@@ -1,0 +1,15 @@
+{
+  "name": "pdc-site",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Сайт-визитка Personal Data Cleaner (PDC) — a0nikolaev.github.io/pdc",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview --host"
+  },
+  "dependencies": {
+    "astro": "^5.0.0"
+  }
+}

@@ -1,0 +1,163 @@
+---
+import Base from '../layouts/Base.astro';
+import { content, issuesUrl, type Lang } from '../i18n/content';
+
+interface Props {
+  lang: Lang;
+}
+
+const { lang } = Astro.props;
+const t = content[lang];
+const img = (name: string) => `${import.meta.env.BASE_URL}img/${name}`;
+---
+
+<Base lang={lang} t={t}>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Personal Data Cleaner (PDC)</p>
+      <h1>{t.hero.tagline}</h1>
+      <p class="lead">{t.hero.lead}</p>
+      <div class="actions">
+        <a class="button primary" href="#features">{t.hero.primary}</a>
+        <a class="button" href={issuesUrl} rel="noopener">{t.hero.secondary}</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="how" class="section">
+    <div class="container">
+      <h2>{t.how.title}</h2>
+      <ol class="steps">
+        {t.how.steps.map((step, i) => (
+          <li class="card">
+            <span class="step-number">{i + 1}</span>
+            <h3>{step.title}</h3>
+            <p>{step.text}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section id="features" class="section alt">
+    <div class="container">
+      <div class="product">
+        <h2>{t.desktop.title}</h2>
+        <p class="section-lead">{t.desktop.lead}</p>
+        <div class="grid">
+          {t.desktop.items.map((item) => (
+            <div class="card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <figure class="screenshot">
+        <img src={img(`desktop-${lang}.png`)} alt={t.screenshot.alt} loading="lazy" width="1180" height="780" />
+        <figcaption>{t.screenshot.caption}</figcaption>
+      </figure>
+
+      <div class="product">
+        <h2>{t.server.title}</h2>
+        <p class="section-lead">{t.server.lead}</p>
+        <div class="grid">
+          {t.server.items.map((item) => (
+            <div class="card">
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container two-columns">
+      <div>
+        <h2>{t.pii.title}</h2>
+        <p class="section-lead">{t.pii.lead}</p>
+        <table class="table">
+          <tbody>
+            {t.pii.rows.map(([name, detail]) => (
+              <tr>
+                <th scope="row">{name}</th>
+                <td>{detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="note">{t.pii.note}</p>
+      </div>
+      <div>
+        <h2>{t.formats.title}</h2>
+        <table class="table">
+          <tbody>
+            {t.formats.rows.map(([name, detail]) => (
+              <tr>
+                <th scope="row">{name}</th>
+                <td>{detail}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="example" class="section alt">
+    <div class="container">
+      <h2>{t.example.title}</h2>
+      <p class="section-lead">{t.example.lead}</p>
+      <div class="before-after">
+        <figure>
+          <figcaption>{t.example.before}</figcaption>
+          <img src={img('before.png')} alt={t.example.before} loading="lazy" />
+        </figure>
+        <figure>
+          <figcaption>{t.example.after}</figcaption>
+          <img src={img('after.png')} alt={t.example.after} loading="lazy" />
+        </figure>
+      </div>
+      <p class="note">{t.example.caption}</p>
+    </div>
+  </section>
+
+  <section id="requirements" class="section">
+    <div class="container">
+      <h2>{t.requirements.title}</h2>
+      <div class="grid three">
+        {[t.requirements.server, t.requirements.client, t.requirements.deploy].map((block) => (
+          <div class="card">
+            <h3>{block.title}</h3>
+            <ul>
+              {block.items.map((item) => <li>{item}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section alt">
+    <div class="container narrow">
+      <h2>{t.faq.title}</h2>
+      {t.faq.items.map((item) => (
+        <details class="faq">
+          <summary>{item.q}</summary>
+          <p>{item.a}</p>
+        </details>
+      ))}
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container narrow center">
+      <h2>{t.contact.title}</h2>
+      <p>{t.contact.text}</p>
+      <a class="button primary" href={issuesUrl} rel="noopener">{t.contact.button}</a>
+    </div>
+  </section>
+</Base>
