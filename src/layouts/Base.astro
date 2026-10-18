@@ -7,12 +7,14 @@ import type { Content, Lang } from '../i18n/content';
 interface Props {
   lang: Lang;
   t: Content;
+  section?: string;
 }
 
-const { lang, t } = Astro.props;
+const { lang, t, section = '' } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const other = t.langSwitch.target;
-const canonical = new URL(`${base}${lang}/`, Astro.site);
+const canonical = new URL(`${base}${lang}/${section}`, Astro.site);
+const home = `${base}${lang}/`;
 ---
 
 <!doctype html>
@@ -30,8 +32,8 @@ const canonical = new URL(`${base}${lang}/`, Astro.site);
     <title>{t.meta.title}</title>
     <meta name="description" content={t.meta.description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="ru" href={new URL(`${base}ru/`, Astro.site)} />
-    <link rel="alternate" hreflang="en" href={new URL(`${base}en/`, Astro.site)} />
+    <link rel="alternate" hreflang="ru" href={new URL(`${base}ru/${section}`, Astro.site)} />
+    <link rel="alternate" hreflang="en" href={new URL(`${base}en/${section}`, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <meta property="og:title" content={t.meta.title} />
     <meta property="og:description" content={t.meta.description} />
@@ -46,17 +48,18 @@ const canonical = new URL(`${base}${lang}/`, Astro.site);
           <img src={`${base}favicon.svg`} alt="" width="28" height="28" />
           <span>PDC</span>
         </a>
-        <nav class="nav" aria-label="Main">
-          <a href="#features">{t.nav.features}</a>
-          <a href="#how">{t.nav.how}</a>
-          <a href="#example">{t.nav.example}</a>
-          <a href="#requirements">{t.nav.requirements}</a>
-          <a href="#faq">{t.nav.faq}</a>
-          <a href="#contact">{t.nav.contact}</a>
+        <nav class="nav" aria-label={lang === 'ru' ? 'Главная навигация' : 'Main navigation'}>
+          <a href={`${home}#features`}>{t.nav.features}</a>
+          <a href={`${home}#how`}>{t.nav.how}</a>
+          <a href={`${home}#example`}>{t.nav.example}</a>
+          <a href={`${home}#requirements`}>{t.nav.requirements}</a>
+          <a href={`${home}#faq`}>{t.nav.faq}</a>
+          <a href={`${home}#contact`}>{t.nav.contact}</a>
         </nav>
         <div class="header-tools">
+          <a class="release-link" href={`${home}changelog/`} aria-current={section === 'changelog/' ? 'page' : undefined}>{lang === 'ru' ? 'Обновления' : 'Updates'}</a>
           <ThemeToggle lang={lang} />
-          <a class="lang-switch" href={`${base}${other}/`} hreflang={other} lang={other}>{t.langSwitch.label}</a>
+          <a class="lang-switch" href={`${base}${other}/${section}`} hreflang={other} lang={other}>{t.langSwitch.label}</a>
         </div>
       </div>
     </header>

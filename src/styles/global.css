@@ -29,6 +29,9 @@
   color-scheme: dark;
 }
 
+.release-link { font-size: .85rem; color: var(--muted); text-decoration: none; white-space: nowrap; }
+.release-link[aria-current='page'], .release-link:hover { color: var(--accent); }
+
 :root[data-theme='light'] {
   --bg: #f8fbff;
   --bg-alt: #eef4fc;

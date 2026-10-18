@@ -1,0 +1,222 @@
+{
+  "ru": [
+    {
+      "component": "desktop",
+      "version": "1.14.0.1",
+      "date": "2026-10-18",
+      "highlights": [
+        "Убраны прозрачные окна и анимация бокового меню при переключении вкладок.",
+        "История изменений использует нативную прокрутку текста без пересчёта длинных подписей."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.14.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Последняя вкладка «История изменений» на русском и английском.",
+        "Компактные кнопки копирования UUID задания, источника и результата на вкладке «Базы данных»."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.13.1.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Процентный прогресс анонимизации БД, видимый только во время выполнения.",
+        "Имя новой таблицы по умолчанию: <имя>pdc.",
+        "Восстановление формы после перезапуска сервера."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.13.1.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Подсчёт общего количества строк и процентный прогресс заданий БД.",
+        "Исправлено определение первичного ключа Oracle.",
+        "Ускорена обработка email и телефонов; лимит задания — 100 000 строк.",
+        "Имя копии по умолчанию: <имя>pdc."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.13.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Вкладка «Базы данных»: PostgreSQL, ClickHouse, SQL Server и Oracle.",
+        "Создание копии или изменение исходной таблицы, отмена и проверка статуса.",
+        "Проверка обязательных полей и подтверждение изменения исходных данных."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.13.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Анонимизация таблиц PostgreSQL, ClickHouse, SQL Server и Oracle.",
+        "Фоновые задания, копирование или изменение на месте, отмена и статусы.",
+        "Доступ для Admin с подпиской; разрешённые подключения задаёт администратор."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.1.1",
+      "date": "2026-10-18",
+      "highlights": [
+        "Контрастная кнопка логина в обеих темах."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.1.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Светлая и тёмная темы с сохранением выбора и применением без перезапуска."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.0.5",
+      "date": "2026-10-18",
+      "highlights": [
+        "Проверка подписки раз в 10 минут и по кнопке."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.0.4",
+      "date": "2026-10-18",
+      "highlights": [
+        "Копирование названия и UUID организации компактными кнопками со значками."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.12.0.1",
+      "date": "2026-10-18",
+      "highlights": [
+        "Название организации в статусе подписки."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.12.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Активация подписок кодами с привязкой к организации и сроком действия.",
+        "Проверка подписки перед новой обработкой документов и пакетов."
+      ]
+    }
+  ],
+  "en": [
+    {
+      "component": "desktop",
+      "version": "1.14.0.1",
+      "date": "2026-10-18",
+      "highlights": [
+        "Removed layered navigation windows and tab switching animations.",
+        "Release notes use native text scrolling without long auto-sized labels."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.14.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Release notes as the last tab, available in Russian and English.",
+        "Compact copy buttons for the job UUID, source and result on the Databases tab."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.13.1.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Database anonymization percentage, shown only while a job is running.",
+        "Default new table name: <name>pdc.",
+        "Recover the form after a server restart."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.13.1.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Total row counts and percentage progress for database jobs.",
+        "Fixed Oracle primary key discovery.",
+        "Faster email and phone processing; 100,000 rows per job.",
+        "Default copy name: <name>pdc."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.13.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Databases tab: PostgreSQL, ClickHouse, SQL Server and Oracle.",
+        "Create a copy or modify the source table; cancel and check job status.",
+        "Required field validation and confirmation before modifying source data."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.13.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Anonymize PostgreSQL, ClickHouse, SQL Server and Oracle tables.",
+        "Background jobs, copy or in-place mode, cancellation and status checks.",
+        "Admin role and subscription required; administrators configure allowed connections."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.1.1",
+      "date": "2026-10-18",
+      "highlights": [
+        "Improved login button contrast in both themes."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.1.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Light and dark themes, saved and applied without restarting."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.0.5",
+      "date": "2026-10-18",
+      "highlights": [
+        "Subscription checks every 10 minutes and on demand."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.12.0.4",
+      "date": "2026-10-18",
+      "highlights": [
+        "Compact icon buttons to copy the organization name and UUID."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.12.0.1",
+      "date": "2026-10-18",
+      "highlights": [
+        "Organization name in subscription status."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.12.0.0",
+      "date": "2026-10-18",
+      "highlights": [
+        "Subscription activation codes bound to an organization and expiration date.",
+        "Subscription checks before processing new documents and batches."
+      ]
+    }
+  ]
+}

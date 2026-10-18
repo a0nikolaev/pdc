@@ -38,6 +38,29 @@ npm run build    # результат — dist/
 docker run --rm -it -p 4321:4321 -v "$PWD:/site" -w /site node:22 bash -c "npm install && npm run dev"
 ```
 
+## История изменений
+
+Страницы `/pdc/ru/changelog/` и `/pdc/en/changelog/` доступны по ссылке
+«Обновления» / «Updates» в шапке. Карточки содержат основные изменения по патчам,
+а фильтры позволяют отдельно смотреть desktop и сервер. Без JavaScript видны
+все релизы. При смене языка сохраняется раздел; тема общая с главной страницей.
+
+Данные `src/data/releases.json` включены в репозиторий: сборка сайта не требует
+доступа к исходникам продукта. Для обновления после релиза:
+
+```bash
+npm run sync:releases
+# Если продукт находится не в соседнем personal-data-cleaner:
+npm run sync:releases -- C:/repos/personal-data-cleaner
+npm run build
+```
+
+Скрипт берёт согласованные основные изменения RU/EN из ресурсов desktop
+(`Changelog.DesktopHistory`, `Changelog.ServerHistory`) и проверяет наличие
+каждой версии в соответствующем `change_log/CHANGELOG*.md` основного проекта.
+После синхронизации закоммитить обновлённый JSON. Запланированные задачи
+в историю выпущенных версий не попадают.
+
 ## Первая публикация
 
 1. Создать **публичный** репозиторий `a0nikolaev/pdc` на GitHub (без README).
