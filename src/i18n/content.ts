@@ -13,7 +13,7 @@ export interface Content {
   meta: { title: string; description: string };
   nav: { features: string; how: string; example: string; requirements: string; faq: string; contact: string };
   langSwitch: { label: string; target: Lang };
-  hero: { title: string; tagline: string; lead: string; primary: string; secondary: string };
+  hero: { title: string; tagline: string; lead: string; benefits: string[]; primary: string; secondary: string };
   how: { title: string; steps: Feature[] };
   desktop: { title: string; lead: string; items: Feature[] };
   server: { title: string; lead: string; items: Feature[] };
@@ -23,11 +23,11 @@ export interface Content {
   screenshot: { title: string; alt: string; caption: string };
   requirements: { title: string; server: { title: string; items: string[] }; client: { title: string; items: string[] }; deploy: { title: string; items: string[] } };
   faq: { title: string; items: { q: string; a: string }[] };
-  contact: { title: string; text: string; button: string };
+  contact: { title: string; text: string };
   footer: string;
 }
 
-export const issuesUrl = 'https://github.com/a0nikolaev/pdc/issues/new';
+export const contactEmail = 'a0nikolaevsoft@gmail.com';
 
 export const content: Record<Lang, Content> = {
   ru: {
@@ -44,8 +44,9 @@ export const content: Record<Lang, Content> = {
       tagline: 'Обезличивание персональных данных в документах — на ваших серверах',
       lead:
         'PDC находит в документах ФИО, телефоны, e-mail, номера банковских карт, СНИЛС, ИНН, IBAN и заменяет их правдоподобными вымышленными значениями или метками. Оформление документа сохраняется, а сами документы не покидают сеть организации.',
+      benefits: ['Работает без интернета', 'Без утечек данных', 'Полный контроль над анонимизацией данных внутри контура компании', 'Удобный инструмент для аналитики данных и создания набора тестовых данных для разработчиков'],
       primary: 'Возможности',
-      secondary: 'Задать вопрос',
+      secondary: 'Контакты',
     },
     how: {
       title: 'Как это работает',
@@ -65,14 +66,14 @@ export const content: Record<Lang, Content> = {
         { title: 'Администрирование', text: 'Пользователи и роли, метки и режимы замены для каждого типа документа — для роли «Администратор».' },
         { title: 'Несколько серверов', text: 'Профили серверов с быстрым переключением.' },
         { title: 'Русский и английский', text: 'Язык интерфейса переключается в настройках.' },
-        { title: 'Простая установка', text: 'Установщик для текущего пользователя, .NET уже внутри; тихая установка для массового развёртывания.' },
+        { title: 'Простая установка', text: 'Установка для текущего пользователя без прав администратора; поддерживается тихое развёртывание на рабочих местах.' },
       ],
     },
     server: {
       title: 'PDC.Сервер',
       lead: 'Серверная часть: находит и заменяет персональные данные, хранит настройки и журнал решений.',
       items: [
-        { title: 'Правила и модели', text: 'Структурированные данные — по правилам с проверкой контрольных сумм; ФИО — нейросетевыми моделями (русский — DeepPavlov NER, английский — Phi-3.5-mini).' },
+        { title: 'Правила и модели', text: 'Структурированные данные — по правилам с проверкой контрольных сумм; ФИО — нейросетевыми моделями.' },
         { title: 'Правдоподобная замена', text: 'ФИО заменяется ФИО того же рода и в том же падеже, телефон — номером в том же формате и с тем же кодом страны. Или меткой вида [EMAIL] — режим настраивается.' },
         { title: 'Сканы и изображения', text: 'Распознавание текста (OCR) на изображениях, многостраничных TIFF и сканированных PDF; замена рисуется на месте исходного текста.' },
         { title: 'Оформление сохраняется', text: 'Замена встаёт на место исходного значения — шрифты и вёрстка не меняются; по желанию — метки той же длины, что и исходный текст.' },
@@ -107,7 +108,7 @@ export const content: Record<Lang, Content> = {
     },
     example: {
       title: 'Пример: скан служебной записки',
-      lead: 'Документ с вымышленными данными до и после обработки.',
+      lead: 'Документ с вымышленными данными до и после обработки. В этом примере для ФИО и телефонных номеров сгенерированы новые случайные значения, а адрес электронной почты заменён меткой [EMAIL]. Способ замены каждого типа данных можно выбрать в настройках.',
       before: 'До',
       after: 'После',
       caption: 'ФИО, телефоны, e-mail и номер карты заменены; расположение текста и таблица сохранены.',
@@ -124,12 +125,12 @@ export const content: Record<Lang, Content> = {
         items: [
           'Linux или Windows с Docker и Docker Compose',
           'Память — от 16 ГБ, диск — около 25 ГБ',
-          'Интернет — только при первом запуске, чтобы загрузить модели',
+          'Для работы сервера доступ в интернет не требуется: обработка данных выполняется внутри сети организации',
         ],
       },
       client: {
         title: 'PDC.Desktop',
-        items: ['Windows 10 или 11, 64-разрядная', '.NET устанавливать не нужно — он входит в установщик', 'Сетевой доступ к серверу'],
+        items: ['Windows 10 или 11, 64-разрядная', 'Сетевой доступ к серверу'],
       },
       deploy: {
         title: 'Развёртывание',
@@ -147,7 +148,7 @@ export const content: Record<Lang, Content> = {
           q: 'Куда попадают документы?',
           a: 'Только на PDC.Сервер вашей организации. Исходный файл не сохраняется; результаты пакетной обработки хранятся ограниченное время (по умолчанию 24 часа) и удаляются. Сохранение обработанных документов на сервере выключено по умолчанию.',
         },
-        { q: 'Нужен ли интернет?', a: 'Только при первом запуске сервера — чтобы загрузить образы и модели. Дальше вся работа идёт внутри вашей сети.' },
+        { q: 'Нужен ли интернет?', a: 'Для работы PDC.Сервер и PDC.Desktop подключение к интернету не требуется. Обработка документов выполняется на сервере организации, а настольное приложение связывается с ним по внутренней сети.' },
         {
           q: 'Насколько надёжно находятся ФИО?',
           a: 'Имена распознают модели машинного обучения — они работают хорошо, но не дают стопроцентной гарантии. Для ответственных документов проверяйте результат и журнал причин замены.',
@@ -159,8 +160,8 @@ export const content: Record<Lang, Content> = {
     },
     contact: {
       title: 'Контакты',
-      text: 'Вопросы, предложения и запросы на поставку — через обращения (Issues) на GitHub.',
-      button: 'Создать обращение',
+      text: 'По вопросам о PDC, предложениям и запросам на поставку:',
+
     },
     footer: 'Скриншоты и примеры подготовлены на вымышленных данных.',
   },
@@ -179,8 +180,9 @@ export const content: Record<Lang, Content> = {
       tagline: 'Personal data anonymization for documents — on your own servers',
       lead:
         'PDC finds names, phone numbers, emails, bank card numbers, IBANs, Russian SNILS/INN and other personal data in documents and replaces them with plausible fake values or labels. Document layout is preserved, and documents never leave your organization’s network.',
+      benefits: ['Works without internet access', 'No data leaks', 'Full control over data anonymization within your company’s network', 'A convenient tool for data analytics and creating test datasets for developers'],
       primary: 'Features',
-      secondary: 'Ask a question',
+      secondary: 'Contact',
     },
     how: {
       title: 'How it works',
@@ -200,14 +202,14 @@ export const content: Record<Lang, Content> = {
         { title: 'Administration', text: 'Users and roles, labels and replacement modes per document type — for the Administrator role.' },
         { title: 'Multiple servers', text: 'Server profiles with quick switching.' },
         { title: 'English and Russian', text: 'The interface language is switched in the settings.' },
-        { title: 'Easy installation', text: 'Per-user installer with .NET included; silent installation for mass deployment.' },
+        { title: 'Easy installation', text: 'Per-user installation without administrator rights, with silent deployment across workstations.' },
       ],
     },
     server: {
       title: 'PDC.Server',
       lead: 'The server side: finds and replaces personal data, stores settings and the decision log.',
       items: [
-        { title: 'Rules and models', text: 'Structured data — rules with checksum validation; names — neural models (Russian — DeepPavlov NER, English — Phi-3.5-mini).' },
+        { title: 'Rules and models', text: 'Structured data — rules with checksum validation; names — neural models.' },
         { title: 'Plausible replacement', text: 'A name is replaced with a name of the same gender and grammatical case, a phone number with one in the same format and country code. Or with a label like [EMAIL] — the mode is configurable.' },
         { title: 'Scans and images', text: 'Text recognition (OCR) in images, multi-page TIFFs and scanned PDFs; replacements are drawn where the original text was.' },
         { title: 'Layout is preserved', text: 'Replacements take the place of the original value — fonts and layout stay the same; optionally, labels of the same length as the original text.' },
@@ -242,7 +244,7 @@ export const content: Record<Lang, Content> = {
     },
     example: {
       title: 'Example: a scanned memo',
-      lead: 'A document with fictitious data before and after processing.',
+      lead: 'A document with fictitious data before and after processing. In this example, names and phone numbers are replaced with newly generated random values, while the email address becomes an [EMAIL] label. The replacement method for each data type can be changed in the settings.',
       before: 'Before',
       after: 'After',
       caption: 'Names, phone numbers, emails and the card number are replaced; text placement and the table are preserved.',
@@ -256,11 +258,11 @@ export const content: Record<Lang, Content> = {
       title: 'Requirements and deployment',
       server: {
         title: 'PDC.Server',
-        items: ['Linux or Windows with Docker and Docker Compose', 'Memory — 16 GB or more, disk — about 25 GB', 'Internet — only on first start, to download the models'],
+        items: ['Linux or Windows with Docker and Docker Compose', 'Memory — 16 GB or more, disk — about 25 GB', 'The server works without internet access: data is processed within your organization’s network'],
       },
       client: {
         title: 'PDC.Desktop',
-        items: ['Windows 10 or 11, 64-bit', 'No need to install .NET — it is included in the installer', 'Network access to the server'],
+        items: ['Windows 10 or 11, 64-bit', 'Network access to the server'],
       },
       deploy: {
         title: 'Deployment',
@@ -278,7 +280,7 @@ export const content: Record<Lang, Content> = {
           q: 'Where do documents go?',
           a: 'Only to your organization’s PDC.Server. The original file is not stored; batch results are kept for a limited time (24 hours by default) and then deleted. Storing processed documents on the server is off by default.',
         },
-        { q: 'Is internet access required?', a: 'Only on the first server start — to download images and models. After that, everything runs inside your network.' },
+        { q: 'Is internet access required?', a: 'Neither PDC.Server nor PDC.Desktop requires internet access to operate. Documents are processed on your organization’s server, and the desktop application connects to it over your internal network.' },
         {
           q: 'How reliably are names detected?',
           a: 'Names are detected by machine learning models — they work well but cannot give a 100% guarantee. For sensitive documents, review the result and the replacement reasons log.',
@@ -290,8 +292,8 @@ export const content: Record<Lang, Content> = {
     },
     contact: {
       title: 'Contact',
-      text: 'Questions, suggestions and delivery requests — via GitHub issues.',
-      button: 'Open an issue',
+      text: 'For questions about PDC, suggestions and delivery enquiries:',
+
     },
     footer: 'Screenshots and examples use fictitious data.',
   },

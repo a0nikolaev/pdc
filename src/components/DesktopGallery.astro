@@ -1,0 +1,123 @@
+---
+import type { Lang } from '../i18n/content';
+interface Props { lang: Lang }
+const { lang } = Astro.props;
+const ru = lang === 'ru';
+const slides = ru ? [
+  ['anonymize', 'Обезличивание документа', 'Перетащите файл в окно приложения, чтобы подготовить обезличенную копию.'],
+  ['batch', 'Пакетная обработка', 'Работайте с несколькими документами и отслеживайте готовность результатов.'],
+  ['placeholders', 'Метки замены', 'Задавайте метки для разных типов персональных данных и форматов документов.'],
+  ['modes', 'Режимы замены', 'Выбирайте генерацию новых значений или замену на заданную метку.'],
+  ['settings', 'Настройки приложения', 'Управляйте профилями серверов, языком интерфейса и сохранением результатов.'],
+] : [
+  ['anonymize', 'Document anonymization', 'Drop a file into the application to prepare an anonymized copy.'],
+  ['batch', 'Batch processing', 'Work with multiple documents and track when results are ready.'],
+  ['placeholders', 'Replacement labels', 'Set labels for different types of personal data and document formats.'],
+  ['modes', 'Replacement modes', 'Choose between generating new values and using a replacement label.'],
+  ['settings', 'Application settings', 'Manage server profiles, the interface language and how results are saved.'],
+];
+const label = ru ? 'Интерфейс PDC.Desktop' : 'PDC.Desktop interface';
+---
+<section class="desktop-gallery" data-gallery aria-label={label} aria-roledescription={ru ? 'карусель' : 'carousel'}>
+  <div class="gallery-heading">
+    <div><p class="eyebrow">PDC.Desktop</p><h3>{ru ? 'Пять экранов — один рабочий процесс' : 'Five views, one workflow'}</h3></div>
+    <span class="gallery-count" data-gallery-count aria-live="polite" aria-atomic="true">1 / 5</span>
+  </div>
+  <div class="gallery-stage">
+    <ul class="gallery-track" id="desktop-gallery-track" tabindex="0" aria-label={label}>
+      {slides.map(([key, title], index) => (
+        <li class="gallery-slide" aria-roledescription={ru ? 'слайд' : 'slide'} aria-label={`${index + 1} / 5: ${title}`}>
+          <a href={`${import.meta.env.BASE_URL}img/desktop-${lang}-${key}.png`} data-open={index} aria-haspopup="dialog" aria-label={`${title} — ${ru ? 'открыть полный размер' : 'open full size'}`}>
+            <img src={`${import.meta.env.BASE_URL}img/desktop-${lang}-${key}.png`} width="1180" height="780" alt={`PDC.Desktop — ${title}`} loading="lazy" />
+          </a>
+        </li>
+      ))}
+    </ul>
+    <button type="button" class="gallery-arrow" data-prev aria-controls="desktop-gallery-track" aria-label={ru ? 'Предыдущий скриншот' : 'Previous screenshot'} hidden>←</button>
+    <button type="button" class="gallery-arrow" data-next aria-controls="desktop-gallery-track" aria-label={ru ? 'Следующий скриншот' : 'Next screenshot'} hidden>→</button>
+  </div>
+  <p class="gallery-caption"><strong data-gallery-title>{slides[0][1]}</strong><span data-gallery-description>{slides[0][2]}</span></p>
+  <div class="gallery-dots" role="group" aria-label={ru ? 'Выбрать скриншот' : 'Choose screenshot'} hidden>
+    {slides.map(([, title, description], i) => <button type="button" data-slide={i} data-title={title} data-description={description} aria-controls="desktop-gallery-track" aria-label={`${i + 1}: ${title}`} aria-current={i === 0 ? 'true' : undefined}><span></span></button>)}
+  </div>
+  <p class="gallery-note">{ru ? 'Скриншоты приложения с демонстрационными настройками. Нажмите на изображение, чтобы рассмотреть детали.' : 'Application screenshots with demo settings. Select an image to see the details.'}</p>
+  <dialog class="gallery-viewer" aria-label={ru ? 'Полноэкранный просмотр PDC.Desktop' : 'PDC.Desktop fullscreen viewer'}>
+    <div class="viewer-toolbar">
+      <p>PDC.Desktop <span data-viewer-count>1 / 5</span></p>
+      <button type="button" class="viewer-close" data-close autofocus><span aria-hidden="true">×</span><span>{ru ? 'Вернуться на сайт' : 'Back to website'}</span></button>
+    </div>
+    <div class="viewer-stage">
+      <img data-viewer-image width="1180" height="780" alt="" />
+      <button type="button" class="gallery-arrow" data-prev aria-label={ru ? 'Предыдущий скриншот' : 'Previous screenshot'}>←</button>
+      <button type="button" class="gallery-arrow" data-next aria-label={ru ? 'Следующий скриншот' : 'Next screenshot'}>→</button>
+    </div>
+    <p class="viewer-caption" data-viewer-title></p>
+  </dialog>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-gallery]').forEach((gallery) => {
+    const track = gallery.querySelector<HTMLElement>('.gallery-track')!;
+    const dots = [...gallery.querySelectorAll<HTMLButtonElement>('[data-slide]')];
+    const links = [...gallery.querySelectorAll<HTMLAnchorElement>('[data-open]')];
+    const count = gallery.querySelector<HTMLElement>('[data-gallery-count]')!;
+    const dialog = gallery.querySelector<HTMLDialogElement>('dialog')!;
+    const image = gallery.querySelector<HTMLImageElement>('[data-viewer-image]')!;
+    let current = 0;
+    let settleTimer: ReturnType<typeof setTimeout>;
+    let opener: HTMLElement | null = null;
+    gallery.querySelector<HTMLElement>('.gallery-dots')!.hidden = false;
+    gallery.querySelectorAll<HTMLButtonElement>('.gallery-stage .gallery-arrow').forEach(button => button.hidden = false);
+
+    const render = () => {
+      const dot = dots[current];
+      dots.forEach((item, i) => i === current ? item.setAttribute('aria-current', 'true') : item.removeAttribute('aria-current'));
+      count.textContent = `${current + 1} / ${dots.length}`;
+      gallery.querySelector('[data-gallery-title]')!.textContent = dot.dataset.title!;
+      gallery.querySelector('[data-gallery-description]')!.textContent = dot.dataset.description!;
+      if (dialog.open) {
+        image.src = links[current].href;
+        image.alt = `PDC.Desktop — ${dot.dataset.title}`;
+        gallery.querySelector('[data-viewer-count]')!.textContent = count.textContent;
+        gallery.querySelector('[data-viewer-title]')!.textContent = dot.dataset.title!;
+      }
+    };
+    const go = (index: number, instant = false) => {
+      clearTimeout(settleTimer);
+      current = (index + dots.length) % dots.length;
+      render();
+      track.scrollTo({left: current * track.clientWidth, behavior: instant || dialog.open || matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth'});
+    };
+    gallery.querySelectorAll('[data-prev]').forEach(button => button.addEventListener('click', () => go(current - 1)));
+    gallery.querySelectorAll('[data-next]').forEach(button => button.addEventListener('click', () => go(current + 1)));
+    dots.forEach((dot, i) => dot.addEventListener('click', () => go(i)));
+    track.addEventListener('scroll', () => {
+      clearTimeout(settleTimer);
+      settleTimer = setTimeout(() => {
+        current = Math.max(0, Math.min(dots.length - 1, Math.round(track.scrollLeft / track.clientWidth)));
+        render();
+      }, 120);
+    }, {passive: true});
+    links.forEach((link, i) => link.addEventListener('click', (event) => {
+      event.preventDefault();
+      opener = link;
+      go(i, true);
+      dialog.showModal();
+      document.documentElement.classList.add('gallery-open');
+      render();
+    }));
+    gallery.querySelector('[data-close]')!.addEventListener('click', () => dialog.close());
+    dialog.addEventListener('click', event => { if (event.target === dialog) dialog.close(); });
+    dialog.addEventListener('close', () => {
+      document.documentElement.classList.remove('gallery-open');
+      (links[current] ?? opener)?.focus({preventScroll: true});
+    });
+    gallery.addEventListener('keydown', event => {
+      if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') {
+        event.preventDefault();
+        go(current + (event.key === 'ArrowRight' ? 1 : -1));
+      }
+    });
+    new ResizeObserver(() => { track.scrollTo({left: current * track.clientWidth, behavior: 'instant'}); }).observe(track);
+  });
+</script>

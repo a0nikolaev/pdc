@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import PrivacyBackdrop from '../components/PrivacyBackdrop.astro';
+import ThemeToggle from '../components/ThemeToggle.astro';
 import type { Content, Lang } from '../i18n/content';
 
 interface Props {
@@ -14,10 +16,17 @@ const canonical = new URL(`${base}${lang}/`, Astro.site);
 ---
 
 <!doctype html>
-<html lang={t.htmlLang}>
+<html lang={t.htmlLang} data-theme="dark">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script is:inline>
+      // Apply the saved theme before painting; a new visitor starts in dark mode.
+      try {
+        const savedTheme = localStorage.getItem('pdc-theme');
+        if (savedTheme === 'light') document.documentElement.dataset.theme = 'light';
+      } catch { /* Dark remains the default when storage is unavailable. */ }
+    </script>
     <title>{t.meta.title}</title>
     <meta name="description" content={t.meta.description} />
     <link rel="canonical" href={canonical} />
@@ -30,6 +39,7 @@ const canonical = new URL(`${base}${lang}/`, Astro.site);
     <meta property="og:url" content={canonical} />
   </head>
   <body>
+    <PrivacyBackdrop lang={lang} />
     <header class="site-header">
       <div class="container header-row">
         <a class="brand" href={`${base}${lang}/`}>
@@ -44,7 +54,10 @@ const canonical = new URL(`${base}${lang}/`, Astro.site);
           <a href="#faq">{t.nav.faq}</a>
           <a href="#contact">{t.nav.contact}</a>
         </nav>
-        <a class="lang-switch" href={`${base}${other}/`} hreflang={other} lang={other}>{t.langSwitch.label}</a>
+        <div class="header-tools">
+          <ThemeToggle lang={lang} />
+          <a class="lang-switch" href={`${base}${other}/`} hreflang={other} lang={other}>{t.langSwitch.label}</a>
+        </div>
       </div>
     </header>
     <main>
