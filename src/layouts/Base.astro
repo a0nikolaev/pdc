@@ -50,6 +50,18 @@ const home = `${base}${lang}/`;
           <img src={`${base}favicon.svg`} alt="" width="28" height="28" />
           <span>PDC</span>
         </a>
+        <details class="mobile-nav">
+          <summary>{ui(lang, 'Main navigation')}</summary>
+          <nav aria-label={ui(lang, 'Main navigation')}>
+            <a href={`${home}#features`}>{t.nav.features}</a>
+            <a href={`${home}#how`}>{t.nav.how}</a>
+            <a href={`${home}#example`}>{t.nav.example}</a>
+            <a href={`${home}#pdc-web`}>PDC.Web</a>
+            <a href={`${home}#requirements`}>{t.nav.requirements}</a>
+            <a href={`${home}#faq`}>{t.nav.faq}</a>
+            <a href={`${home}#contact`}>{t.nav.contact}</a>
+          </nav>
+        </details>
         <nav class="nav" aria-label={ui(lang, "Main navigation")}>
           <a href={`${home}#features`}>{t.nav.features}</a>
           <a href={`${home}#how`}>{t.nav.how}</a>
@@ -84,10 +96,16 @@ const home = `${base}${lang}/`;
 
 <script>
   const investors = document.querySelector<HTMLDetailsElement>('.investor-menu');
+  const navigation = document.querySelector<HTMLDetailsElement>('.mobile-nav');
+  navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navigation.open = false; }));
+  const wide = matchMedia('(min-width: 761px)');
+  wide.addEventListener('change', () => { if (wide.matches && navigation) navigation.open = false; });
   document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && navigation?.open) { navigation.open = false; navigation.querySelector('summary')?.focus(); }
     if (event.key === 'Escape' && investors?.open) { investors.open = false; investors.querySelector('summary')?.focus(); }
   });
   document.addEventListener('click', event => {
     if (investors?.open && !investors.contains(event.target as Node)) investors.open = false;
+    if (navigation?.open && !navigation.contains(event.target as Node)) navigation.open = false;
   });
 </script>

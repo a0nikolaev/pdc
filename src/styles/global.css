@@ -557,3 +557,16 @@ html { scrollbar-gutter: stable; }
   .nav a { font-size:.85rem; }
   .header-tools { border-inline-start:1px solid var(--border); padding-inline-start:18px; }
 }
+
+.mobile-nav { display:none; }
+@media(max-width:760px) {
+ .mobile-nav { display:block; position:relative; margin-left:auto; font-size:.85rem; }
+ .mobile-nav summary { cursor:pointer; padding:8px 12px; border:1px solid var(--border); border-radius:8px; background:var(--card); }
+ .mobile-nav nav { position:absolute; right:0; top:calc(100% + 8px); width:270px; max-width:calc(100vw - 32px); max-height:65dvh; overflow:auto; padding:8px; border:1px solid var(--border); border-radius:12px; background:var(--card); box-shadow:var(--shadow); }
+ .mobile-nav nav a { display:block; padding:10px 12px; text-decoration:none; border-radius:8px; }
+ .mobile-nav nav a:hover { background:var(--accent-soft); }
+}
+@media(max-width:480px) {
+ .mobile-nav { grid-column:1 / -1; grid-row:3; margin-left:0; }
+ .mobile-nav nav { left:0; right:auto; }
+}
