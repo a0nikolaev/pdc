@@ -4,6 +4,7 @@ import { resolve } from 'node:path';
 // Published data stays in this repository; the product checkout is needed only to sync.
 const product = resolve(process.argv[2] || '../personal-data-cleaner');
 const data = {};
+const curated = JSON.parse(await readFile(new URL('../src/data/release-highlights.json', import.meta.url), 'utf8'));
 for (const lang of ['ru', 'en']) {
   const strings = JSON.parse(await readFile(resolve(product, `PDC.Desktop/PDC.Desktop.Core/Localization/Resources/${lang}.json`), 'utf8'));
   data[lang] = [];
@@ -22,6 +23,16 @@ for (const lang of ['ru', 'en']) {
         data[lang].push(release);
       } else if (line.startsWith('• ') && release) release.highlights.push(line.slice(2));
     }
+  }
+  for (const entry of curated[lang]) {
+    const log = await readFile(resolve(product, `change_log/${entry.component === 'server' ? 'CHANGELOG.md' : 'CHANGELOG.Desktop.md'}`), 'utf8');
+    if (!log.includes(`## [${entry.version}] - ${entry.date}`)) throw new Error(`Unverified curated version: ${entry.version}`);
+    const index = data[lang].findIndex(r => r.component === entry.component && r.version === entry.version);
+    if (index < 0) data[lang].push(entry); else data[lang][index] = entry;
+  }
+  for (const [component, config] of [['server','PDC/WebAPI/PDC.WebAPI/appsettings.json'], ['desktop','PDC.Desktop/PDC.Desktop/appsettings.json']]) {
+    const expected = JSON.parse((await readFile(resolve(product, config), 'utf8')).replace(/^\uFEFF/, '')).Application.Version.replace(/^v/, '');
+    if (!data[lang].some(r => r.component === component && r.version === expected)) throw new Error(`Missing current ${component} ${expected} (${lang}); update release-highlights.json before syncing`);
   }
   data[lang].sort((a, b) => b.date.localeCompare(a.date) || b.version.localeCompare(a.version, 'en', { numeric: true }) || a.component.localeCompare(b.component));
 }

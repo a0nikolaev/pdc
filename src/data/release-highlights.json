@@ -1,0 +1,182 @@
+{
+  "ru": [
+    {
+      "component": "server",
+      "version": "1.15.12.4",
+      "date": "2026-10-31",
+      "highlights": [
+        "Исправлена MIME-маршрутизация: единый тип документа используется при обработке, кэшировании и записи журнала; неоднозначные форматы отклоняются. 1030 тестов и 8 сценариев PostgreSQL прошли."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Исправлен контекст разреженных ячеек Excel: учитываются реальные адреса соседних ячеек и заголовки столбцов, чтобы не заменять номера заказов как телефоны."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "PDF: исходные Info/XMP очищаются даже без текстовых замен; результат независимо проверяется до выдачи. Очистка метаданных отделена от оценки распознавания."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Пакетная обработка сохраняет исходник и квоту до подтверждённой записи результата; временные ошибки БД повторяются безопасно. Завершение запрещено при необработанных документах."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Удаляются служебные миниатюры Office, включая файлы без текстовых замен. Проверены 3308 текстов без ошибок вызова; пропуски имён и 2 отказа из 22 файлов остаются известными ограничениями."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Улучшены границы английских имён и отсев подписей полей. Точные повторения распознанных многословных имён заменяются согласованно; проверка остаточных данных сохранена."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Авторы и создатели Office обрабатываются по структуре полей с сохранением выбранного режима замены. Это защита полей, а не дополнительное предсказание модели."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Числовые ячейки Excel получают контекст подписи или заголовка; различаются телефоны, ИНН, СНИЛС и номера заказов, суммы, даты. Служебный контекст не вставляется в результат."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "Профиль minimal наследует полный английский контекст standard: изменяются потоки и очередь, а не веса или входной текст."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Исправлено чтение миниатюр Office; расширена обработка комментариев, авторов и свойств Excel. Проверены 3304 текста; остаточные данные и явные отказы не скрываются."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.0",
+      "date": "2026-10-30",
+      "highlights": [
+        "Улучшены модели RU/EN, телефоны, ИНН, СНИЛС, email и смешанный текст. Расширено покрытие Office, числовых Excel и смешанных PDF; ограничены очередь и память. Неподдерживаемые формулы отклоняются; проверка качества compact сохранена."
+      ]
+    }
+  ],
+  "en": [
+    {
+      "component": "server",
+      "version": "1.15.12.4",
+      "date": "2026-10-31",
+      "highlights": [
+        "Fixed MIME routing: processing, cache and audit use the same effective document type; ambiguous formats are rejected. 1030 tests and 8 PostgreSQL scenarios passed."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Fixed sparse Excel cell context: actual adjacent addresses and column headers prevent order IDs from being replaced as phone numbers."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "PDF Info/XMP metadata is cleaned even without text replacements; output is independently checked before delivery. Metadata cleanup is separate from recognition quality."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Batch processing retains the source and quota until the result is committed; transient database failures are retried safely. Jobs cannot complete with pending documents."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Office service thumbnails are removed, including files without text replacements. 3308 texts were checked with no call failures; missed names and 2 refusals out of 22 files remain known limitations."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Improved English name boundaries and field-label filtering. Exact repetitions of recognized multiword names are replaced consistently; residual-data verification remains enabled."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Office author and creator fields are protected using their structure while preserving the selected replacement mode. This is field protection, not an additional model prediction."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Numeric Excel cells use label or header context to distinguish phone/INN/SNILS values from order IDs, amounts and dates. Synthetic context is not written to the output."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "The minimal profile retains the full standard English context: only threads and queue settings differ, not weights or input text."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Fixed Office thumbnail reading and extended Excel comment, author and property handling. 3304 texts were checked; residual data and explicit refusals remain visible."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.0",
+      "date": "2026-10-30",
+      "highlights": [
+        "Improved RU/EN models, phones, INN, SNILS, email and mixed text. Extended Office, numeric Excel and mixed PDF handling with bounded queues and memory. Unsupported formulas are rejected; the compact quality gate remains mandatory."
+      ]
+    }
+  ]
+}

@@ -1,6 +1,391 @@
 {
   "ru": [
     {
+      "component": "server",
+      "version": "1.15.12.4",
+      "date": "2026-10-31",
+      "highlights": [
+        "Исправлена MIME-маршрутизация: единый тип документа используется при обработке, кэшировании и записи журнала; неоднозначные форматы отклоняются. 1030 тестов и 8 сценариев PostgreSQL прошли."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Исправлен контекст разреженных ячеек Excel: учитываются реальные адреса соседних ячеек и заголовки столбцов, чтобы не заменять номера заказов как телефоны."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "PDF: исходные Info/XMP очищаются даже без текстовых замен; результат независимо проверяется до выдачи. Очистка метаданных отделена от оценки распознавания."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Пакетная обработка сохраняет исходник и квоту до подтверждённой записи результата; временные ошибки БД повторяются безопасно. Завершение запрещено при необработанных документах."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Удаляются служебные миниатюры Office, включая файлы без текстовых замен. Проверены 3308 текстов без ошибок вызова; пропуски имён и 2 отказа из 22 файлов остаются известными ограничениями."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Улучшены границы английских имён и отсев подписей полей. Точные повторения распознанных многословных имён заменяются согласованно; проверка остаточных данных сохранена."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Авторы и создатели Office обрабатываются по структуре полей с сохранением выбранного режима замены. Это защита полей, а не дополнительное предсказание модели."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Числовые ячейки Excel получают контекст подписи или заголовка; различаются телефоны, ИНН, СНИЛС и номера заказов, суммы, даты. Служебный контекст не вставляется в результат."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "Профиль minimal наследует полный английский контекст standard: изменяются потоки и очередь, а не веса или входной текст."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Исправлено чтение миниатюр Office; расширена обработка комментариев, авторов и свойств Excel. Проверены 3304 текста; остаточные данные и явные отказы не скрываются."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.0",
+      "date": "2026-10-30",
+      "highlights": [
+        "Улучшены модели RU/EN, телефоны, ИНН, СНИЛС, email и смешанный текст. Расширено покрытие Office, числовых Excel и смешанных PDF; ограничены очередь и память. Неподдерживаемые формулы отклоняются; проверка качества compact сохранена."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.9.0",
+      "date": "2026-10-27",
+      "highlights": [
+        "EN: контекст 6144 и более крупные окна для standard, 4096 для minimal. Веса, RAM-лимит и тайм-ауты не увеличены; сохранены точные цитаты и явный отказ неполной обработки."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.4",
+      "date": "2026-10-27",
+      "highlights": [
+        "EN: допустимые цитаты ограничены исходными словами и фразами до генерации ответа, temperature=0. Выдуманные цитаты по-прежнему отклоняются; ограничение времени не увеличено."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.3",
+      "date": "2026-10-27",
+      "highlights": [
+        "EN: статическая схема короткого массива исходных строк и ограниченные UTF-8 окна уменьшают стоимость промпта и ответа. Стандартный профиль использует 4 потока в бюджете 4 CPU; пределы времени сохранены."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.2",
+      "date": "2026-10-27",
+      "highlights": [
+        "Длинный RU-текст получает план точных токен-окон и обрабатывается по окнам в общем бюджете без увеличения тайм-аута отдельного вызова. Для длинных EN-фрагментов модель возвращает ограниченные индексы слов вместо повторного копирования исходного текста."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.1",
+      "date": "2026-10-27",
+      "highlights": [
+        "RU NER использует окна фактического WordPiece-токенизатора с перекрытием и точными UTF-16 координатами. EN ограничивает вход и генерацию, учитывает очередь и общий срок; ошибки отдельных окон не скрываются."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.0",
+      "date": "2026-10-27",
+      "highlights": [
+        "Исправлен пропуск карты рядом с телефоном. Выходной файл повторно извлекается/OCR и проверяется до выдачи и кэширования; остаток исходного значения или отказ проверки даёт HTTP 422."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.13",
+      "date": "2026-10-27",
+      "highlights": [
+        "Обновлена история сервера 1.15.9.0."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.12",
+      "date": "2026-10-27",
+      "highlights": [
+        "Обновлена история сервера 1.15.8.4."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.11",
+      "date": "2026-10-27",
+      "highlights": [
+        "Обновлена история сервера 1.15.8.3."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.10",
+      "date": "2026-10-27",
+      "highlights": [
+        "Обновлена история сервера 1.15.8.2."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.9",
+      "date": "2026-10-27",
+      "highlights": [
+        "Обновлена история сервера 1.15.8.1."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.8",
+      "date": "2026-10-27",
+      "highlights": [
+        "Обновлена история сервера 1.15.8.0."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.7.0",
+      "date": "2026-10-26",
+      "highlights": [
+        "Варианты моделей default/compact одной версии: локальные small NER RU/EN, точные UTF-16 координаты и сохранение варианта при обновлении. Выпуск compact требует сравнительной проверки качества."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.6.2",
+      "date": "2026-10-26",
+      "highlights": [
+        "OCR: извлечённые координаты изображений и PDF повторно используются при замене в рамках одного документа; повторное распознавание исключено."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.6.1",
+      "date": "2026-10-26",
+      "highlights": [
+        "RU/EN NER: повреждённые, неполные и недопустимые ответы дают явную ошибку вместо пустого результата; API различает ошибки и тайм-ауты."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.6.0",
+      "date": "2026-10-26",
+      "highlights": [
+        "OCR: ограничены время Tesseract и общий срок запроса; отмена завершает принадлежащие запросу процессы и очищает временные файлы."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.7",
+      "date": "2026-10-26",
+      "highlights": [
+        "Обновлена история сервера 1.15.7.0."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.6",
+      "date": "2026-10-26",
+      "highlights": [
+        "Обновлена история сервера 1.15.6.2."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.5",
+      "date": "2026-10-26",
+      "highlights": [
+        "Обновлена история сервера 1.15.6.1."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.4",
+      "date": "2026-10-26",
+      "highlights": [
+        "Обновлена история сервера 1.15.6.0."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.5.1",
+      "date": "2026-10-25",
+      "highlights": [
+        "Исправлены отступы настройки ротации логов; конфигурация обоих профилей проверена Docker Compose."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.5.0",
+      "date": "2026-10-25",
+      "highlights": [
+        "Ограничен кэш Ollama: 512 MiB standard, 128 MiB minimal; веса и контекст сохранены.",
+        "Потоки EN-инференса соответствуют CPU-бюджету: 2 / 1.",
+        "Уже распознанные структурированные фрагменты не вызывают FullName-модель; исходный контекст имён сохранён.",
+        "Лимит RU по умолчанию 5 GiB учитывает наблюдавшийся пик загрузки; действующие пользовательские настройки сохраняются."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.3",
+      "date": "2026-10-25",
+      "highlights": [
+        "Обновлена история исправления Compose в сервере 1.15.5.1."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.2",
+      "date": "2026-10-25",
+      "highlights": [
+        "Обновлена история выпуска сервера 1.15.5.0 на русском и английском."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.4.0",
+      "date": "2026-10-24",
+      "highlights": [
+        "Профили standard/minimal с сохранением при обновлении; выгрузка EN через 5 минут простоя.",
+        "Общая очередь NER/LLM/OCR/конвертера; HTTP 503 при переполнении.",
+        "Меньше вызовов моделей, конвертаций Office и копий файлов в памяти.",
+        "Компактные модели default/compact запланированы (#00052); требования и качество ожидают замеров."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.1",
+      "date": "2026-10-24",
+      "highlights": [
+        "Обновлена история выпусков сервера 1.15.4.0 на русском и английском."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.3.0",
+      "date": "2026-10-20",
+      "highlights": [
+        "API GET/PUT /api/settings/updates для администратора, сохранение политики между перезапусками.",
+        "Политика источника, адресов и интервала в server-info; закрытая сеть без автоматического выхода в интернет."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.0",
+      "date": "2026-10-20",
+      "highlights": [
+        "Фоновая и ручная проверка, выбор источника и политика администратора.",
+        "Резервная копия, контроль запуска и откат после трёх неудачных попыток."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.2.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Анонимная выдача подписанного манифеста и установщика с HTTP Range.",
+        "Принудительная проверка обновлений через Application:Updates:AutoUpdate."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.1.1",
+      "date": "2026-10-19",
+      "highlights": [
+        "Web: переключение темы с первого экрана и сворачиваемая панель.",
+        "Анимированный фон с запуском/остановкой; настройки хранятся в браузере."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.1.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Проверка обновлений с сервера компании до входа; подпись манифеста, SHA-256 и докачка.",
+        "Тихая установка с ожиданием завершения клиента и повторным запуском."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.1.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Выбор, добавление и изменение серверов на странице входа web.",
+        "Refresh cookie разделены для разных портов одного хоста."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Одна сессия на пользователя для desktop и web.",
+        "Новый вход сразу отзывает старые bearer/refresh токены.",
+        "Старый клиент показывает вход с причиной завершения сессии."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Одна сессия на пользователя для desktop и web.",
+        "Новый вход сразу отзывает старые bearer/refresh токены.",
+        "Старый клиент показывает вход с причиной завершения сессии."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.14.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Web-клиент /web/: все основные сценарии desktop, RU/EN, адаптивный интерфейс.",
+        "Вход в браузере с HttpOnly refresh cookie; вся обработка на сервере."
+      ]
+    },
+    {
       "component": "desktop",
       "version": "1.14.0.1",
       "date": "2026-10-18",
@@ -110,6 +495,391 @@
     }
   ],
   "en": [
+    {
+      "component": "server",
+      "version": "1.15.12.4",
+      "date": "2026-10-31",
+      "highlights": [
+        "Fixed MIME routing: processing, cache and audit use the same effective document type; ambiguous formats are rejected. 1030 tests and 8 PostgreSQL scenarios passed."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Fixed sparse Excel cell context: actual adjacent addresses and column headers prevent order IDs from being replaced as phone numbers."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "PDF Info/XMP metadata is cleaned even without text replacements; output is independently checked before delivery. Metadata cleanup is separate from recognition quality."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Batch processing retains the source and quota until the result is committed; transient database failures are retried safely. Jobs cannot complete with pending documents."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.12.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Office service thumbnails are removed, including files without text replacements. 3308 texts were checked with no call failures; missed names and 2 refusals out of 22 files remain known limitations."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Improved English name boundaries and field-label filtering. Exact repetitions of recognized multiword names are replaced consistently; residual-data verification remains enabled."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.11.0",
+      "date": "2026-10-31",
+      "highlights": [
+        "Office author and creator fields are protected using their structure while preserving the selected replacement mode. This is field protection, not an additional model prediction."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.3",
+      "date": "2026-10-31",
+      "highlights": [
+        "Numeric Excel cells use label or header context to distinguish phone/INN/SNILS values from order IDs, amounts and dates. Synthetic context is not written to the output."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.2",
+      "date": "2026-10-31",
+      "highlights": [
+        "The minimal profile retains the full standard English context: only threads and queue settings differ, not weights or input text."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.1",
+      "date": "2026-10-31",
+      "highlights": [
+        "Fixed Office thumbnail reading and extended Excel comment, author and property handling. 3304 texts were checked; residual data and explicit refusals remain visible."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.10.0",
+      "date": "2026-10-30",
+      "highlights": [
+        "Improved RU/EN models, phones, INN, SNILS, email and mixed text. Extended Office, numeric Excel and mixed PDF handling with bounded queues and memory. Unsupported formulas are rejected; the compact quality gate remains mandatory."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.9.0",
+      "date": "2026-10-27",
+      "highlights": [
+        "EN uses a 6144-token context and larger standard windows, with 4096 for minimal. Weights, RAM limits and timeouts are unchanged; exact quotes and explicit incomplete-processing failures remain."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.4",
+      "date": "2026-10-27",
+      "highlights": [
+        "EN constrains decoded quotes to source words/phrases before generation and uses temperature=0. Fabricated quotes remain rejected; time limits are unchanged."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.3",
+      "date": "2026-10-27",
+      "highlights": [
+        "EN uses a static short source-string array schema and bounded UTF-8 windows to reduce prompt/output cost. Standard uses 4 threads within its 4-CPU budget; time limits are unchanged."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.2",
+      "date": "2026-10-27",
+      "highlights": [
+        "Long RU input uses an exact token-window plan and per-window calls within one total budget, without increasing individual call timeouts. Long EN fragments return constrained source word IDs instead of regenerating source quotes."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.1",
+      "date": "2026-10-27",
+      "highlights": [
+        "RU NER uses actual WordPiece windows with overlap and exact UTF-16 offsets. EN bounds input/generation and includes queueing in the overall deadline; failed windows remain explicit errors."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.8.0",
+      "date": "2026-10-27",
+      "highlights": [
+        "Fixed missed cards adjacent to phone numbers. Output is re-extracted/OCR-checked before delivery and caching; a residual original value or failed mandatory check returns HTTP 422."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.13",
+      "date": "2026-10-27",
+      "highlights": [
+        "Updated server 1.15.9.0 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.12",
+      "date": "2026-10-27",
+      "highlights": [
+        "Updated server 1.15.8.4 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.11",
+      "date": "2026-10-27",
+      "highlights": [
+        "Updated server 1.15.8.3 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.10",
+      "date": "2026-10-27",
+      "highlights": [
+        "Updated server 1.15.8.2 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.9",
+      "date": "2026-10-27",
+      "highlights": [
+        "Updated server 1.15.8.1 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.8",
+      "date": "2026-10-27",
+      "highlights": [
+        "Updated server 1.15.8.0 release history."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.7.0",
+      "date": "2026-10-26",
+      "highlights": [
+        "Same-version default/compact model flavors: local small RU/EN NER, exact UTF-16 spans and persisted flavor on update. Compact release requires a paired quality gate."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.6.2",
+      "date": "2026-10-26",
+      "highlights": [
+        "OCR: extracted image/PDF coordinates are reused during replacement within one document; duplicate recognition is removed."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.6.1",
+      "date": "2026-10-26",
+      "highlights": [
+        "RU/EN NER: malformed, incomplete or invalid responses fail explicitly instead of returning no entities; API distinguishes failures and timeouts."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.6.0",
+      "date": "2026-10-26",
+      "highlights": [
+        "OCR: bounded Tesseract and total request deadlines; cancellation terminates owned processes and removes temporary files."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.7",
+      "date": "2026-10-26",
+      "highlights": [
+        "Updated server 1.15.7.0 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.6",
+      "date": "2026-10-26",
+      "highlights": [
+        "Updated server 1.15.6.2 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.5",
+      "date": "2026-10-26",
+      "highlights": [
+        "Updated server 1.15.6.1 release history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.4",
+      "date": "2026-10-26",
+      "highlights": [
+        "Updated server 1.15.6.0 release history."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.5.1",
+      "date": "2026-10-25",
+      "highlights": [
+        "Corrected log rotation indentation; both resource profile configurations validated by Docker Compose."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.5.0",
+      "date": "2026-10-25",
+      "highlights": [
+        "Bounded Ollama prompt cache: 512 MiB standard, 128 MiB minimal; same weights and context.",
+        "EN inference threads match CPU budgets: 2 / 1.",
+        "Structured-only chunks skip FullName inference; free-text context and offsets are preserved.",
+        "The default RU limit is 5 GiB for the observed startup peak; existing user overrides remain unchanged."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.3",
+      "date": "2026-10-25",
+      "highlights": [
+        "Updated server 1.15.5.1 Compose correction history."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.2",
+      "date": "2026-10-25",
+      "highlights": [
+        "Updated server 1.15.5.0 release history in Russian and English."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.4.0",
+      "date": "2026-10-24",
+      "highlights": [
+        "Persistent standard/minimal profiles; unload EN after 5 idle minutes.",
+        "Shared NER/LLM/OCR/converter budget; HTTP 503 when the queue is full.",
+        "Fewer inference calls, Office conversions and in-memory file copies.",
+        "Default/compact model flavors are planned (#00052); sizing and quality await benchmarks."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.1",
+      "date": "2026-10-24",
+      "highlights": [
+        "Updated server 1.15.4.0 release history in Russian and English."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.3.0",
+      "date": "2026-10-20",
+      "highlights": [
+        "Administrator GET/PUT /api/settings/updates with persisted organization policy.",
+        "Source, URL and interval policy in server-info; no automatic internet fallback."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.2.0",
+      "date": "2026-10-20",
+      "highlights": [
+        "Background and manual update checks, source selection and administrator policy.",
+        "Backup, startup acknowledgement and rollback after three failed attempts."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.2.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Anonymous signed manifest and installer delivery with HTTP Range.",
+        "Enforce update checking through Application:Updates:AutoUpdate."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.1.1",
+      "date": "2026-10-19",
+      "highlights": [
+        "Web: theme switch from the first screen and a collapsible sidebar.",
+        "Animated background with start/stop; appearance persists in the browser."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.1.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Check company server updates before sign-in; manifest signature, SHA-256 and resume.",
+        "Silent installation waits for client exit and restarts the client."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.1.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Select, add and edit servers on the web sign-in page.",
+        "Refresh cookies are isolated between ports on the same host."
+      ]
+    },
+    {
+      "component": "desktop",
+      "version": "1.15.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "One active session per user across desktop and web.",
+        "New sign-in immediately revokes older bearer/refresh tokens.",
+        "Older clients return to sign-in with the session termination reason."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.15.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "One active session per user across desktop and web.",
+        "New sign-in immediately revokes older bearer/refresh tokens.",
+        "Older clients return to sign-in with the session termination reason."
+      ]
+    },
+    {
+      "component": "server",
+      "version": "1.14.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Web client at /web/: desktop workflows, RU/EN and responsive layout.",
+        "Browser sign-in with HttpOnly refresh cookies; all processing runs on the server."
+      ]
+    },
     {
       "component": "desktop",
       "version": "1.14.0.1",
