@@ -38,7 +38,8 @@
     "Application settings": "Настройки приложения",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "Что нового в PDC.Desktop, PDC.Web и PDC.Server: основные изменения каждого обновления.",
     "Components have separate version histories. Choose the component you’re interested in.": "У компонентов отдельные истории версий. Выберите интересующий компонент.",
-    "Close image": "Закрыть изображение"
+    "Close image": "Закрыть изображение",
+    "Skip to main content": "Перейти к основному содержимому"
   },
   "en": {
     "Main navigation": "Main navigation",
@@ -79,7 +80,8 @@
     "Application settings": "Application settings",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.",
     "Components have separate version histories. Choose the component you’re interested in.": "Components have separate version histories. Choose the component you’re interested in.",
-    "Close image": "Close image"
+    "Close image": "Close image",
+    "Skip to main content": "Skip to main content"
   },
   "kk": {
     "Main navigation": "Негізгі навигация",
@@ -120,7 +122,8 @@
     "Application settings": "Қолданба баптаулары",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web және PDC.Server жаңалықтары: әр жаңартудың негізгі өзгерістері.",
     "Components have separate version histories. Choose the component you’re interested in.": "Құрамдастардың нұсқа тарихы бөлек. Қажетті құрамдасты таңдаңыз.",
-    "Close image": "Суретті жабу"
+    "Close image": "Суретті жабу",
+    "Skip to main content": "Негізгі мазмұнға өту"
   },
   "uz": {
     "Main navigation": "Asosiy navigatsiya",
@@ -161,7 +164,8 @@
     "Application settings": "Ilova sozlamalari",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web va PDC.Server yangiliklari: har bir yangilanishning asosiy o‘zgarishlari.",
     "Components have separate version histories. Choose the component you’re interested in.": "Komponentlarning versiya tarixi alohida. Kerakli komponentni tanlang.",
-    "Close image": "Rasmni yopish"
+    "Close image": "Rasmni yopish",
+    "Skip to main content": "Asosiy mazmunga o‘tish"
   },
   "ky": {
     "Main navigation": "Негизги багыттоо",
@@ -202,7 +206,8 @@
     "Application settings": "Колдонмонун жөндөөлөрү",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web жана PDC.Server жаңылыктары: ар бир жаңыртуунун негизги өзгөрүүлөрү.",
     "Components have separate version histories. Choose the component you’re interested in.": "Компоненттердин версия тарыхтары өзүнчө. Керектүү компонентти тандаңыз.",
-    "Close image": "Сүрөттү жабуу"
+    "Close image": "Сүрөттү жабуу",
+    "Skip to main content": "Негизги мазмунга өтүү"
   },
   "tg": {
     "Main navigation": "Роҳнамоии асосӣ",
@@ -243,6 +248,7 @@
     "Application settings": "Танзимоти барнома",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "Навигариҳои PDC.Desktop, PDC.Web ва PDC.Server: тағйироти асосии ҳар навсозӣ.",
     "Components have separate version histories. Choose the component you’re interested in.": "Ҷузъҳо таърихи версияҳои ҷудо доранд. Ҷузъи лозимаро интихоб кунед.",
-    "Close image": "Пӯшидани тасвир"
+    "Close image": "Пӯшидани тасвир",
+    "Skip to main content": "Гузариш ба муҳтавои асосӣ"
   }
 }

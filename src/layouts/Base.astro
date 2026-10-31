@@ -41,6 +41,7 @@ const home = `${base}${lang}/`;
     <SocialMeta title={t.meta.title} description={t.meta.description} url={canonical} />
   </head>
   <body>
+    <a class="skip-link" href="#main-content">{ui(lang, 'Skip to main content')}</a>
     <PrivacyBackdrop lang={lang} />
     <header class="site-header">
       <div class="container header-row">
@@ -81,7 +82,7 @@ const home = `${base}${lang}/`;
         </div>
       </div>
     </header>
-    <main>
+    <main id="main-content" tabindex="-1">
       <slot />
     </main>
     <footer class="site-footer">
@@ -93,6 +94,10 @@ const home = `${base}${lang}/`;
 </html>
 
 <script>
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (header) new ResizeObserver(() => {
+    document.documentElement.style.setProperty('--header-offset', `${Math.ceil(header.getBoundingClientRect().height) + 16}px`);
+  }).observe(header);
   const investors = document.querySelector<HTMLDetailsElement>('.investor-menu');
   const navigation = document.querySelector<HTMLDetailsElement>('.mobile-nav');
   navigation?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { navigation.open = false; }));

@@ -410,7 +410,7 @@ figcaption {
 
 /* Data travels through a quiet, decorative anonymization layer. */
 body { isolation: isolate; }
-html { scroll-padding-top: 84px; }
+html { scroll-padding-top: var(--header-offset,84px); }
 .privacy-backdrop { background: var(--privacy-background); position: fixed; inset: 0; z-index: -1; overflow: hidden; pointer-events: none; color: var(--privacy-ink); }
 .privacy-grid { position: absolute; inset: 0; opacity: var(--privacy-grid-opacity); background-image: radial-gradient(currentColor .7px, transparent .7px); background-size: 32px 32px; mask-image: linear-gradient(90deg, transparent 15%, #000); }
 .privacy-glow { position: absolute; width: 65vmax; height: 65vmax; border-radius: 50%; opacity: .34; background: radial-gradient(circle, var(--privacy-glow-one), transparent 65%); animation: privacy-breathe 16s ease-in-out infinite alternate; }
@@ -570,3 +570,7 @@ html { scrollbar-gutter: stable; }
  .mobile-nav { grid-column:1 / -1; grid-row:3; margin-left:0; }
  .mobile-nav nav { left:0; right:auto; }
 }
+
+.skip-link { position:fixed; z-index:1000; top:8px; left:8px; transform:translateY(-160%); padding:12px 16px; color:var(--text); background:var(--card); border:2px solid var(--accent); border-radius:8px; }
+.skip-link:focus { transform:none; }
+@media(max-width:760px) { html { --header-offset:156px; } }

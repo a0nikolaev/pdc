@@ -15,6 +15,8 @@ for(const lang of langs){
  for(const section of ['', 'changelog/']){
   const html=await fs.readFile(`dist/${lang}/${section}index.html`,'utf8');
   assert(html.includes(`<html lang="${lang}"`));
+  assert(html.includes('href="#main-content"') && html.includes('id="main-content" tabindex="-1"'));
+  assert(html.includes(ui[lang]['Skip to main content']));
   assert(!html.includes('undefined')&&!html.includes('[object Object]'));
   if (!section) {
     assert(html.includes('id="pdc-web"') && html.includes('PDC.Web'));
