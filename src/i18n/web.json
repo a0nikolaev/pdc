@@ -1,0 +1,194 @@
+{
+  "ru": {
+    "how": "PDC.Desktop устанавливается без прав администратора; адрес сервера задаётся при установке. Либо сотрудники открывают PDC.Web в браузере по адресу /web/ на сервере организации — без установки приложения.",
+    "lead": "Браузерный интерфейс, встроенный в PDC.Сервер. Откройте /web/ на сервере организации и войдите в учётную запись: устанавливать настольное приложение не требуется. Обработка выполняется на том же сервере.",
+    "items": [
+      {
+        "title": "Один документ в браузере",
+        "text": "Выберите файл или перетащите его в окно, запустите обработку и скачайте результат средствами браузера."
+      },
+      {
+        "title": "Пакеты и статусы",
+        "text": "Отправляйте несколько документов, следите за состоянием задания и скачивайте готовые файлы. Лимиты и срок хранения задаёт сервер."
+      },
+      {
+        "title": "Метки замены",
+        "text": "Администратор может задавать шаблоны для типов ПДн и форматов документов."
+      },
+      {
+        "title": "Generate, Template и Mask",
+        "text": "Настраивайте генерацию, шаблоны и частичное маскирование по типам данных. Правила общие для Web, Desktop и API."
+      },
+      {
+        "title": "Профили и оформление",
+        "text": "Выбирайте сервер, русский или английский язык интерфейса, светлую или тёмную тему. Папка загрузки зависит от возможностей и разрешений браузера."
+      },
+      {
+        "title": "Роли и интеграция с сервером",
+        "text": "Права и подписка проверяются сервером. Для администратора доступны пользователи и работа с базами данных; причины замены можно просматривать и экспортировать."
+      }
+    ],
+    "note": "Скриншоты PDC.Web с демонстрационными данными. Интерфейс приложения доступен на русском и английском; нажмите на снимок для просмотра деталей.",
+    "title": "PDC.Web"
+  },
+  "en": {
+    "how": "PDC.Desktop installs without administrator rights; set the server address during installation. Alternatively, employees open PDC.Web at /web/ on the organization’s server in a browser, without installing an app.",
+    "lead": "The browser interface built into PDC.Server. Open /web/ on your organization’s server and sign in, without installing the desktop app. Processing runs on the same server.",
+    "items": [
+      {
+        "title": "One document in the browser",
+        "text": "Choose or drop a file, start processing and download the result using your browser."
+      },
+      {
+        "title": "Batches and status",
+        "text": "Submit multiple documents, monitor job status and download ready files. The server sets limits and retention."
+      },
+      {
+        "title": "Replacement labels",
+        "text": "Administrators can configure templates by PII type and document format."
+      },
+      {
+        "title": "Generate, Template and Mask",
+        "text": "Configure generated values, templates and partial masking by data type. Policies are shared across Web, Desktop and API."
+      },
+      {
+        "title": "Profiles and appearance",
+        "text": "Choose a server, Russian or English interface, and light or dark theme. Output-folder access depends on browser capabilities and permissions."
+      },
+      {
+        "title": "Roles and server integration",
+        "text": "Permissions and subscriptions are enforced by the server. Administrators can manage users and database jobs; replacement reasons can be viewed and exported."
+      }
+    ],
+    "note": "PDC.Web screenshots with demo data. The application interface is available in Russian and English; select an image to see the details.",
+    "title": "PDC.Web"
+  },
+  "kk": {
+    "how": "PDC.Desktop әкімші құқығынсыз орнатылады; сервер мекенжайы орнатуда көрсетіледі. Немесе қызметкерлер ұйым серверіндегі /web/ мекенжайында PDC.Web жүйесін браузерде ашады — қолданба орнатпай.",
+    "lead": "PDC.Server құрамындағы браузерлік интерфейс. Ұйым серверіндегі /web/ мекенжайын ашып, тіркелгіге кіріңіз; Desktop қолданбасын орнату қажет емес. Өңдеу сол серверде орындалады.",
+    "items": [
+      {
+        "title": "Браузерде бір құжат",
+        "text": "Файлды таңдаңыз не сүйреңіз, өңдеуді бастап, нәтижені браузер арқылы жүктеңіз."
+      },
+      {
+        "title": "Топтамалар және күйі",
+        "text": "Бірнеше құжат жіберіп, тапсырма күйін бақылаңыз және дайын файлдарды жүктеңіз. Шектер мен сақтау мерзімін сервер анықтайды."
+      },
+      {
+        "title": "Алмастыру белгілері",
+        "text": "Әкімші дербес дерек түрі мен құжат пішіміне қарай үлгілерді баптай алады."
+      },
+      {
+        "title": "Generate, Template және Mask",
+        "text": "Дерек түріне қарай жаңа мән, үлгі не ішінара маска таңдаңыз. Ережелер Web, Desktop және API үшін ортақ."
+      },
+      {
+        "title": "Профильдер мен көрініс",
+        "text": "Серверді, орыс не ағылшын интерфейсін және ашық не қараңғы тақырыпты таңдаңыз. Нәтиже қалтасына қатынас браузер мүмкіндігі мен рұқсатына тәуелді."
+      },
+      {
+        "title": "Рөлдер және сервермен біріктіру",
+        "text": "Құқықтар мен жазылым серверде тексеріледі. Әкімші пайдаланушылар мен дерекқор тапсырмаларын басқара алады; алмастыру себептерін қарап, экспорттауға болады."
+      }
+    ],
+    "note": "PDC.Web скриншоттары демонстрациялық деректермен берілген. Қолданба интерфейсі орыс және ағылшын тілдерінде; толығырақ көру үшін суретті басыңыз.",
+    "title": "PDC.Web"
+  },
+  "uz": {
+    "how": "PDC.Desktop administrator huquqisiz o‘rnatiladi; server manzili o‘rnatishda beriladi. Yoki xodimlar tashkilot serveridagi /web/ manzilida PDC.Web’ni brauzerda, ilova o‘rnatmasdan ochadi.",
+    "lead": "PDC.Server tarkibidagi brauzer interfeysi. Tashkilot serveridagi /web/ manzilini ochib, hisobga kiring; Desktop ilovasini o‘rnatish shart emas. Ishlov shu serverda bajariladi.",
+    "items": [
+      {
+        "title": "Brauzerda bitta hujjat",
+        "text": "Faylni tanlang yoki tashlang, ishlovni boshlang va natijani brauzer orqali yuklang."
+      },
+      {
+        "title": "Paketlar va holat",
+        "text": "Bir nechta hujjat yuboring, vazifa holatini kuzating va tayyor fayllarni yuklang. Chegaralar va saqlash muddatini server belgilaydi."
+      },
+      {
+        "title": "Almashtirish belgilari",
+        "text": "Administrator shaxsiy ma’lumot turi va hujjat formati bo‘yicha shablonlarni sozlaydi."
+      },
+      {
+        "title": "Generate, Template va Mask",
+        "text": "Ma’lumot turi bo‘yicha generatsiya, shablon yoki qisman niqoblashni sozlang. Qoidalar Web, Desktop va API uchun umumiy."
+      },
+      {
+        "title": "Profillar va ko‘rinish",
+        "text": "Server, rus yoki ingliz interfeysi va yorug‘ yoki qorong‘i mavzuni tanlang. Natija jildiga kirish brauzer imkoniyati va ruxsatiga bog‘liq."
+      },
+      {
+        "title": "Rollar va server integratsiyasi",
+        "text": "Huquq va obuna serverda tekshiriladi. Administrator foydalanuvchilar va baza vazifalarini boshqaradi; almashtirish sabablarini ko‘rish va eksport qilish mumkin."
+      }
+    ],
+    "note": "PDC.Web skrinshotlari namoyish ma’lumotlari bilan olingan. Ilova interfeysi rus va ingliz tilida; tafsilot uchun rasmni bosing.",
+    "title": "PDC.Web"
+  },
+  "ky": {
+    "how": "PDC.Desktop администратор укугусуз орнотулат; сервер дареги орнотууда көрсөтүлөт. Же кызматкерлер уюм сервериндеги /web/ дарегинде PDC.Web системасын браузерде, колдонмо орнотпой ачат.",
+    "lead": "PDC.Server курамындагы браузер интерфейси. Уюм сервериндеги /web/ дарегин ачып, каттоо эсебине кириңиз; Desktop колдонмосун орнотуу керек эмес. Иштетүү ошол серверде аткарылат.",
+    "items": [
+      {
+        "title": "Браузерде бир документ",
+        "text": "Файлды тандаңыз же таштаңыз, иштетүүнү баштап, натыйжаны браузер аркылуу жүктөңүз."
+      },
+      {
+        "title": "Топтомдор жана абал",
+        "text": "Бир нече документ жөнөтүп, тапшырма абалын байкаңыз жана даяр файлдарды жүктөңүз. Чектер менен сактоо мөөнөтүн сервер коёт."
+      },
+      {
+        "title": "Алмаштыруу белгилери",
+        "text": "Администратор жеке маалымат түрүнө жана документ форматына жараша шаблондорду жөндөйт."
+      },
+      {
+        "title": "Generate, Template жана Mask",
+        "text": "Маалымат түрүнө жараша түзүүнү, шаблонду же жарым-жартылай масканы жөндөңүз. Эрежелер Web, Desktop жана API үчүн жалпы."
+      },
+      {
+        "title": "Профилдер жана көрүнүш",
+        "text": "Серверди, орус же англис интерфейсин, жарык же караңгы теманы тандаңыз. Натыйжа папкасына жетүү браузердин мүмкүнчүлүгүнө жана уруксатына жараша."
+      },
+      {
+        "title": "Ролдор жана сервер менен биригүү",
+        "text": "Укуктар жана жазылуу серверде текшерилет. Администратор колдонуучуларды жана база тапшырмаларын башкарат; алмаштыруу себептерин көрүп, экспорттоого болот."
+      }
+    ],
+    "note": "PDC.Web скриншоттору көрсөтмө маалыматтар менен алынган. Колдонмонун интерфейси орус жана англис тилинде; толук көрүү үчүн сүрөттү басыңыз.",
+    "title": "PDC.Web"
+  },
+  "tg": {
+    "how": "PDC.Desktop бе ҳуқуқи маъмур насб мешавад; суроғаи сервер ҳангоми насб дода мешавад. Ё кормандон PDC.Web-ро дар браузер аз /web/-и сервери ташкилот, бе насби барнома мекушоянд.",
+    "lead": "Интерфейси браузерӣ дар таркиби PDC.Server. Дар сервери ташкилот /web/-ро кушода, ба ҳисоб ворид шавед; насби Desktop лозим нест. Коркард дар ҳамон сервер анҷом меёбад.",
+    "items": [
+      {
+        "title": "Як ҳуҷҷат дар браузер",
+        "text": "Файлро интихоб ё кашед, коркардро оғоз карда, натиҷаро бо браузер боргирӣ кунед."
+      },
+      {
+        "title": "Гурӯҳҳо ва ҳолат",
+        "text": "Якчанд ҳуҷҷат фиристед, ҳолати вазифаро бинед ва файлҳои тайёрро боргирӣ кунед. Ҳадҳо ва муҳлати нигоҳдориро сервер муайян мекунад."
+      },
+      {
+        "title": "Нишонаҳои ивазкунӣ",
+        "text": "Маъмур қолабҳоро аз рӯйи навъи маълумоти шахсӣ ва формати ҳуҷҷат танзим мекунад."
+      },
+      {
+        "title": "Generate, Template ва Mask",
+        "text": "Тавлид, қолаб ё ниқоби қисмиро аз рӯйи навъи маълумот танзим кунед. Қоидаҳо барои Web, Desktop ва API умумӣ ҳастанд."
+      },
+      {
+        "title": "Профилҳо ва намуд",
+        "text": "Сервер, интерфейси русӣ ё англисӣ ва намуди равшан ё торикро интихоб кунед. Дастрасӣ ба ҷузвдони натиҷа аз имконият ва иҷозати браузер вобаста аст."
+      },
+      {
+        "title": "Нақшҳо ва ҳамгироии сервер",
+        "text": "Ҳуқуқ ва обуна дар сервер санҷида мешаванд. Маъмур корбарон ва вазифаҳои пойгоҳро идора мекунад; сабабҳои ивазкуниро дидан ва содир кардан мумкин аст."
+      }
+    ],
+    "note": "Скриншотҳои PDC.Web бо маълумоти намоишӣ гирифта шудаанд. Интерфейси барнома русӣ ва англисӣ аст; барои дидани тафсилот тасвирро интихоб кунед.",
+    "title": "PDC.Web"
+  }
+}

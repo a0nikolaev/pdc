@@ -1,0 +1,56 @@
+{
+  "product": "PDC.Web v1.2.1.0",
+  "serverConfigVersion": "v1.15.12.4",
+  "mode": "Actual unmodified local UI; Playwright intercepts all requests with synthetic demo fixtures; no inference or real server/database",
+  "origin": "https://demo.pdc.example",
+  "viewport": {
+    "width": 1280,
+    "height": 820
+  },
+  "languages": [
+    "ru",
+    "en"
+  ],
+  "screenshots": [
+    {
+      "file": "web-ru-anonymize.png",
+      "sha256": "7b959fd32512d7dc6a3ae75d49aec7ed809de8e7bfbc1eea85e0e08dfac3cf7a"
+    },
+    {
+      "file": "web-ru-batch.png",
+      "sha256": "797691ee1e16b3228ece40763aeb1b1e4e079416dfba1d7d6b98e4db494797f0"
+    },
+    {
+      "file": "web-ru-placeholders.png",
+      "sha256": "ce0c7107265d2ca13ff0a231f85874ae87f72036ea552e3bc7274e758551e43f"
+    },
+    {
+      "file": "web-ru-modes.png",
+      "sha256": "d6f83e3cc5879adf82fe480303bbff41a441188c8037db0d0731ea5914c3d9d3"
+    },
+    {
+      "file": "web-ru-settings.png",
+      "sha256": "23b0c53349e09a370a22c59e5909fead35ec689fdd5fde13a5a132437bc319d6"
+    },
+    {
+      "file": "web-en-anonymize.png",
+      "sha256": "6bb66d735a0902c528a5e9431d9f2165b2388e9f12be36e04c572acd0e6f351d"
+    },
+    {
+      "file": "web-en-batch.png",
+      "sha256": "d0584722e1297e35d90edefd1b7798327e5d2a356cda5c28d42e1dc3d31866c5"
+    },
+    {
+      "file": "web-en-placeholders.png",
+      "sha256": "090e4f69d83fc72ed7bbefc29baaeaabf9d1573b3bfef79b779129decf42de9e"
+    },
+    {
+      "file": "web-en-modes.png",
+      "sha256": "3fd8983b9eeae88f08b3bbe4dbcfbdbf9f14f8da0da76797053abc676f81f278"
+    },
+    {
+      "file": "web-en-settings.png",
+      "sha256": "acd2c956efa09e7d2a2896970c67c57744278155af040d52c344e81eafae6d98"
+    }
+  ]
+}
