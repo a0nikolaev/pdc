@@ -20,6 +20,11 @@ for(const lang of langs){
     assert(html.includes('id="pdc-web"') && html.includes('PDC.Web'));
     for (const product of ['desktop','web']) assert.equal((html.match(new RegExp(`id="${product}-gallery-track"`,'g')) || []).length,1,`${lang}/${product} gallery controls`);
   }
+  if (section === 'changelog/') {
+    assert(html.includes('data-release-filter="web"'));
+    for (const version of ['1.0.0.0','1.1.0.0','1.2.0.0','1.2.1.0']) assert(html.includes(`id="web-${version}"`));
+    assert.equal((html.match(/data-release-component="web"/g)||[]).length,4);
+  }
   for(const target of langs)assert(html.includes(`hreflang="${target}"`));
   for(const pdf of ['RU','EN'])assert(html.includes(`download="PDC_Startup_Deck_${pdf}_V3.pdf"`));
   for(const match of html.matchAll(/(?:src|href)="(\/pdc\/[^"#?]*)/g)){

@@ -386,6 +386,38 @@
       ]
     },
     {
+      "component": "web",
+      "version": "1.2.1.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Переключение светлой/тёмной темы до входа, сворачиваемая панель на desktop и выдвижное меню на телефоне. Анимация фона управляется кнопкой; тема, панель и движение сохраняются. Поддерживаются Escape, узкие экраны и ограничение движения."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.2.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Выбор, добавление и изменение профилей серверов перед входом; профили общие с настройками. Для другого сервера сначала открывается его страница входа; до этого поля учётных данных отключены. Меню скрыто до авторизации."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.1.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Одна активная сессия пользователя в Desktop/Web. Новый вход отзывает прежнюю сессию, браузер показывает причину и возвращается к форме входа. Проверка идёт каждые 30 секунд и при возврате на вкладку; ротация cookie сериализуется через Web Locks API."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.0.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Первый браузерный клиент по /web/ в составе образа сервера: документы, пакеты, причины и экспорт, БД, метки, режимы, пользователи, подписка и настройки. Интерфейс RU/EN, светлая/тёмная темы; обработка на сервере, access token в памяти страницы, refresh cookie HttpOnly/SameSite Strict. Результаты скачиваются браузером."
+      ]
+    },
+    {
       "component": "desktop",
       "version": "1.14.0.1",
       "date": "2026-10-18",
@@ -878,6 +910,38 @@
       "highlights": [
         "Web client at /web/: desktop workflows, RU/EN and responsive layout.",
         "Browser sign-in with HttpOnly refresh cookies; all processing runs on the server."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.2.1.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Light/dark switching before sign-in, a collapsible desktop sidebar and a phone drawer. Background animation has start/stop controls; theme, sidebar and motion choices persist. Escape dismissal, narrow screens and reduced motion are supported."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.2.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Select, add and edit server profiles before sign-in; profiles are shared with Settings. Another server opens its own sign-in page before credentials can be entered. Navigation stays hidden until authentication."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.1.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "One active user session across Desktop/Web. A new sign-in revokes the previous session and returns the browser to sign-in with a reason. Checks run every 30 seconds and on tab activation; Web Locks API serializes cookie rotation."
+      ]
+    },
+    {
+      "component": "web",
+      "version": "1.0.0.0",
+      "date": "2026-10-19",
+      "highlights": [
+        "Initial browser client at /web/, included in the server image: documents, batches, reasons and export, databases, labels, modes, users, subscription and settings. RU/EN and light/dark themes; processing runs on the server, access tokens stay in page memory and refresh cookies use HttpOnly/SameSite Strict. Results download through the browser."
       ]
     },
     {

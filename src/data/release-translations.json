@@ -868,5 +868,65 @@
       "Рамзҳои обуна ба ташкилот ва санаи анҷом вобастаанд. Пеш аз коркарди ҳуҷҷатҳо ва гурӯҳҳои нав обуна санҷида мешавад."
     ],
     "sourceText": "Subscription activation codes bound to an organization and expiration date.\nSubscription checks before processing new documents and batches."
+  },
+  "web:1.2.1.0": {
+    "sourceText": "Light/dark switching before sign-in, a collapsible desktop sidebar and a phone drawer. Background animation has start/stop controls; theme, sidebar and motion choices persist. Escape dismissal, narrow screens and reduced motion are supported.",
+    "kk": [
+      "Кіруге дейін ашық/қараңғы тақырып ауыстыру, desktop үшін жиналмалы бүйір мәзір және телефонға сырғымалы панель. Фон анимациясы қосылады/тоқтайды; тақырып, панель және қозғалыс таңдауы сақталады. Escape, тар экрандар және қозғалысты азайту қолдауы бар."
+    ],
+    "uz": [
+      "Kirishdan oldin yorug‘/qorong‘i mavzu, desktop uchun yig‘iladigan yon menyu va telefon paneli. Fon animatsiyasi yoqiladi/to‘xtatiladi; mavzu, menyu va harakat tanlovi saqlanadi. Escape, tor ekran va kamaytirilgan harakat qo‘llanadi."
+    ],
+    "ky": [
+      "Кирүүгө чейин жарык/караңгы тема, desktop үчүн жыйналуучу каптал меню жана телефон панели. Фон анимациясы күйгүзүлөт/токтотулат; тема, панель жана кыймыл тандоосу сакталат. Escape, тар экран жана азайтылган кыймыл колдоого алынат."
+    ],
+    "tg": [
+      "Ивази намуди равшан/торик пеш аз вуруд, менюи паҳлуии ҷамъшаванда дар desktop ва панел барои телефон. Аниматсия оғоз/қатъ мешавад; интихобҳои намуд, панел ва ҳаракат нигоҳ дошта мешаванд. Escape, экранҳои танг ва камкунии ҳаракат дастгирӣ мешаванд."
+    ]
+  },
+  "web:1.2.0.0": {
+    "sourceText": "Select, add and edit server profiles before sign-in; profiles are shared with Settings. Another server opens its own sign-in page before credentials can be entered. Navigation stays hidden until authentication.",
+    "kk": [
+      "Кіруге дейін сервер профилін таңдау, қосу және өңдеу; профильдер баптаулармен ортақ. Басқа серверге дерек енгізбес бұрын оның кіру беті ашылады. Аутентификацияға дейін навигация жасырын."
+    ],
+    "uz": [
+      "Kirishdan oldin server profilini tanlash, qo‘shish va tahrirlash; profillar sozlamalar bilan umumiy. Boshqa serverga hisob ma’lumoti kiritilishidan oldin uning kirish sahifasi ochiladi. Autentifikatsiyagacha navigatsiya yashirin."
+    ],
+    "ky": [
+      "Кирүүгө чейин сервер профилин тандоо, кошуу жана түзөтүү; профилдер жөндөөлөр менен жалпы. Башка серверге эсеп маалыматы киргизилерден мурда анын кирүү бети ачылат. Аутентификацияга чейин меню жашыруун."
+    ],
+    "tg": [
+      "Интихоб, илова ва таҳрири профили сервер пеш аз вуруд; профилҳо бо танзимот умумӣ ҳастанд. Пеш аз ворид кардани маълумоти ҳисоб саҳифаи вуруди сервери дигар кушода мешавад. Роҳнамоӣ то шиносоӣ пинҳон аст."
+    ]
+  },
+  "web:1.1.0.0": {
+    "sourceText": "One active user session across Desktop/Web. A new sign-in revokes the previous session and returns the browser to sign-in with a reason. Checks run every 30 seconds and on tab activation; Web Locks API serializes cookie rotation.",
+    "kk": [
+      "Desktop/Web бойынша пайдаланушының бір белсенді сессиясы. Жаңа кіру бұрынғы сессияны тоқтатып, браузер себеппен кіру бетіне оралады. Тексеру әр 30 секундта және бетке оралғанда орындалады; Web Locks API cookie айналымын реттейді."
+    ],
+    "uz": [
+      "Desktop/Web bo‘yicha bitta faol foydalanuvchi sessiyasi. Yangi kirish oldingi sessiyani bekor qilib, sabab bilan kirish sahifasiga qaytaradi. Tekshiruv har 30 soniyada va tab faollashganda bajariladi; Web Locks API cookie aylanishini ketma-ket qiladi."
+    ],
+    "ky": [
+      "Desktop/Web боюнча колдонуучунун бир активдүү сессиясы. Жаңы кирүү эски сессияны жокко чыгарып, браузерди себеби менен кирүү бетине кайтарат. Текшерүү ар 30 секундда жана өтмөккө кайтууда болот; Web Locks API cookie айлануусун иреттейт."
+    ],
+    "tg": [
+      "Як ҷаласаи фаъоли корбар дар Desktop/Web. Вуруди нав ҷаласаи пешинаро бекор карда, браузерро бо сабаб ба вуруд бармегардонад. Санҷиш ҳар 30 сония ва ҳангоми фаъолшавии ҷадвал аст; Web Locks API гардиши cookie-ро пайдарпай мекунад."
+    ]
+  },
+  "web:1.0.0.0": {
+    "sourceText": "Initial browser client at /web/, included in the server image: documents, batches, reasons and export, databases, labels, modes, users, subscription and settings. RU/EN and light/dark themes; processing runs on the server, access tokens stay in page memory and refresh cookies use HttpOnly/SameSite Strict. Results download through the browser.",
+    "kk": [
+      "Сервер образына кіретін алғашқы /web/ браузер клиенті: құжаттар, топтамалар, себептер мен экспорт, дерекқор, белгілер, режимдер, пайдаланушылар, жазылым және баптаулар. RU/EN, ашық/қараңғы тақырыптар; өңдеу серверде, access token бет жадында, refresh cookie HttpOnly/SameSite Strict. Нәтиже браузермен жүктеледі."
+    ],
+    "uz": [
+      "Server tasviridagi dastlabki /web/ brauzer mijozi: hujjatlar, paketlar, sabablar va eksport, bazalar, belgilar, rejimlar, foydalanuvchilar, obuna va sozlamalar. RU/EN, yorug‘/qorong‘i mavzu; ishlov serverda, access token sahifa xotirasida, refresh cookie HttpOnly/SameSite Strict. Natija brauzer orqali yuklanadi."
+    ],
+    "ky": [
+      "Сервер образына кирген алгачкы /web/ браузер кардары: документтер, топтомдор, себептер жана экспорт, базалар, белгилер, режимдер, колдонуучулар, жазылуу жана жөндөөлөр. RU/EN, жарык/караңгы темалар; иштетүү серверде, access token бет эстутумунда, refresh cookie HttpOnly/SameSite Strict. Натыйжа браузер менен жүктөлөт."
+    ],
+    "tg": [
+      "Барномаи аввалини браузерӣ дар /web/, дар тасвири сервер: ҳуҷҷат, гурӯҳҳо, сабабҳо ва содирот, пойгоҳҳо, нишонаҳо, реҷаҳо, корбарон, обуна ва танзимот. RU/EN, намудҳои равшан/торик; коркард дар сервер, access token дар хотираи саҳифа, refresh cookie HttpOnly/SameSite Strict. Натиҷа бо браузер боргирӣ мешавад."
+    ]
   }
 }

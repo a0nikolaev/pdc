@@ -25,7 +25,9 @@ for (const lang of ['ru', 'en']) {
     }
   }
   for (const entry of curated[lang]) {
-    const log = await readFile(resolve(product, `change_log/${entry.component === 'server' ? 'CHANGELOG.md' : 'CHANGELOG.Desktop.md'}`), 'utf8');
+    const logs = {server:'CHANGELOG.md', desktop:'CHANGELOG.Desktop.md', web:'CHANGELOG.Web.md'};
+    if (!logs[entry.component]) throw new Error(`Unknown component: ${entry.component}`);
+    const log = await readFile(resolve(product, `change_log/${logs[entry.component]}`), 'utf8');
     if (!log.includes(`## [${entry.version}] - ${entry.date}`)) throw new Error(`Unverified curated version: ${entry.version}`);
     const index = data[lang].findIndex(r => r.component === entry.component && r.version === entry.version);
     if (index < 0) data[lang].push(entry); else data[lang][index] = entry;
@@ -34,6 +36,9 @@ for (const lang of ['ru', 'en']) {
     const expected = JSON.parse((await readFile(resolve(product, config), 'utf8')).replace(/^\uFEFF/, '')).Application.Version.replace(/^v/, '');
     if (!data[lang].some(r => r.component === component && r.version === expected)) throw new Error(`Missing current ${component} ${expected} (${lang}); update release-highlights.json before syncing`);
   }
+  const webSource = await readFile(resolve(product, 'PDC/WebAPI/PDC.WebAPI/wwwroot/web/api.js'), 'utf8');
+  const webVersion = webSource.match(/export const WEB_VERSION = ['"]v?(\d+\.\d+\.\d+\.\d+)['"]/)?.[1];
+  if (!webVersion || !data[lang].some(r => r.component === 'web' && r.version === webVersion)) throw new Error(`Missing current Web ${webVersion} (${lang}); update release-highlights.json before syncing`);
   data[lang].sort((a, b) => b.date.localeCompare(a.date) || b.version.localeCompare(a.version, 'en', { numeric: true }) || a.component.localeCompare(b.component));
 }
 await mkdir('src/data', { recursive: true });

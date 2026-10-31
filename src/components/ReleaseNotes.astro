@@ -6,9 +6,10 @@ import {localizedReleases} from '../data/localized-releases';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
 const entries = localizedReleases(lang);
-const latest = { desktop: entries.find(r => r.component === 'desktop')!, server: entries.find(r => r.component === 'server')! };
+const componentNames = {desktop:'PDC.Desktop', server:'PDC.Server', web:'PDC.Web'};
+const latest = { desktop: entries.find(r => r.component === 'desktop')!, server: entries.find(r => r.component === 'server')!, web: entries.find(r => r.component === 'web')! };
 const title = ui(lang, "Release notes");
-const description = ui(lang, "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.");
+const description = ui(lang, "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.");
 const t = { ...content[lang], meta: { title: `${title} — Personal Data Cleaner`, description } };
 const base = import.meta.env.BASE_URL;
 ---
@@ -20,26 +21,27 @@ const base = import.meta.env.BASE_URL;
     <p class="release-lead">{description} {ui(lang, "New features, improvements and fixes, all in one place.")}</p>
     <div class="release-current">
       {Object.entries(latest).map(([key, release]) => <a href={`#${key}-${release.version}`} class={`current-version ${key}`}>
-        <span class="release-dot" aria-hidden="true"></span><span>PDC.{key === 'desktop' ? 'Desktop' : 'Server'}</span><strong>v{release.version}</strong><span aria-hidden="true">↘</span>
+        <span class="release-dot" aria-hidden="true"></span><span>{componentNames[key as keyof typeof componentNames]}</span><strong>v{release.version}</strong><span aria-hidden="true">↘</span>
       </a>)}
     </div>
   </section>
   <section class="container release-layout" aria-label={title}>
     <aside class="release-aside">
       <h2>{title}</h2>
-      <p>{ui(lang, "Client and server evolve independently. Choose the component you’re interested in.")}</p>
+      <p>{ui(lang, "Components have separate version histories. Choose the component you’re interested in.")}</p>
       <div class="release-filters" role="group" aria-label={ui(lang, "Filter by component")} hidden>
         <button type="button" data-release-filter="all" aria-pressed="true">{ui(lang, "All updates")} <span>{entries.length}</span></button>
         <button type="button" data-release-filter="desktop" aria-pressed="false">Desktop <span>{entries.filter(r => r.component === 'desktop').length}</span></button>
         <button type="button" data-release-filter="server" aria-pressed="false">{ui(lang, "Server")} <span>{entries.filter(r => r.component === 'server').length}</span></button>
+        <button type="button" data-release-filter="web" aria-pressed="false">PDC.Web <span>{entries.filter(r => r.component === 'web').length}</span></button>
       </div>
       <p class="release-note">{ui(lang, "These are highlights of released versions. Planned features will appear once implemented.")}</p>
       <p class="release-count" aria-live="polite" data-release-count data-label={ui(lang, "Updates shown")}>{ui(lang, "Updates shown")}: {entries.length}</p>
     </aside>
     <div class="release-timeline">
       {entries.map(release => <article class={`release-card ${release.component}`} id={`${release.component}-${release.version}`} data-release-component={release.component}>
-        <div class="release-meta"><span class="component-badge">PDC.{release.component === 'desktop' ? 'Desktop' : 'Server'}</span><time datetime={release.date}>{new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${release.date}T00:00:00Z`))}</time></div>
-        <div class="release-version"><h2><a href={`#${release.component}-${release.version}`}>v{release.version}</a></h2>{latest[release.component as 'desktop' | 'server'].version === release.version && <span class="latest-badge">{ui(lang, "Latest")}</span>}</div>
+        <div class="release-meta"><span class="component-badge">{componentNames[release.component as keyof typeof componentNames]}</span><time datetime={release.date}>{new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${release.date}T00:00:00Z`))}</time></div>
+        <div class="release-version"><h2><a href={`#${release.component}-${release.version}`}>v{release.version}</a></h2>{latest[release.component as keyof typeof latest].version === release.version && <span class="latest-badge">{ui(lang, "Latest")}</span>}</div>
         <h3>{release.highlights[0]}</h3>
         {release.highlights.length > 1 && <ul>{release.highlights.slice(1).map(item => <li>{item}</li>)}</ul>}
       </article>)}
@@ -72,6 +74,10 @@ const base = import.meta.env.BASE_URL;
   .current-version strong { color:var(--accent); font-variant-numeric:tabular-nums; }
   .release-dot { width:7px; height:7px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft); }
   .server .release-dot { background:var(--benefit-color); }
+  :global(:root) { --web-release-color:#c8b4ff; }
+  :global(:root[data-theme='light']) { --web-release-color:#7144a4; }
+  .web .release-dot, .release-card.web::before { background:var(--web-release-color); }
+  .web .component-badge { color:var(--web-release-color); }
   .release-layout { display:grid; grid-template-columns:245px minmax(0,1fr); gap:70px; padding-bottom:100px; align-items:start; }
   .release-aside { position:sticky; top:110px; }
   .release-aside h2 { font-size:1.2rem; margin:0 0 14px; }

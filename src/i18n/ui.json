@@ -19,13 +19,11 @@
     "Play background animation": "Включить анимацию фона",
     "Background animation": "Анимация фона",
     "Release notes": "История изменений",
-    "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.": "Что нового в PDC.Desktop и PDC.Server: основные изменения каждого обновления.",
     "About the product": "О продукте",
     "Product evolution": "Развитие продукта",
     "A little better": "С каждым обновлением",
     "with every update.": "лучше.",
     "New features, improvements and fixes, all in one place.": "Новые возможности, улучшения и исправления — в одном месте.",
-    "Client and server evolve independently. Choose the component you’re interested in.": "Клиент и сервер развиваются независимо. Выберите интересующий компонент.",
     "Filter by component": "Фильтр по компоненту",
     "All updates": "Все обновления",
     "Server": "Сервер",
@@ -37,7 +35,9 @@
     "Language": "Язык",
     "Replacement labels": "Метки замены",
     "Replacement modes": "Режимы замены",
-    "Application settings": "Настройки приложения"
+    "Application settings": "Настройки приложения",
+    "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "Что нового в PDC.Desktop, PDC.Web и PDC.Server: основные изменения каждого обновления.",
+    "Components have separate version histories. Choose the component you’re interested in.": "У компонентов отдельные истории версий. Выберите интересующий компонент."
   },
   "en": {
     "Main navigation": "Main navigation",
@@ -59,13 +59,11 @@
     "Play background animation": "Play background animation",
     "Background animation": "Background animation",
     "Release notes": "Release notes",
-    "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.": "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.",
     "About the product": "About the product",
     "Product evolution": "Product evolution",
     "A little better": "A little better",
     "with every update.": "with every update.",
     "New features, improvements and fixes, all in one place.": "New features, improvements and fixes, all in one place.",
-    "Client and server evolve independently. Choose the component you’re interested in.": "Client and server evolve independently. Choose the component you’re interested in.",
     "Filter by component": "Filter by component",
     "All updates": "All updates",
     "Server": "Server",
@@ -77,7 +75,9 @@
     "Language": "Language",
     "Replacement labels": "Replacement labels",
     "Replacement modes": "Replacement modes",
-    "Application settings": "Application settings"
+    "Application settings": "Application settings",
+    "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.",
+    "Components have separate version histories. Choose the component you’re interested in.": "Components have separate version histories. Choose the component you’re interested in."
   },
   "kk": {
     "Main navigation": "Негізгі навигация",
@@ -99,13 +99,11 @@
     "Play background animation": "Фон анимациясын қосу",
     "Background animation": "Фон анимациясы",
     "Release notes": "Өзгерістер тарихы",
-    "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.": "PDC.Desktop және PDC.Server жаңалықтары: әр жаңартудың негізгі өзгерістері.",
     "About the product": "Өнім туралы",
     "Product evolution": "Өнімнің дамуы",
     "A little better": "Әр жаңартумен",
     "with every update.": "жақсарады.",
     "New features, improvements and fixes, all in one place.": "Жаңа мүмкіндіктер, жақсартулар мен түзетулер бір жерде.",
-    "Client and server evolve independently. Choose the component you’re interested in.": "Клиент пен сервер бөлек дамиды. Қажетті құрамдасты таңдаңыз.",
     "Filter by component": "Құрамдас бойынша сүзу",
     "All updates": "Барлық жаңартулар",
     "Server": "Сервер",
@@ -117,7 +115,9 @@
     "Language": "Тіл",
     "Replacement labels": "Алмастыру белгілері",
     "Replacement modes": "Алмастыру режимдері",
-    "Application settings": "Қолданба баптаулары"
+    "Application settings": "Қолданба баптаулары",
+    "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web және PDC.Server жаңалықтары: әр жаңартудың негізгі өзгерістері.",
+    "Components have separate version histories. Choose the component you’re interested in.": "Құрамдастардың нұсқа тарихы бөлек. Қажетті құрамдасты таңдаңыз."
   },
   "uz": {
     "Main navigation": "Asosiy navigatsiya",
@@ -139,13 +139,11 @@
     "Play background animation": "Fon animatsiyasini yoqish",
     "Background animation": "Fon animatsiyasi",
     "Release notes": "O‘zgarishlar tarixi",
-    "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.": "PDC.Desktop va PDC.Server yangiliklari: har bir yangilanishning asosiy o‘zgarishlari.",
     "About the product": "Mahsulot haqida",
     "Product evolution": "Mahsulot rivoji",
     "A little better": "Har bir yangilanishda",
     "with every update.": "yanada yaxshiroq.",
     "New features, improvements and fixes, all in one place.": "Yangi imkoniyatlar, yaxshilanishlar va tuzatishlar bir joyda.",
-    "Client and server evolve independently. Choose the component you’re interested in.": "Mijoz va server alohida rivojlanadi. Kerakli komponentni tanlang.",
     "Filter by component": "Komponent bo‘yicha saralash",
     "All updates": "Barcha yangilanishlar",
     "Server": "Server",
@@ -157,7 +155,9 @@
     "Language": "Til",
     "Replacement labels": "Almashtirish belgilari",
     "Replacement modes": "Almashtirish rejimlari",
-    "Application settings": "Ilova sozlamalari"
+    "Application settings": "Ilova sozlamalari",
+    "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web va PDC.Server yangiliklari: har bir yangilanishning asosiy o‘zgarishlari.",
+    "Components have separate version histories. Choose the component you’re interested in.": "Komponentlarning versiya tarixi alohida. Kerakli komponentni tanlang."
   },
   "ky": {
     "Main navigation": "Негизги багыттоо",
@@ -179,13 +179,11 @@
     "Play background animation": "Фон анимациясын күйгүзүү",
     "Background animation": "Фон анимациясы",
     "Release notes": "Өзгөрүүлөр тарыхы",
-    "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.": "PDC.Desktop жана PDC.Server жаңылыктары: ар бир жаңыртуунун негизги өзгөрүүлөрү.",
     "About the product": "Өнүм жөнүндө",
     "Product evolution": "Өнүмдүн өнүгүшү",
     "A little better": "Ар бир жаңыртууда",
     "with every update.": "дагы жакшыраак.",
     "New features, improvements and fixes, all in one place.": "Жаңы мүмкүнчүлүктөр, жакшыртуулар жана оңдоолор бир жерде.",
-    "Client and server evolve independently. Choose the component you’re interested in.": "Кардар менен сервер өзүнчө өнүгөт. Керектүү компонентти тандаңыз.",
     "Filter by component": "Компонент боюнча чыпкалоо",
     "All updates": "Бардык жаңыртуулар",
     "Server": "Сервер",
@@ -197,7 +195,9 @@
     "Language": "Тил",
     "Replacement labels": "Алмаштыруу белгилери",
     "Replacement modes": "Алмаштыруу режимдери",
-    "Application settings": "Колдонмонун жөндөөлөрү"
+    "Application settings": "Колдонмонун жөндөөлөрү",
+    "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web жана PDC.Server жаңылыктары: ар бир жаңыртуунун негизги өзгөрүүлөрү.",
+    "Components have separate version histories. Choose the component you’re interested in.": "Компоненттердин версия тарыхтары өзүнчө. Керектүү компонентти тандаңыз."
   },
   "tg": {
     "Main navigation": "Роҳнамоии асосӣ",
@@ -219,13 +219,11 @@
     "Play background animation": "Оғози аниматсияи пасзамина",
     "Background animation": "Аниматсияи пасзамина",
     "Release notes": "Таърихи тағйирот",
-    "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.": "Навигариҳои PDC.Desktop ва PDC.Server: тағйироти асосии ҳар навсозӣ.",
     "About the product": "Дар бораи маҳсулот",
     "Product evolution": "Рушди маҳсулот",
     "A little better": "Бо ҳар навсозӣ",
     "with every update.": "беҳтар мешавад.",
     "New features, improvements and fixes, all in one place.": "Имкониятҳои нав, беҳбудиҳо ва ислоҳҳо дар як ҷо.",
-    "Client and server evolve independently. Choose the component you’re interested in.": "Барнома ва сервер мустақилона рушд мекунанд. Ҷузъи лозимаро интихоб кунед.",
     "Filter by component": "Полоиш аз рӯйи ҷузъ",
     "All updates": "Ҳамаи навсозиҳо",
     "Server": "Сервер",
@@ -237,6 +235,8 @@
     "Language": "Забон",
     "Replacement labels": "Нишонаҳои ивазкунӣ",
     "Replacement modes": "Реҷаҳои ивазкунӣ",
-    "Application settings": "Танзимоти барнома"
+    "Application settings": "Танзимоти барнома",
+    "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "Навигариҳои PDC.Desktop, PDC.Web ва PDC.Server: тағйироти асосии ҳар навсозӣ.",
+    "Components have separate version histories. Choose the component you’re interested in.": "Ҷузъҳо таърихи версияҳои ҷудо доранд. Ҷузъи лозимаро интихоб кунед."
   }
 }
