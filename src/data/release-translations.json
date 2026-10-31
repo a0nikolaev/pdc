@@ -1,0 +1,872 @@
+{
+  "server:1.15.12.4": {
+    "kk": [
+      "MIME бағыты түзетілді: өңдеу, кэш және журнал бір құжат түрін қолданады; екіұшты пішімдер қабылданбайды. 1030 тест және PostgreSQL-дің 8 сценарийі өтті."
+    ],
+    "uz": [
+      "MIME yo‘naltirish tuzatildi: ishlov, kesh va jurnal yagona hujjat turini ishlatadi; noaniq formatlar rad etiladi. 1030 test va 8 PostgreSQL ssenariysi o‘tdi."
+    ],
+    "ky": [
+      "MIME багыттоосу оңдолду: иштетүү, кэш жана журнал бир документ түрүн колдонот; күмөндүү форматтар четке кагылат. 1030 тест жана PostgreSQL’дин 8 сценарийи өттү."
+    ],
+    "tg": [
+      "Масиргузории MIME ислоҳ шуд: коркард, кэш ва сабт як навъи ҳуҷҷатро истифода мебаранд; форматҳои номуайян рад мешаванд. 1030 санҷиш ва 8 сенарияи PostgreSQL гузашт."
+    ],
+    "sourceText": "Fixed MIME routing: processing, cache and audit use the same effective document type; ambiguous formats are rejected. 1030 tests and 8 PostgreSQL scenarios passed."
+  },
+  "server:1.15.12.3": {
+    "kk": [
+      "Excel бос ұяшықтарының контексі түзетілді: көршілердің нақты мекенжайлары мен баған атаулары тапсырыс нөмірін телефон деп алмастырудан қорғайды."
+    ],
+    "uz": [
+      "Excel siyrak kataklari konteksti tuzatildi: qo‘shni manzillar va ustun sarlavhalari buyurtma raqamini telefon deb almashtirishdan saqlaydi."
+    ],
+    "ky": [
+      "Excel бош уячаларынын контексти оңдолду: чыныгы кошуна даректер жана мамыча аттары буйрутма номерин телефон катары алмаштыруудан сактайт."
+    ],
+    "tg": [
+      "Контексти ҳуҷайраҳои холии Excel ислоҳ шуд: суроғаҳои воқеии ҳамсоя ва сарлавҳаҳо рақами фармоишро аз ивазшавӣ ҳамчун телефон муҳофизат мекунанд."
+    ],
+    "sourceText": "Fixed sparse Excel cell context: actual adjacent addresses and column headers prevent order IDs from being replaced as phone numbers."
+  },
+  "server:1.15.12.2": {
+    "kk": [
+      "PDF Info/XMP мәтін алмастырылмаса да тазартылады; нәтиже берілер алдында тәуелсіз тексеріледі. Метадеректерді тазарту тану сапасынан бөлек бағаланады."
+    ],
+    "uz": [
+      "PDF Info/XMP matn almashtirilmasa ham tozalanadi; natija berilishidan oldin mustaqil tekshiriladi. Metama’lumot tozaligi aniqlash sifatidan alohida baholanadi."
+    ],
+    "ky": [
+      "PDF Info/XMP текст алмашпаса да тазаланат; натыйжа берилер алдында өзүнчө текшерилет. Метамаалыматты тазалоо таануу сапатынан бөлөк бааланат."
+    ],
+    "tg": [
+      "PDF Info/XMP ҳатто бе ивазкунии матн тоза мешавад; натиҷа пеш аз таҳвил мустақилона санҷида мешавад. Тозакунии метамаълумот аз сифати шинохт ҷудо арзёбӣ мешавад."
+    ],
+    "sourceText": "PDF Info/XMP metadata is cleaned even without text replacements; output is independently checked before delivery. Metadata cleanup is separate from recognition quality."
+  },
+  "server:1.15.12.1": {
+    "kk": [
+      "Топтап өңдеу бастапқы файл мен квотаны нәтиже БД-ға жазылғанша сақтайды; уақытша қателер қауіпсіз қайталанады. Өңделмеген құжаттармен тапсырманы аяқтау мүмкін емес."
+    ],
+    "uz": [
+      "Paket ishlovi asl fayl va kvotani natija bazaga yozilguncha saqlaydi; vaqtinchalik xatolar xavfsiz qayta uriniladi. Kutilayotgan hujjatlar bilan vazifa tugamaydi."
+    ],
+    "ky": [
+      "Топтомдук иштетүү баштапкы файл менен квотаны натыйжа базага жазылганча сактайт; убактылуу каталар коопсуз кайталанат. Иштетилбеген документтер менен тапшырма бүтпөйт."
+    ],
+    "tg": [
+      "Коркарди гурӯҳӣ файл ва квотаро то сабти натиҷа дар пойгоҳ нигоҳ медорад; хатогиҳои муваққатӣ бехатар такрор мешаванд. Бо ҳуҷҷатҳои нотамом вазифа анҷом намеёбад."
+    ],
+    "sourceText": "Batch processing retains the source and quota until the result is committed; transient database failures are retried safely. Jobs cannot complete with pending documents."
+  },
+  "server:1.15.12.0": {
+    "kk": [
+      "Office қызметтік нобайлары мәтін алмастырылмаса да жойылады. 3308 мәтін шақыру қатесінсіз тексерілді; табылмаған есімдер мен 22 файлдың 2 бас тартуы белгілі шектеулер болып қалады."
+    ],
+    "uz": [
+      "Office xizmat eskizlari matn almashtirilmasa ham o‘chiriladi. 3308 matn chaqiruv xatosiz tekshirildi; topilmagan ismlar va 22 fayldan 2 rad javobi ma’lum cheklov bo‘lib qoladi."
+    ],
+    "ky": [
+      "Office кызматтык эскиздери текст алмашпаса да өчүрүлөт. 3308 текст чакыруу катасыз текшерилди; табылбаган аттар жана 22 файлдан 2 баш тартуу белгилүү чектөө бойдон калат."
+    ],
+    "tg": [
+      "Тасвирчаҳои хизматии Office ҳатто бе ивазкунии матн нест мешаванд. 3308 матн бе хатои даъват санҷида шуд; номҳои ёфтнашуда ва 2 рад аз 22 файл маҳдудияти маълум мемонанд."
+    ],
+    "sourceText": "Office service thumbnails are removed, including files without text replacements. 3308 texts were checked with no call failures; missed names and 2 refusals out of 22 files remain known limitations."
+  },
+  "server:1.15.11.1": {
+    "kk": [
+      "Ағылшын есімдерінің шекаралары және өріс белгілерін сүзу жақсартылды. Танылған көпсөзді есімдердің дәл қайталануы бірізді алмастырылады; қалдық деректер тексеріледі."
+    ],
+    "uz": [
+      "Ingliz ismlari chegaralari va maydon yorliqlarini filtrlash yaxshilandi. Topilgan ko‘p so‘zli ismlarning aniq takrorlari izchil almashtiriladi; qoldiq ma’lumot tekshiruvi saqlanadi."
+    ],
+    "ky": [
+      "Англис аттарынын чектери жана талаа белгилерин чыпкалоо жакшырды. Таанылган көп сөздүү аттардын так кайталанышы ырааттуу алмашат; калган маалыматтар текшерилет."
+    ],
+    "tg": [
+      "Ҳудуди номҳои англисӣ ва полоиши нишонаҳои майдон беҳтар шуд. Такрорҳои дақиқи номҳои бисёркалима пайдарпай иваз мешаванд; санҷиши боқимондаҳо фаъол аст."
+    ],
+    "sourceText": "Improved English name boundaries and field-label filtering. Exact repetitions of recognized multiword names are replaced consistently; residual-data verification remains enabled."
+  },
+  "server:1.15.11.0": {
+    "kk": [
+      "Office авторлары мен жасаушылары өріс құрылымы бойынша, таңдалған режимді сақтап қорғалады. Бұл — өрістерді қорғау, модельдің қосымша болжамы емес."
+    ],
+    "uz": [
+      "Office muallif va yaratuvchi maydonlari tuzilish bo‘yicha, tanlangan rejim saqlanib himoyalanadi. Bu maydon himoyasi, modelning qo‘shimcha bashorati emas."
+    ],
+    "ky": [
+      "Office автор жана түзүүчү талаалары түзүмү боюнча, тандалган режим сакталуу менен корголот. Бул — талааны коргоо, моделдин кошумча божомолу эмес."
+    ],
+    "tg": [
+      "Майдонҳои муаллиф ва созандаи Office аз рӯйи сохтор бо нигоҳ доштани реҷаи интихобшуда муҳофизат мешаванд. Ин муҳофизати майдон аст, на пешгӯии иловагии модел."
+    ],
+    "sourceText": "Office author and creator fields are protected using their structure while preserving the selected replacement mode. This is field protection, not an additional model prediction."
+  },
+  "server:1.15.10.3": {
+    "kk": [
+      "Excel сандық ұяшықтары белгі не баған контексін қолданып, телефон/ИНН/СНИЛС-ті тапсырыс, сома және күннен ажыратады. Қызметтік контекст нәтижеге жазылмайды."
+    ],
+    "uz": [
+      "Excel sonli kataklari yorliq yoki sarlavha kontekstidan foydalanib, telefon/INN/SNILS’ni buyurtma, summa va sanalardan ajratadi. Yordamchi kontekst natijaga yozilmaydi."
+    ],
+    "ky": [
+      "Excel сандык уячалары белги же аталыш контексти аркылуу телефон/ИНН/СНИЛСти буйрутма, сумма жана датадан айырмалайт. Кызматтык контекст натыйжага жазылбайт."
+    ],
+    "tg": [
+      "Ҳуҷайраҳои рақамии Excel аз контексти нишона ё сарлавҳа истифода бурда, телефон/ИНН/СНИЛС-ро аз фармоиш, маблағ ва сана фарқ мекунанд. Контексти ёрирасон ба натиҷа навишта намешавад."
+    ],
+    "sourceText": "Numeric Excel cells use label or header context to distinguish phone/INN/SNILS values from order IDs, amounts and dates. Synthetic context is not written to the output."
+  },
+  "server:1.15.10.2": {
+    "kk": [
+      "minimal ағылшынның толық standard контексін сақтайды: ағындар мен кезек қана өзгереді, салмақтар мен кіріс мәтіні қысқармайды."
+    ],
+    "uz": [
+      "minimal to‘liq standard ingliz kontekstini saqlaydi: faqat oqimlar va navbat o‘zgaradi, vaznlar va matn qisqarmaydi."
+    ],
+    "ky": [
+      "minimal англис тилинин толук standard контекстин сактайт: агымдар менен кезек гана өзгөрөт, салмактар жана текст кыскарбайт."
+    ],
+    "tg": [
+      "minimal контексти пурраи англисии standard-ро нигоҳ медорад: танҳо риштаҳо ва навбат тағйир меёбанд, вазнҳо ва матн кӯтоҳ намешаванд."
+    ],
+    "sourceText": "The minimal profile retains the full standard English context: only threads and queue settings differ, not weights or input text."
+  },
+  "server:1.15.10.1": {
+    "kk": [
+      "Office нобайларын оқу түзетіліп, Excel пікірлері, авторлары және қасиеттерін өңдеу кеңейтілді. 3304 мәтін тексерілді; қалдық деректер мен бас тартулар жасырылмайды."
+    ],
+    "uz": [
+      "Office eskizlarini o‘qish tuzatildi, Excel izohlari, mualliflari va xususiyatlariga ishlov kengaydi. 3304 matn tekshirildi; qoldiqlar va rad javoblari yashirilmaydi."
+    ],
+    "ky": [
+      "Office эскиздерин окуу оңдолду, Excel пикирлери, авторлору жана касиеттерин иштетүү кеңейди. 3304 текст текшерилди; калган маалыматтар жана баш тартуулар жашырылбайт."
+    ],
+    "tg": [
+      "Хондани тасвирчаҳои Office ислоҳ шуда, коркарди шарҳҳо, муаллифон ва хосиятҳои Excel васеъ шуд. 3304 матн санҷида шуд; боқимондаҳо ва радҳо пинҳон намешаванд."
+    ],
+    "sourceText": "Fixed Office thumbnail reading and extended Excel comment, author and property handling. 3304 texts were checked; residual data and explicit refusals remain visible."
+  },
+  "server:1.15.10.0": {
+    "kk": [
+      "RU/EN модельдері, телефон, ИНН, СНИЛС, email және аралас мәтін жақсартылды. Office, сандық Excel және аралас PDF өңдеуі кеңейді, кезек пен жад шектелді. Қолдаусыз формулалар қабылданбайды; compact сапа тексерісі міндетті."
+    ],
+    "uz": [
+      "RU/EN modellari, telefon, INN, SNILS, email va aralash matn yaxshilandi. Office, sonli Excel va aralash PDF ishlovi kengaydi; navbat va xotira cheklangan. Qo‘llanmaydigan formulalar rad etiladi; compact sifat sinovi majburiy."
+    ],
+    "ky": [
+      "RU/EN моделдери, телефон, ИНН, СНИЛС, email жана аралаш текст жакшырды. Office, сандык Excel жана аралаш PDF иштетүү кеңейди; кезек жана эстутум чектелди. Колдоого алынбаган формулалар четке кагылат; compact сапат текшерүүсү милдеттүү."
+    ],
+    "tg": [
+      "Моделҳои RU/EN, телефон, ИНН, СНИЛС, email ва матни омехта беҳтар шуданд. Коркарди Office, Excel-и рақамӣ ва PDF-и омехта васеъ шуда, навбат ва хотира маҳдуданд. Формулаҳои номувофиқ рад мешаванд; санҷиши сифати compact ҳатмист."
+    ],
+    "sourceText": "Improved RU/EN models, phones, INN, SNILS, email and mixed text. Extended Office, numeric Excel and mixed PDF handling with bounded queues and memory. Unsupported formulas are rejected; the compact quality gate remains mandatory."
+  },
+  "server:1.15.9.0": {
+    "kk": [
+      "EN контексі standard үшін 6144, minimal үшін 4096 токен; standard терезелері үлкейтілді. Салмақ, RAM және уақыт шектері өзгермеді; дәл дәйексөздер мен толық емес өңдеуден бас тарту сақталды."
+    ],
+    "uz": [
+      "EN konteksti standard uchun 6144, minimal uchun 4096 token; standard oynalari kattalashdi. Vazn, RAM va vaqt chegaralari o‘zgarmadi; aniq iqtiboslar va to‘liq bo‘lmagan ishlovning ochiq xatosi saqlandi."
+    ],
+    "ky": [
+      "EN контексти standard үчүн 6144, minimal үчүн 4096 токен; standard терезелери чоңойду. Салмак, RAM жана убакыт чектери өзгөргөн жок; так цитаталар жана толук эмес иштетүүдө баш тартуу сакталды."
+    ],
+    "tg": [
+      "Контексти EN барои standard 6144 ва minimal 4096 токен аст; равзанаҳои standard калон шуданд. Вазн, RAM ва муҳлат тағйир наёфт; иқтибосҳои дақиқ ва рад кардани коркарди нопурра нигоҳ дошта шуд."
+    ],
+    "sourceText": "EN uses a 6144-token context and larger standard windows, with 4096 for minimal. Weights, RAM limits and timeouts are unchanged; exact quotes and explicit incomplete-processing failures remain."
+  },
+  "server:1.15.8.4": {
+    "kk": [
+      "EN дәйексөздері генерацияға дейін бастапқы сөздермен шектеледі, temperature=0. Ойдан шығарылған дәйексөздер қабылданбайды, уақыт шегі өзгермейді."
+    ],
+    "uz": [
+      "EN iqtiboslari generatsiyadan oldin asl so‘zlar bilan cheklanadi, temperature=0. To‘qima iqtiboslar rad etiladi, vaqt chegarasi o‘zgarmaydi."
+    ],
+    "ky": [
+      "EN цитаталары түзүүдөн мурда баштапкы сөздөр менен чектелет, temperature=0. Ойдон чыгарылган цитаталар четке кагылат, убакыт чеги өзгөрбөйт."
+    ],
+    "tg": [
+      "Иқтибосҳои EN пеш аз тавлид бо калимаҳои аслӣ маҳдуданд, temperature=0. Иқтибосҳои сохта рад мешаванд, муҳлат тағйир намеёбад."
+    ],
+    "sourceText": "EN constrains decoded quotes to source words/phrases before generation and uses temperature=0. Fabricated quotes remain rejected; time limits are unchanged."
+  },
+  "server:1.15.8.3": {
+    "kk": [
+      "EN қысқа бастапқы жолдар схемасы мен шектеулі UTF-8 терезелерін қолданады. Standard — 4 CPU шегінде 4 ағын; уақыт шегі сақталған."
+    ],
+    "uz": [
+      "EN qisqa asl satrlar sxemasi va cheklangan UTF-8 oynalaridan foydalanadi. Standard 4 CPU doirasida 4 oqim ishlatadi; vaqt chegarasi saqlangan."
+    ],
+    "ky": [
+      "EN кыска баштапкы саптар схемасын жана чектелген UTF-8 терезелерин колдонот. Standard 4 CPU чегинде 4 агым иштетет; убакыт чеги сакталган."
+    ],
+    "tg": [
+      "EN нақшаи сатрҳои кӯтоҳи аслӣ ва равзанаҳои маҳдуди UTF-8-ро истифода мебарад. Standard дар буҷети 4 CPU чор ришта дорад; муҳлат нигоҳ дошта шудааст."
+    ],
+    "sourceText": "EN uses a static short source-string array schema and bounded UTF-8 windows to reduce prompt/output cost. Standard uses 4 threads within its 4-CPU budget; time limits are unchanged."
+  },
+  "server:1.15.8.2": {
+    "kk": [
+      "Ұзын RU мәтіні бір жалпы бюджетте дәл токен терезелерімен өңделеді; жеке шақыру уақыты өспейді. Ұзын EN мәтіні дәйексөз орнына бастапқы сөз индекстерін қайтарады."
+    ],
+    "uz": [
+      "Uzun RU matni yagona byudjetda aniq token oynalari bilan ishlanadi; alohida chaqiruv vaqti oshmaydi. Uzun EN matni iqtibos o‘rniga asl so‘z indekslarini qaytaradi."
+    ],
+    "ky": [
+      "Узун RU текст бир жалпы бюджетте так токен терезелери менен иштетилет; өзүнчө чакыруу убактысы өспөйт. Узун EN текст цитатанын ордуна баштапкы сөз индекстерин кайтарат."
+    ],
+    "tg": [
+      "Матни дарози RU бо равзанаҳои дақиқи токенӣ дар як буҷети умумӣ коркард мешавад; муҳлати даъват намеафзояд. EN-и дароз ба ҷойи иқтибос индексҳои калимаҳои аслиро бармегардонад."
+    ],
+    "sourceText": "Long RU input uses an exact token-window plan and per-window calls within one total budget, without increasing individual call timeouts. Long EN fragments return constrained source word IDs instead of regenerating source quotes."
+  },
+  "server:1.15.8.1": {
+    "kk": [
+      "RU NER қабаттасатын WordPiece терезелері мен дәл UTF-16 координаттарын қолданады. EN кіріс пен генерацияны шектеп, кезекті жалпы мерзімге қосады; терезе қатесі ашық қайтарылады."
+    ],
+    "uz": [
+      "RU NER ustma-ust WordPiece oynalari va aniq UTF-16 koordinatalarini ishlatadi. EN kirish va generatsiyani cheklaydi, navbatni umumiy muddatga qo‘shadi; oyna xatolari yashirilmaydi."
+    ],
+    "ky": [
+      "RU NER кабатташкан WordPiece терезелерин жана так UTF-16 координаттарын колдонот. EN киришти жана түзүүнү чектеп, кезекти жалпы мөөнөткө кошот; терезе катасы ачык берилет."
+    ],
+    "tg": [
+      "RU NER равзанаҳои ҳампӯши WordPiece ва координатҳои дақиқи UTF-16-ро истифода мебарад. EN вуруд ва тавлидро маҳдуд карда, навбатро ба муҳлати умумӣ дохил мекунад; хатои равзана ошкор аст."
+    ],
+    "sourceText": "RU NER uses actual WordPiece windows with overlap and exact UTF-16 offsets. EN bounds input/generation and includes queueing in the overall deadline; failed windows remain explicit errors."
+  },
+  "server:1.15.8.0": {
+    "kk": [
+      "Телефон жанындағы картаны өткізіп жіберу түзетілді. Нәтиже берілмес және кэштелмес бұрын мәтінді қайта шығару/OCR тексерісінен өтеді; бастапқы мән қалса не тексеріс өтпесе HTTP 422 қайтады."
+    ],
+    "uz": [
+      "Telefon yonidagi kartani o‘tkazib yuborish tuzatildi. Natija berish va keshlashdan oldin qayta ajratish/OCR tekshiruvidan o‘tadi; asl qiymat qolsa yoki tekshiruv bajarilmasa HTTP 422 qaytadi."
+    ],
+    "ky": [
+      "Телефондун жанындагы картаны өткөрүп жиберүү оңдолду. Натыйжа берүүдөн жана кэштөөдөн мурда кайра чыгаруу/OCR текшерүүсүнөн өтөт; баштапкы маани калса же текшерүү өтпөсө HTTP 422 кайтарылат."
+    ],
+    "tg": [
+      "Гузаронидани корти паҳлуи телефон ислоҳ шуд. Натиҷа пеш аз таҳвил ва кэш аз санҷиши такрории матн/OCR мегузарад; агар қимати аслӣ монад ё санҷиш ноком шавад, HTTP 422 бармегардад."
+    ],
+    "sourceText": "Fixed missed cards adjacent to phone numbers. Output is re-extracted/OCR-checked before delivery and caching; a residual original value or failed mandatory check returns HTTP 422."
+  },
+  "desktop:1.15.2.13": {
+    "kk": [
+      "Сервер 1.15.9.0 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.9.0 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.9.0 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.9.0 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.9.0 release history."
+  },
+  "desktop:1.15.2.12": {
+    "kk": [
+      "Сервер 1.15.8.4 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.8.4 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.8.4 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.8.4 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.8.4 release history."
+  },
+  "desktop:1.15.2.11": {
+    "kk": [
+      "Сервер 1.15.8.3 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.8.3 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.8.3 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.8.3 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.8.3 release history."
+  },
+  "desktop:1.15.2.10": {
+    "kk": [
+      "Сервер 1.15.8.2 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.8.2 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.8.2 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.8.2 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.8.2 release history."
+  },
+  "desktop:1.15.2.9": {
+    "kk": [
+      "Сервер 1.15.8.1 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.8.1 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.8.1 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.8.1 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.8.1 release history."
+  },
+  "desktop:1.15.2.8": {
+    "kk": [
+      "Сервер 1.15.8.0 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.8.0 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.8.0 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.8.0 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.8.0 release history."
+  },
+  "server:1.15.7.0": {
+    "kk": [
+      "Бір нұсқадағы default/compact: жергілікті шағын RU/EN NER, дәл UTF-16 шекаралары және жаңартуда нұсқаны сақтау. Compact шығарылымына жұптық сапа тексерісі қажет."
+    ],
+    "uz": [
+      "Bir versiyadagi default/compact: mahalliy kichik RU/EN NER, aniq UTF-16 chegaralari va yangilanishda variantni saqlash. Compact uchun juft sifat sinovi kerak."
+    ],
+    "ky": [
+      "Бир версиядагы default/compact: жергиликтүү чакан RU/EN NER, так UTF-16 чектери жана жаңыртууда вариантты сактоо. Compact чыгаруу үчүн жуп сапат текшерүүсү керек."
+    ],
+    "tg": [
+      "default/compact-и як версия: RU/EN NER-и хурди маҳаллӣ, ҳудуди дақиқи UTF-16 ва нигоҳдории вариант ҳангоми навсозӣ. Барои compact санҷиши ҷуфтии сифат лозим аст."
+    ],
+    "sourceText": "Same-version default/compact model flavors: local small RU/EN NER, exact UTF-16 spans and persisted flavor on update. Compact release requires a paired quality gate."
+  },
+  "server:1.15.6.2": {
+    "kk": [
+      "OCR сурет/PDF координаттары бір құжаттағы алмастыруда қайта қолданылады; қайталама тану жойылды."
+    ],
+    "uz": [
+      "OCR rasm/PDF koordinatalari bir hujjatdagi almashtirishda qayta ishlatiladi; takroriy aniqlash olib tashlandi."
+    ],
+    "ky": [
+      "OCR сүрөт/PDF координаттары бир документте алмаштырууда кайра колдонулат; кайталанган таануу жоюлду."
+    ],
+    "tg": [
+      "Координатҳои OCR-и тасвир/PDF ҳангоми ивазкунии ҳамон ҳуҷҷат дубора истифода мешаванд; шинохти такрорӣ бартараф шуд."
+    ],
+    "sourceText": "OCR: extracted image/PDF coordinates are reused during replacement within one document; duplicate recognition is removed."
+  },
+  "server:1.15.6.1": {
+    "kk": [
+      "RU/EN NER қате не толық емес жауапта бос нәтиженің орнына айқын қате қайтарады; API қате мен тайм-аутты ажыратады."
+    ],
+    "uz": [
+      "RU/EN NER noto‘g‘ri yoki to‘liq bo‘lmagan javobda bo‘sh natija emas, aniq xato qaytaradi; API xato va taym-autni ajratadi."
+    ],
+    "ky": [
+      "RU/EN NER бузулган же толук эмес жоопто бош натыйжанын ордуна ачык ката берет; API ката менен тайм-аутту айырмалайт."
+    ],
+    "tg": [
+      "RU/EN NER ҳангоми ҷавоби нодуруст ё нопурра ба ҷойи натиҷаи холӣ хатои ошкор медиҳад; API хато ва анҷоми муҳлатро фарқ мекунад."
+    ],
+    "sourceText": "RU/EN NER: malformed, incomplete or invalid responses fail explicitly instead of returning no entities; API distinguishes failures and timeouts."
+  },
+  "server:1.15.6.0": {
+    "kk": [
+      "Tesseract пен бүкіл сұраудың мерзімі шектелді; тоқтату тиесілі процестерді аяқтап, уақытша файлдарды тазалайды."
+    ],
+    "uz": [
+      "Tesseract va umumiy so‘rov muddati cheklangan; bekor qilish tegishli jarayonlarni to‘xtatib, vaqtinchalik fayllarni o‘chiradi."
+    ],
+    "ky": [
+      "Tesseract жана жалпы суроо мөөнөтү чектелди; жокко чыгаруу тиешелүү процесстерди токтотуп, убактылуу файлдарды тазалайт."
+    ],
+    "tg": [
+      "Муҳлати Tesseract ва дархости умумӣ маҳдуд шуд; бекоркунӣ равандҳои вобастаро қатъ карда, файлҳои муваққатиро тоза мекунад."
+    ],
+    "sourceText": "OCR: bounded Tesseract and total request deadlines; cancellation terminates owned processes and removes temporary files."
+  },
+  "desktop:1.15.2.7": {
+    "kk": [
+      "Сервер 1.15.7.0 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.7.0 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.7.0 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.7.0 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.7.0 release history."
+  },
+  "desktop:1.15.2.6": {
+    "kk": [
+      "Сервер 1.15.6.2 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.6.2 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.6.2 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.6.2 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.6.2 release history."
+  },
+  "desktop:1.15.2.5": {
+    "kk": [
+      "Сервер 1.15.6.1 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.6.1 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.6.1 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.6.1 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.6.1 release history."
+  },
+  "desktop:1.15.2.4": {
+    "kk": [
+      "Сервер 1.15.6.0 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.6.0 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.6.0 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.6.0 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.6.0 release history."
+  },
+  "server:1.15.5.1": {
+    "kk": [
+      "Журнал айналымының шегінісі түзетілді; екі ресурс профилі Docker Compose арқылы тексерілді."
+    ],
+    "uz": [
+      "Jurnal aylanishi chekinishi tuzatildi; ikki resurs profili Docker Compose bilan tekshirildi."
+    ],
+    "ky": [
+      "Журнал айлануусунун чегинүүсү оңдолду; эки ресурс профили Docker Compose менен текшерилди."
+    ],
+    "tg": [
+      "Фосилагузории гардиши сабт ислоҳ шуд; ду профили захираҳо бо Docker Compose санҷида шуданд."
+    ],
+    "sourceText": "Corrected log rotation indentation; both resource profile configurations validated by Docker Compose."
+  },
+  "server:1.15.5.0": {
+    "kk": [
+      "Ollama кэші standard/minimal үшін 512/128 MiB, EN ағындары 2/1 болып шектелді; салмақ пен контекст бірдей. Тек құрылымдалған деректері бар бөліктерде FullName шақырылмайды; еркін мәтін сақталады. RU әдепкі шегі 5 GiB, пайдаланушы баптауы өзгермейді."
+    ],
+    "uz": [
+      "Ollama keshi standard/minimal uchun 512/128 MiB, EN oqimlari 2/1 bilan cheklangan; vazn va kontekst bir xil. Faqat tuzilgan ma’lumotli bo‘laklarda FullName chaqirilmaydi; erkin matn saqlanadi. RU odatiy chegarasi 5 GiB, foydalanuvchi sozlamalari o‘zgarmaydi."
+    ],
+    "ky": [
+      "Ollama кэши standard/minimal үчүн 512/128 MiB, EN агымдары 2/1 менен чектелди; салмак менен контекст бирдей. Түзүмдүү маалымат гана бар бөлүктөрдө FullName чакырылбайт; эркин текст сакталат. RU демейки чеги 5 GiB, колдонуучу жөндөөсү өзгөрбөйт."
+    ],
+    "tg": [
+      "Кэши Ollama барои standard/minimal 512/128 MiB ва риштаҳои EN 2/1 маҳдуданд; вазн ва контекст яксонанд. Дар қисмҳои танҳо сохторӣ FullName даъват намешавад; матни озод нигоҳ дошта мешавад. Ҳадди RU 5 GiB аст, танзими корбар тағйир намеёбад."
+    ],
+    "sourceText": "Bounded Ollama prompt cache: 512 MiB standard, 128 MiB minimal; same weights and context.\nEN inference threads match CPU budgets: 2 / 1.\nStructured-only chunks skip FullName inference; free-text context and offsets are preserved.\nThe default RU limit is 5 GiB for the observed startup peak; existing user overrides remain unchanged."
+  },
+  "desktop:1.15.2.3": {
+    "kk": [
+      "Сервер 1.15.5.1 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.5.1 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.5.1 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.5.1 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.5.1 Compose correction history."
+  },
+  "desktop:1.15.2.2": {
+    "kk": [
+      "Сервер 1.15.5.0 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.5.0 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.5.0 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.5.0 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.5.0 release history in Russian and English."
+  },
+  "server:1.15.4.0": {
+    "kk": [
+      "Тұрақты standard/minimal профильдері, 5 минут бос тұрған соң EN жүктен босатылады. NER/LLM/OCR/конвертер бюджеті ортақ; кезек толса HTTP 503. Шақырулар мен көшірмелер азайды. Default/compact — жоспар, ресурстар мен сапа өлшеуді күтеді."
+    ],
+    "uz": [
+      "Doimiy standard/minimal profillari, 5 daqiqa bekor turishdan so‘ng EN bo‘shatiladi. NER/LLM/OCR/konverter byudjeti umumiy; navbat to‘lsa HTTP 503. Chaqiruv va nusxalar kamaydi. Default/compact rejalashtirilgan, resurs va sifat o‘lchov kutadi."
+    ],
+    "ky": [
+      "Туруктуу standard/minimal профилдери, 5 мүнөт бош тургандан кийин EN бошотулат. NER/LLM/OCR/конвертер бюджети жалпы; кезек толсо HTTP 503. Чакыруу жана көчүрмөлөр азайды. Default/compact планда, ресурстар менен сапат өлчөөнү күтөт."
+    ],
+    "tg": [
+      "Профилҳои доимии standard/minimal, баъди 5 дақиқа бекорӣ EN холӣ мешавад. Буҷети NER/LLM/OCR/табдилдиҳанда умумӣ аст; навбати пур HTTP 503 медиҳад. Даъватҳо ва нусхаҳо кам шуданд. Default/compact дар нақша, захира ва сифат дар интизори ченкунӣ."
+    ],
+    "sourceText": "Persistent standard/minimal profiles; unload EN after 5 idle minutes.\nShared NER/LLM/OCR/converter budget; HTTP 503 when the queue is full.\nFewer inference calls, Office conversions and in-memory file copies.\nDefault/compact model flavors are planned (#00052); sizing and quality await benchmarks."
+  },
+  "desktop:1.15.2.1": {
+    "kk": [
+      "Сервер 1.15.4.0 өзгерістер тарихы жаңартылды."
+    ],
+    "uz": [
+      "Server 1.15.4.0 o‘zgarishlar tarixi yangilandi."
+    ],
+    "ky": [
+      "Сервер 1.15.4.0 өзгөрүүлөр тарыхы жаңыртылды."
+    ],
+    "tg": [
+      "Таърихи тағйироти сервери 1.15.4.0 нав шуд."
+    ],
+    "sourceText": "Updated server 1.15.4.0 release history in Russian and English."
+  },
+  "server:1.15.3.0": {
+    "kk": [
+      "Әкімшінің GET/PUT /api/settings/updates саясаты сақталады. server-info жаңарту көзі, URL және аралығын береді; интернетке автоматты ауысу жоқ."
+    ],
+    "uz": [
+      "Administrator GET/PUT /api/settings/updates siyosati saqlanadi. server-info manba, URL va intervalni beradi; internetga avtomatik o‘tish yo‘q."
+    ],
+    "ky": [
+      "Администратордун GET/PUT /api/settings/updates саясаты сакталат. server-info булак, URL жана аралыкты берет; интернетке автоматтык өтүү жок."
+    ],
+    "tg": [
+      "Сиёсати маъмурии GET/PUT /api/settings/updates нигоҳ дошта мешавад. server-info манбаъ, URL ва фосиларо медиҳад; гузариши худкор ба интернет нест."
+    ],
+    "sourceText": "Administrator GET/PUT /api/settings/updates with persisted organization policy.\nSource, URL and interval policy in server-info; no automatic internet fallback."
+  },
+  "desktop:1.15.2.0": {
+    "kk": [
+      "Фондық және қолмен жаңарту тексерісі, көзді таңдау және әкімші саясаты. Сақтық көшірме, іске қосылуды растау, үш сәтсіз әрекеттен кейін кері қайтару."
+    ],
+    "uz": [
+      "Fon va qo‘lda yangilanish tekshiruvi, manba tanlash va administrator siyosati. Zaxira, ishga tushishni tasdiqlash va uch muvaffaqiyatsiz urinishdan so‘ng qaytarish."
+    ],
+    "ky": [
+      "Фондо жана кол менен жаңыртууну текшерүү, булакты тандоо жана администратор саясаты. Камдык көчүрмө, ишке кирүүнү ырастоо жана үч ийгиликсиз аракеттен кийин артка кайтаруу."
+    ],
+    "tg": [
+      "Санҷиши навсозӣ дар пасзамина ва дастӣ, интихоби манбаъ ва сиёсати маъмур. Нусхаи эҳтиётӣ, тасдиқи оғоз ва бозгашт баъди се кӯшиши ноком."
+    ],
+    "sourceText": "Background and manual update checks, source selection and administrator policy.\nBackup, startup acknowledgement and rollback after three failed attempts."
+  },
+  "server:1.15.2.0": {
+    "kk": [
+      "Қолтаңбалы анонимді манифест пен орнатқыш HTTP Range арқылы беріледі. Жаңарту тексерісін Application:Updates:AutoUpdate арқылы міндеттеуге болады."
+    ],
+    "uz": [
+      "Imzolangan anonim manifest va o‘rnatuvchi HTTP Range bilan beriladi. Yangilanish tekshiruvini Application:Updates:AutoUpdate orqali majburlash mumkin."
+    ],
+    "ky": [
+      "Кол коюлган анонимдүү манифест жана орноткуч HTTP Range аркылуу берилет. Жаңыртуу текшерүүсүн Application:Updates:AutoUpdate менен милдеттендирүүгө болот."
+    ],
+    "tg": [
+      "Манифести имзошудаи беном ва насбкунанда бо HTTP Range дода мешаванд. Санҷиши навсозиро бо Application:Updates:AutoUpdate ҳатмӣ кардан мумкин аст."
+    ],
+    "sourceText": "Anonymous signed manifest and installer delivery with HTTP Range.\nEnforce update checking through Application:Updates:AutoUpdate."
+  },
+  "server:1.15.1.1": {
+    "kk": [
+      "Web: алғашқы экраннан тақырып ауыстыру, жиналмалы бүйір мәзір. Фон анимациясын қосу/өшіру және көріністі браузерде сақтау."
+    ],
+    "uz": [
+      "Web: birinchi ekrandan mavzu almashtirish, yig‘iladigan yon menyu. Fon animatsiyasini yoqish/o‘chirish va ko‘rinishni brauzerda saqlash."
+    ],
+    "ky": [
+      "Web: биринчи экрандан тема которуу, жыйналуучу каптал меню. Фон анимациясын күйгүзүү/өчүрүү жана көрүнүштү браузерде сактоо."
+    ],
+    "tg": [
+      "Web: ивазкунии намуд аз экрани аввал, менюи паҳлуии ҷамъшаванда. Фаъол/хомӯш кардани аниматсия ва нигоҳдории намуд дар браузер."
+    ],
+    "sourceText": "Web: theme switch from the first screen and a collapsible sidebar.\nAnimated background with start/stop; appearance persists in the browser."
+  },
+  "desktop:1.15.1.0": {
+    "kk": [
+      "Кіруден бұрын компания серверіндегі жаңарту тексеріледі; манифест қолтаңбасы, SHA-256 және жалғастырып жүктеу. Үнсіз орнатқыш клиентті жауып, кейін қайта іске қосады."
+    ],
+    "uz": [
+      "Kirishdan oldin kompaniya serveridagi yangilanish tekshiriladi; manifest imzosi, SHA-256 va davomli yuklash. Yashirin o‘rnatuvchi mijoz yopilishini kutib, so‘ng qayta boshlaydi."
+    ],
+    "ky": [
+      "Кирүүдөн мурда компания сервериндеги жаңыртуу текшерилет; манифесттин колу, SHA-256 жана улантып жүктөө. Үнсүз орноткуч кардардын жабылышын күтүп, кайра иштетет."
+    ],
+    "tg": [
+      "Пеш аз вуруд навсозии сервери ширкат санҷида мешавад; имзои манифест, SHA-256 ва идомаи боргирӣ. Насби хомӯш бастани барномаро интизор шуда, онро дубора оғоз мекунад."
+    ],
+    "sourceText": "Check company server updates before sign-in; manifest signature, SHA-256 and resume.\nSilent installation waits for client exit and restarts the client."
+  },
+  "server:1.15.1.0": {
+    "kk": [
+      "Web кіру бетінде серверді таңдау, қосу және өңдеу бар. Refresh cookie бір хосттағы порттар арасында оқшауланған."
+    ],
+    "uz": [
+      "Web kirish sahifasida server tanlash, qo‘shish va tahrirlash mavjud. Refresh cookie bir xostdagi portlar orasida ajratilgan."
+    ],
+    "ky": [
+      "Web кирүү бетинде сервер тандоо, кошуу жана түзөтүү бар. Refresh cookie бир хосттун портторунун ортосунда обочолонгон."
+    ],
+    "tg": [
+      "Дар саҳифаи вуруди Web интихоб, илова ва таҳрири сервер мавҷуд аст. Refresh cookie байни портҳои як мизбон ҷудо аст."
+    ],
+    "sourceText": "Select, add and edit servers on the web sign-in page.\nRefresh cookies are isolated between ports on the same host."
+  },
+  "desktop:1.15.0.0": {
+    "kk": [
+      "Desktop және Web үшін бір пайдаланушыға бір белсенді сессия. Жаңа кіру бұрынғы bearer/refresh токендерін бірден жояды; ескі клиенттер себебін көрсетіп, кіру бетіне оралады."
+    ],
+    "uz": [
+      "Desktop va Web uchun bir foydalanuvchiga bitta faol sessiya. Yangi kirish eski bearer/refresh tokenlarini darhol bekor qiladi; eski mijozlar sabab bilan kirish sahifasiga qaytadi."
+    ],
+    "ky": [
+      "Desktop жана Web үчүн бир колдонуучуга бир активдүү сессия. Жаңы кирүү эски bearer/refresh токендерин дароо жокко чыгарат; эски кардарлар себебин көрсөтүп кирүүгө кайтышат."
+    ],
+    "tg": [
+      "Барои Desktop ва Web як корбар як ҷаласаи фаъол дорад. Вуруди нав token-ҳои bearer/refresh-и пешинаро фавран бекор мекунад; барномаҳои пешина бо нишон додани сабаб ба вуруд бармегарданд."
+    ],
+    "sourceText": "One active session per user across desktop and web.\nNew sign-in immediately revokes older bearer/refresh tokens.\nOlder clients return to sign-in with the session termination reason."
+  },
+  "server:1.15.0.0": {
+    "kk": [
+      "Desktop және Web үшін бір пайдаланушыға бір белсенді сессия. Жаңа кіру бұрынғы bearer/refresh токендерін бірден жояды; ескі клиенттер себебін көрсетіп, кіру бетіне оралады."
+    ],
+    "uz": [
+      "Desktop va Web uchun bir foydalanuvchiga bitta faol sessiya. Yangi kirish eski bearer/refresh tokenlarini darhol bekor qiladi; eski mijozlar sabab bilan kirish sahifasiga qaytadi."
+    ],
+    "ky": [
+      "Desktop жана Web үчүн бир колдонуучуга бир активдүү сессия. Жаңы кирүү эски bearer/refresh токендерин дароо жокко чыгарат; эски кардарлар себебин көрсөтүп кирүүгө кайтышат."
+    ],
+    "tg": [
+      "Барои Desktop ва Web як корбар як ҷаласаи фаъол дорад. Вуруди нав token-ҳои bearer/refresh-и пешинаро фавран бекор мекунад; барномаҳои пешина бо нишон додани сабаб ба вуруд бармегарданд."
+    ],
+    "sourceText": "One active session per user across desktop and web.\nNew sign-in immediately revokes older bearer/refresh tokens.\nOlder clients return to sign-in with the session termination reason."
+  },
+  "server:1.14.0.0": {
+    "kk": [
+      "/web/ клиенті: desktop үдерістері, RU/EN және бейімделгіш көрініс. HttpOnly refresh cookie арқылы кіру; барлық өңдеу серверде."
+    ],
+    "uz": [
+      "/web/ mijozi: desktop jarayonlari, RU/EN va moslashuvchan ko‘rinish. HttpOnly refresh cookie bilan kirish; barcha ishlov serverda."
+    ],
+    "ky": [
+      "/web/ кардары: desktop иш тартиби, RU/EN жана ыңгайлашуучу көрүнүш. HttpOnly refresh cookie менен кирүү; бардык иштетүү серверде."
+    ],
+    "tg": [
+      "Барномаи /web/: равандҳои desktop, RU/EN ва намуди мутобиқ. Вуруд бо HttpOnly refresh cookie; тамоми коркард дар сервер."
+    ],
+    "sourceText": "Web client at /web/: desktop workflows, RU/EN and responsive layout.\nBrowser sign-in with HttpOnly refresh cookies; all processing runs on the server."
+  },
+  "desktop:1.14.0.1": {
+    "kk": [
+      "Қабаттасқан навигация терезелері мен бет ауысу анимациясы жойылды. Өзгерістер тарихы ұзын белгілерді қайта есептемей, табиғи мәтін айналдыруын қолданады."
+    ],
+    "uz": [
+      "Shaffof navigatsiya oynalari va bo‘lim almashtirish animatsiyasi olib tashlandi. O‘zgarishlar tarixi uzun yozuvlarni qayta hisoblamay, tabiiy matn aylantirishdan foydalanadi."
+    ],
+    "ky": [
+      "Кабатталган багыттоо терезелери жана бөлүм которуу анимациясы алынды. Өзгөрүүлөр тарыхы узун белгилерди кайра эсептебей, кадимки текст жылдырууну колдонот."
+    ],
+    "tg": [
+      "Равзанаҳои қабатии роҳнамоӣ ва аниматсияи ивази бахш хориҷ шуданд. Таърихи тағйирот аз ҳаракати одии матн бе ҳисоби дубораи навиштаҳои дароз истифода мебарад."
+    ],
+    "sourceText": "Removed layered navigation windows and tab switching animations.\nRelease notes use native text scrolling without long auto-sized labels."
+  },
+  "desktop:1.14.0.0": {
+    "kk": [
+      "RU/EN өзгерістер тарихы соңғы бет ретінде қосылды. Базалар бетінде тапсырма UUID, бастапқы және нәтиже үшін ықшам көшіру түймелері бар."
+    ],
+    "uz": [
+      "RU/EN o‘zgarishlar tarixi oxirgi bo‘lim sifatida qo‘shildi. Bazalar bo‘limida vazifa UUID, manba va natija uchun ixcham nusxalash tugmalari bor."
+    ],
+    "ky": [
+      "RU/EN өзгөрүүлөр тарыхы акыркы бөлүм катары кошулду. Базалар бөлүмүндө тапшырма UUID, булак жана натыйжа үчүн чакан көчүрүү баскычтары бар."
+    ],
+    "tg": [
+      "Таърихи тағйироти RU/EN ҳамчун бахши охирин илова шуд. Дар бахши пойгоҳҳо тугмаҳои хурди нусхабардории UUID, манбаъ ва натиҷа ҳастанд."
+    ],
+    "sourceText": "Release notes as the last tab, available in Russian and English.\nCompact copy buttons for the job UUID, source and result on the Databases tab."
+  },
+  "desktop:1.13.1.0": {
+    "kk": [
+      "База тапсырмасы орындалып жатқанда пайыз көрсетіледі. Жаңа кестенің әдепкі аты — <name>pdc; сервер қайта іске қосылса, пішін қалпына келеді."
+    ],
+    "uz": [
+      "Baza vazifasi ishlayotganda foiz ko‘rsatiladi. Yangi jadvalning odatiy nomi <name>pdc; server qayta ishga tushsa, shakl tiklanadi."
+    ],
+    "ky": [
+      "База тапшырмасы иштеп жатканда пайыз көрсөтүлөт. Жаңы таблицанын демейки аты <name>pdc; сервер кайра иштесе, форма калыбына келет."
+    ],
+    "tg": [
+      "Ҳангоми кори вазифаи пойгоҳ фоиз нишон дода мешавад. Номи пешфарзи ҷадвали нав <name>pdc; баъди оғози дубораи сервер шакл барқарор мешавад."
+    ],
+    "sourceText": "Database anonymization percentage, shown only while a job is running.\nDefault new table name: <name>pdc.\nRecover the form after a server restart."
+  },
+  "server:1.13.1.0": {
+    "kk": [
+      "База тапсырмаларына жол саны мен пайыз қосылды. Oracle бастапқы кілтін табу түзетілді; email/телефон өңдеуі жылдамдады, шек — 100000 жол. Көшірме аты — <name>pdc."
+    ],
+    "uz": [
+      "Baza vazifalariga satr soni va foiz qo‘shildi. Oracle asosiy kalitini topish tuzatildi; email/telefon ishlovi tezlashdi, chegara 100000 satr. Nusxa nomi <name>pdc."
+    ],
+    "ky": [
+      "База тапшырмаларына сап саны жана пайыз кошулду. Oracle негизги ачкычын табуу оңдолду; email/телефон иштетүү ылдамдады, чек 100000 сап. Көчүрмө аты <name>pdc."
+    ],
+    "tg": [
+      "Ба вазифаҳои пойгоҳ шумораи сатр ва фоиз илова шуд. Ёфтани калиди асосии Oracle ислоҳ шуд; коркарди email/телефон тезтар, ҳад 100000 сатр. Номи нусха <name>pdc."
+    ],
+    "sourceText": "Total row counts and percentage progress for database jobs.\nFixed Oracle primary key discovery.\nFaster email and phone processing; 100,000 rows per job.\nDefault copy name: <name>pdc."
+  },
+  "desktop:1.13.0.0": {
+    "kk": [
+      "Базалар беті: PostgreSQL, ClickHouse, SQL Server, Oracle. Көшірме жасау не бастапқы кестені өзгерту, тоқтату және күйін тексеру; міндетті өрістер мен бастапқы деректі өзгерту растауы бар."
+    ],
+    "uz": [
+      "Bazalar bo‘limi: PostgreSQL, ClickHouse, SQL Server, Oracle. Nusxa yaratish yoki asl jadvalni o‘zgartirish, bekor qilish va holat tekshiruvi; majburiy maydonlar va asl ma’lumotni o‘zgartirish tasdig‘i bor."
+    ],
+    "ky": [
+      "Базалар бөлүмү: PostgreSQL, ClickHouse, SQL Server, Oracle. Көчүрмө түзүү же баштапкы таблицаны өзгөртүү, токтотуу жана абалды текшерүү; милдеттүү талаалар жана баштапкы маалыматты өзгөртүү ырастоосу бар."
+    ],
+    "tg": [
+      "Бахши пойгоҳҳо: PostgreSQL, ClickHouse, SQL Server, Oracle. Сохтани нусха ё тағйири ҷадвали аслӣ, бекоркунӣ ва санҷиши ҳолат; майдонҳои ҳатмӣ ва тасдиқи тағйири асл мавҷуданд."
+    ],
+    "sourceText": "Databases tab: PostgreSQL, ClickHouse, SQL Server and Oracle.\nCreate a copy or modify the source table; cancel and check job status.\nRequired field validation and confirmation before modifying source data."
+  },
+  "server:1.13.0.0": {
+    "kk": [
+      "PostgreSQL, ClickHouse, SQL Server және Oracle кестелерін иесіздендіру. Фондық тапсырмалар, көшірме не орнында өңдеу, тоқтату және күй. Әкімші рөлі мен жазылым қажет; рұқсатты қосылымдарды әкімші баптайды."
+    ],
+    "uz": [
+      "PostgreSQL, ClickHouse, SQL Server va Oracle jadvallarini egasizlantirish. Fon vazifalari, nusxa yoki joyida ishlov, bekor qilish va holat. Administrator roli va obuna kerak; ruxsatli ulanishlarni administrator sozlaydi."
+    ],
+    "ky": [
+      "PostgreSQL, ClickHouse, SQL Server жана Oracle таблицаларын ээсиздендирүү. Фон тапшырмалары, көчүрмө же ордунда иштетүү, токтотуу жана абал. Администратор ролу жана жазылуу керек; уруксаттуу кошулууну администратор жөндөйт."
+    ],
+    "tg": [
+      "Беномсозии ҷадвалҳои PostgreSQL, ClickHouse, SQL Server ва Oracle. Вазифаҳои пасзамина, нусха ё кор дар ҷой, бекоркунӣ ва ҳолат. Нақши Маъмур ва обуна лозиманд; пайвастҳои иҷозатшударо маъмур танзим мекунад."
+    ],
+    "sourceText": "Anonymize PostgreSQL, ClickHouse, SQL Server and Oracle tables.\nBackground jobs, copy or in-place mode, cancellation and status checks.\nAdmin role and subscription required; administrators configure allowed connections."
+  },
+  "desktop:1.12.1.1": {
+    "kk": [
+      "Екі тақырыпта кіру түймесінің контрастылығы жақсартылды."
+    ],
+    "uz": [
+      "Ikkala mavzuda kirish tugmasi kontrasti yaxshilandi."
+    ],
+    "ky": [
+      "Эки темада кирүү баскычынын контрасты жакшырды."
+    ],
+    "tg": [
+      "Контрасти тугмаи вуруд дар ҳар ду намуд беҳтар шуд."
+    ],
+    "sourceText": "Improved login button contrast in both themes."
+  },
+  "desktop:1.12.1.0": {
+    "kk": [
+      "Ашық және қараңғы тақырыптар сақталады және қайта іске қоспай қолданылады."
+    ],
+    "uz": [
+      "Yorug‘ va qorong‘i mavzular saqlanib, qayta ishga tushirmasdan qo‘llanadi."
+    ],
+    "ky": [
+      "Жарык жана караңгы темалар сакталып, кайра иштетүүсүз колдонулат."
+    ],
+    "tg": [
+      "Намудҳои равшан ва торик нигоҳ дошта шуда, бе оғози дубора татбиқ мешаванд."
+    ],
+    "sourceText": "Light and dark themes, saved and applied without restarting."
+  },
+  "desktop:1.12.0.5": {
+    "kk": [
+      "Жазылым әр 10 минутта және сұрау бойынша тексеріледі."
+    ],
+    "uz": [
+      "Obuna har 10 daqiqada va talabga ko‘ra tekshiriladi."
+    ],
+    "ky": [
+      "Жазылуу ар 10 мүнөттө жана суроо боюнча текшерилет."
+    ],
+    "tg": [
+      "Обуна ҳар 10 дақиқа ва бо дархост санҷида мешавад."
+    ],
+    "sourceText": "Subscription checks every 10 minutes and on demand."
+  },
+  "desktop:1.12.0.4": {
+    "kk": [
+      "Ұйым атауы мен UUID көшіру үшін ықшам белгіше түймелері."
+    ],
+    "uz": [
+      "Tashkilot nomi va UUID’ni nusxalash uchun ixcham belgili tugmalar."
+    ],
+    "ky": [
+      "Уюмдун атын жана UUID көчүрүү үчүн чакан сүрөттүү баскычтар."
+    ],
+    "tg": [
+      "Тугмаҳои хурд барои нусхабардории номи ташкилот ва UUID."
+    ],
+    "sourceText": "Compact icon buttons to copy the organization name and UUID."
+  },
+  "server:1.12.0.1": {
+    "kk": [
+      "Жазылым күйінде ұйым атауы көрсетіледі."
+    ],
+    "uz": [
+      "Obuna holatida tashkilot nomi ko‘rsatiladi."
+    ],
+    "ky": [
+      "Жазылуу абалында уюмдун аты көрсөтүлөт."
+    ],
+    "tg": [
+      "Дар ҳолати обуна номи ташкилот нишон дода мешавад."
+    ],
+    "sourceText": "Organization name in subscription status."
+  },
+  "server:1.12.0.0": {
+    "kk": [
+      "Жазылым кодтары ұйым мен аяқталу күніне байланған. Жаңа құжаттар мен топтамаларды өңдеудің алдында жазылым тексеріледі."
+    ],
+    "uz": [
+      "Obuna kodlari tashkilot va tugash sanasiga bog‘langan. Yangi hujjat va paketlarni ishlashdan oldin obuna tekshiriladi."
+    ],
+    "ky": [
+      "Жазылуу коддору уюмга жана бүтүү датасына байланган. Жаңы документтер менен топтомдорду иштетүүдөн мурда жазылуу текшерилет."
+    ],
+    "tg": [
+      "Рамзҳои обуна ба ташкилот ва санаи анҷом вобастаанд. Пеш аз коркарди ҳуҷҷатҳо ва гурӯҳҳои нав обуна санҷида мешавад."
+    ],
+    "sourceText": "Subscription activation codes bound to an organization and expiration date.\nSubscription checks before processing new documents and batches."
+  }
+}

@@ -1,9 +1,11 @@
 ---
-import type { Lang } from '../i18n/content';
+import { ui } from '../i18n/ui';
+import {content, type Lang} from '../i18n/content';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const ru = lang === 'ru';
-const slides = ru ? [
+const t = content[lang];
+const screenshotLang = lang === 'ru' ? 'ru' : 'en';
+const originalSlides = lang === 'ru' ? [
   ['anonymize', 'Обезличивание документа', 'Перетащите файл в окно приложения, чтобы подготовить обезличенную копию.'],
   ['batch', 'Пакетная обработка', 'Работайте с несколькими документами и отслеживайте готовность результатов.'],
   ['placeholders', 'Метки замены', 'Задавайте метки для разных типов персональных данных и форматов документов.'],
@@ -16,40 +18,47 @@ const slides = ru ? [
   ['modes', 'Replacement modes', 'Choose between generating new values and using a replacement label.'],
   ['settings', 'Application settings', 'Manage server profiles, the interface language and how results are saved.'],
 ];
-const label = ru ? 'Интерфейс PDC.Desktop' : 'PDC.Desktop interface';
+const slides = (lang === 'ru' || lang === 'en') ? originalSlides : [
+ ['anonymize', t.desktop.items[0].title, t.how.steps[2].text],
+ ['batch', t.desktop.items[1].title, t.desktop.items[1].text],
+ ['placeholders', ui(lang, 'Replacement labels'), t.desktop.items[3].text],
+ ['modes', ui(lang, 'Replacement modes'), t.server.items[1].text],
+ ['settings', ui(lang, 'Application settings'), t.desktop.items[4].text],
+];
+const label = ui(lang, "PDC.Desktop interface");
 ---
-<section class="desktop-gallery" data-gallery aria-label={label} aria-roledescription={ru ? 'карусель' : 'carousel'}>
+<section class="desktop-gallery" data-gallery aria-label={label} aria-roledescription={ui(lang, "carousel")}>
   <div class="gallery-heading">
-    <div><p class="eyebrow">PDC.Desktop</p><h3>{ru ? 'Пять экранов — один рабочий процесс' : 'Five views, one workflow'}</h3></div>
+    <div><p class="eyebrow">PDC.Desktop</p><h3>{ui(lang, "Five views, one workflow")}</h3></div>
     <span class="gallery-count" data-gallery-count aria-live="polite" aria-atomic="true">1 / 5</span>
   </div>
   <div class="gallery-stage">
     <ul class="gallery-track" id="desktop-gallery-track" tabindex="0" aria-label={label}>
       {slides.map(([key, title], index) => (
-        <li class="gallery-slide" aria-roledescription={ru ? 'слайд' : 'slide'} aria-label={`${index + 1} / 5: ${title}`}>
-          <a href={`${import.meta.env.BASE_URL}img/desktop-${lang}-${key}.png`} data-open={index} aria-haspopup="dialog" aria-label={`${title} — ${ru ? 'открыть полный размер' : 'open full size'}`}>
-            <img src={`${import.meta.env.BASE_URL}img/desktop-${lang}-${key}.png`} width="1180" height="780" alt={`PDC.Desktop — ${title}`} loading="lazy" />
+        <li class="gallery-slide" aria-roledescription={ui(lang, "slide")} aria-label={`${index + 1} / 5: ${title}`}>
+          <a href={`${import.meta.env.BASE_URL}img/desktop-${screenshotLang}-${key}.png`} data-open={index} aria-haspopup="dialog" aria-label={`${title} — ${ui(lang, "open full size")}`}>
+            <img src={`${import.meta.env.BASE_URL}img/desktop-${screenshotLang}-${key}.png`} width="1180" height="780" alt={`PDC.Desktop — ${title}`} loading="lazy" />
           </a>
         </li>
       ))}
     </ul>
-    <button type="button" class="gallery-arrow" data-prev aria-controls="desktop-gallery-track" aria-label={ru ? 'Предыдущий скриншот' : 'Previous screenshot'} hidden>←</button>
-    <button type="button" class="gallery-arrow" data-next aria-controls="desktop-gallery-track" aria-label={ru ? 'Следующий скриншот' : 'Next screenshot'} hidden>→</button>
+    <button type="button" class="gallery-arrow" data-prev aria-controls="desktop-gallery-track" aria-label={ui(lang, "Previous screenshot")} hidden>←</button>
+    <button type="button" class="gallery-arrow" data-next aria-controls="desktop-gallery-track" aria-label={ui(lang, "Next screenshot")} hidden>→</button>
   </div>
   <p class="gallery-caption"><strong data-gallery-title>{slides[0][1]}</strong><span data-gallery-description>{slides[0][2]}</span></p>
-  <div class="gallery-dots" role="group" aria-label={ru ? 'Выбрать скриншот' : 'Choose screenshot'} hidden>
+  <div class="gallery-dots" role="group" aria-label={ui(lang, "Choose screenshot")} hidden>
     {slides.map(([, title, description], i) => <button type="button" data-slide={i} data-title={title} data-description={description} aria-controls="desktop-gallery-track" aria-label={`${i + 1}: ${title}`} aria-current={i === 0 ? 'true' : undefined}><span></span></button>)}
   </div>
-  <p class="gallery-note">{ru ? 'Скриншоты приложения с демонстрационными настройками. Нажмите на изображение, чтобы рассмотреть детали.' : 'Application screenshots with demo settings. Select an image to see the details.'}</p>
-  <dialog class="gallery-viewer" aria-label={ru ? 'Полноэкранный просмотр PDC.Desktop' : 'PDC.Desktop fullscreen viewer'}>
+  <p class="gallery-note">{ui(lang, "Application screenshots with demo settings. Select an image to see the details.")}</p>
+  <dialog class="gallery-viewer" aria-label={ui(lang, "PDC.Desktop fullscreen viewer")}>
     <div class="viewer-toolbar">
       <p>PDC.Desktop <span data-viewer-count>1 / 5</span></p>
-      <button type="button" class="viewer-close" data-close autofocus><span aria-hidden="true">×</span><span>{ru ? 'Вернуться на сайт' : 'Back to website'}</span></button>
+      <button type="button" class="viewer-close" data-close autofocus><span aria-hidden="true">×</span><span>{ui(lang, "Back to website")}</span></button>
     </div>
     <div class="viewer-stage">
       <img data-viewer-image width="1180" height="780" alt="" />
-      <button type="button" class="gallery-arrow" data-prev aria-label={ru ? 'Предыдущий скриншот' : 'Previous screenshot'}>←</button>
-      <button type="button" class="gallery-arrow" data-next aria-label={ru ? 'Следующий скриншот' : 'Next screenshot'}>→</button>
+      <button type="button" class="gallery-arrow" data-prev aria-label={ui(lang, "Previous screenshot")}>←</button>
+      <button type="button" class="gallery-arrow" data-next aria-label={ui(lang, "Next screenshot")}>→</button>
     </div>
     <p class="viewer-caption" data-viewer-title></p>
   </dialog>

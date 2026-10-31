@@ -1,0 +1,249 @@
+{
+  "htmlLang": "uz",
+  "meta": {
+    "title": "Personal Data Cleaner (PDC) — hujjatlardagi shaxsiy ma’lumotlarni egasizlantirish",
+    "description": "PDC ism, telefon, email, karta raqamlari va boshqa shaxsiy ma’lumotlarni topib almashtiradi. Qayta ishlash tashkilotingiz serverida bajariladi."
+  },
+  "nav": {
+    "features": "Imkoniyatlar",
+    "how": "Qanday ishlaydi",
+    "example": "Misol",
+    "requirements": "Talablar",
+    "faq": "Savollar",
+    "contact": "Aloqa"
+  },
+  "langSwitch": {
+    "label": "English",
+    "target": "en"
+  },
+  "hero": {
+    "title": "Personal Data Cleaner",
+    "tagline": "Hujjatlardagi shaxsiy ma’lumotlarni o‘z serverlaringizda egasizlantirish",
+    "lead": "PDC ism, telefon, email, bank kartalari, IBAN, Rossiya SNILS/INN va boshqa shaxsiy ma’lumotlarni topib, haqiqatga o‘xshash to‘qima qiymatlar yoki belgilar bilan almashtiradi. Hujjat shakli saqlanadi, hujjatlar tashkilot tarmog‘idan chiqmaydi.",
+    "benefits": [
+      "Internetsiz ishlaydi",
+      "Ma’lumotlar tashqariga chiqmaydi",
+      "Kompaniya doirasida egasizlantirish ustidan to‘liq nazorat",
+      "Ma’lumotlar tahlili va dasturchilar uchun sinov to‘plamlarini tayyorlash vositasi"
+    ],
+    "primary": "Imkoniyatlar",
+    "secondary": "Aloqa"
+  },
+  "how": {
+    "title": "Qanday ishlaydi",
+    "steps": [
+      {
+        "title": "Tarmog‘ingizdagi server",
+        "text": "Administrator PDC.Server’ni Docker Compose yordamida tashkilot serveriga joylashtiradi. Aniqlash modellari mahalliy ishlaydi."
+      },
+      {
+        "title": "Xodimlar uchun mijoz ilovasi",
+        "text": "PDC.Desktop administrator huquqisiz o‘rnatiladi; server manzili o‘rnatishda ko‘rsatiladi."
+      },
+      {
+        "title": "Hujjatni oynaga tashlang",
+        "text": "Faylni ilova oynasiga sudrab, shu formatdagi egasizlantirilgan nusxani oling."
+      }
+    ]
+  },
+  "desktop": {
+    "title": "PDC.Desktop",
+    "lead": "Xodimlarning server bilan ishlashi uchun Windows ilovasi.",
+    "items": [
+      {
+        "title": "Bitta hujjat",
+        "text": "Faylni tanlang yoki oynaga tashlang; natija asl fayl yonida name_anonymized nomi bilan saqlanadi."
+      },
+      {
+        "title": "Paketli ishlov",
+        "text": "Bir nechta fayl yoki butun jild (odatda 20 fayl / 100 MB). Ishlov fonda bajariladi, tayyor natijalar yuklab olinadi."
+      },
+      {
+        "title": "Almashtirish sabablari",
+        "text": "Har bir hujjatda nima, qayerda va nega almashtirilganini ko‘ring; CSV va JSON eksporti mavjud."
+      },
+      {
+        "title": "Boshqaruv",
+        "text": "Administrator roli uchun foydalanuvchilar, rollar, belgilar va hujjat turlari bo‘yicha almashtirish rejimlari."
+      },
+      {
+        "title": "Bir nechta server",
+        "text": "Tez almashish imkonini beruvchi server profillari."
+      },
+      {
+        "title": "Rus va ingliz tillari",
+        "text": "Ilova interfeysi tili sozlamalarda almashtiriladi."
+      },
+      {
+        "title": "Oson o‘rnatish",
+        "text": "Administrator huquqisiz joriy foydalanuvchi uchun o‘rnatish; ish joylariga yashirin o‘rnatish qo‘llab-quvvatlanadi."
+      }
+    ]
+  },
+  "server": {
+    "title": "PDC.Server",
+    "lead": "Shaxsiy ma’lumotlarni topadi va almashtiradi, sozlamalar hamda qarorlar jurnalini saqlaydi.",
+    "items": [
+      {
+        "title": "Qoidalar va modellar",
+        "text": "Tuzilgan ma’lumotlar nazorat summasini tekshiruvchi qoidalar bilan, ismlar neyron modellar bilan aniqlanadi."
+      },
+      {
+        "title": "Haqiqatga o‘xshash almashtirish",
+        "text": "Ism bir xil jins va kelishikdagi ismga, telefon ayni format va mamlakat kodidagi raqamga almashtiriladi. Yoki [EMAIL] kabi belgi ishlatiladi; rejim sozlanadi."
+      },
+      {
+        "title": "Skanlar va rasmlar",
+        "text": "Rasmlar, ko‘p sahifali TIFF va skanerlangan PDF ichida OCR ishlaydi; yangi qiymat asl matn o‘rniga chiziladi."
+      },
+      {
+        "title": "Shakl saqlanadi",
+        "text": "Almashtirish asl qiymat o‘rniga qo‘yiladi, shrift va joylashuv o‘zgarmaydi. Asl matn uzunligidagi belgilarni tanlash mumkin."
+      },
+      {
+        "title": "Foydalanuvchilar va jurnal",
+        "text": "Login va parol, Foydalanuvchi va Administrator rollari, har bir hujjat uchun almashtirish sabablari jurnali."
+      },
+      {
+        "title": "REST API",
+        "text": "Boshqa tizimlar bilan integratsiya uchun barcha imkoniyatlar Swagger hujjatli API orqali ochiq."
+      }
+    ]
+  },
+  "pii": {
+    "title": "Nimalar topiladi va almashtiriladi",
+    "lead": "Tuzilgan ma’lumotlar hujjat tilidan qat’i nazar, ismlar rus va ingliz matnlarida aniqlanadi.",
+    "rows": [
+      [
+        "Telefonlar",
+        "Rossiya, AQSH va xalqaro format (+44, +49 …)"
+      ],
+      [
+        "Email",
+        "Elektron pochta manzillari"
+      ],
+      [
+        "Bank kartalari",
+        "Nazorat summasi tekshiriladi (Luhn algoritmi)"
+      ],
+      [
+        "SNILS, INN (Rossiya)",
+        "Nazorat raqamlari tekshiriladi"
+      ],
+      [
+        "IBAN",
+        "Bo‘shliq bilan yoki bo‘shliqsiz, nazorat summasi tekshiriladi"
+      ],
+      [
+        "To‘liq ism",
+        "Rus va ingliz ismlari, istalgan kelishikda"
+      ],
+      [
+        "Rossiya pasporti, AQSH SSN",
+        "Server sozlamalarida yoqiladi"
+      ]
+    ],
+    "note": "Formatga mos, ammo nazorat summasi xato qiymat alohida belgi, masalan [FAKEBANKCARD], bilan almashtiriladi."
+  },
+  "formats": {
+    "title": "Hujjat formatlari",
+    "rows": [
+      [
+        "Word",
+        ".doc, .docx"
+      ],
+      [
+        "Excel",
+        ".xls, .xlsx"
+      ],
+      [
+        "PowerPoint",
+        ".ppt, .pptx"
+      ],
+      [
+        "PDF",
+        "Matnli va skanerlangan"
+      ],
+      [
+        "Matn",
+        ".txt, .csv"
+      ],
+      [
+        "Rasmlar",
+        ".png, .jpg, .jpeg, .bmp, .tif, .tiff"
+      ]
+    ]
+  },
+  "example": {
+    "title": "Misol: xizmat yozuvi skani",
+    "lead": "To‘qima ma’lumotli hujjat ishlovdan oldin va keyin. Ism va telefonlarga yangi tasodifiy qiymatlar yaratilgan, email esa [EMAIL] belgisiga almashtirilgan. Har bir ma’lumot turi rejimini sozlamalarda tanlash mumkin.",
+    "before": "Oldin",
+    "after": "Keyin",
+    "caption": "Ismlar, telefonlar, email va karta raqami almashtirilgan; matn joylashuvi va jadval saqlangan."
+  },
+  "screenshot": {
+    "title": "PDC.Desktop",
+    "alt": "PDC.Desktop asosiy oynasi: hujjatni egasizlantirish",
+    "caption": "Faylni oynaga tashlab, egasizlantirilgan nusxani oling."
+  },
+  "requirements": {
+    "title": "Talablar va joylashtirish",
+    "server": {
+      "title": "PDC.Server",
+      "items": [
+        "Docker va Docker Compose o‘rnatilgan Linux yoki Windows",
+        "Xotira — kamida 16 GB, disk — taxminan 25 GB",
+        "Serverga internet kerak emas: ma’lumotlar tashkilot tarmog‘ida qayta ishlanadi"
+      ]
+    },
+    "client": {
+      "title": "PDC.Desktop",
+      "items": [
+        "Windows 10 yoki 11, 64 bit",
+        "Serverga tarmoq orqali kirish"
+      ]
+    },
+    "deploy": {
+      "title": "Joylashtirish",
+      "items": [
+        "docker compose up buyrug‘i PDC.Server, PostgreSQL va model konteynerlarini ishga tushiradi",
+        "Mijozlar o‘rnatuvchi yordamida, jumladan server manzilini parametrda ko‘rsatib yashirin o‘rnatiladi",
+        "Yetkazib berishda administrator qo‘llanmasi taqdim etiladi"
+      ]
+    }
+  },
+  "faq": {
+    "title": "Ko‘p beriladigan savollar",
+    "items": [
+      {
+        "q": "Hujjatlar qayerga yuboriladi?",
+        "a": "Faqat tashkilotingizning PDC.Server serveriga. Asl fayl saqlanmaydi; paket natijalari cheklangan vaqt (odatda 24 soat) saqlanib, so‘ng o‘chiriladi. Ishlangan hujjatlarni serverda saqlash odatda o‘chirilgan."
+      },
+      {
+        "q": "Internet kerakmi?",
+        "a": "PDC.Server va PDC.Desktop ishlashi uchun internet kerak emas. Hujjatlar tashkilot serverida qayta ishlanadi, ilova ichki tarmoq orqali ulanadi."
+      },
+      {
+        "q": "Ismlar qanchalik ishonchli topiladi?",
+        "a": "Mashinaviy o‘rganish modellari 100% kafolat bermaydi. Muhim hujjatlar uchun natija va almashtirish sabablari jurnalini tekshiring."
+      },
+      {
+        "q": "Hujjat shakli saqlanadimi?",
+        "a": "Ha. Almashtirish asl matn o‘rniga qo‘yiladi, shrift va joylashuv o‘zgarmaydi. Skanlarda yangi qiymat asl matn o‘rniga chiziladi."
+      },
+      {
+        "q": "Qaysi hujjat tillari qo‘llab-quvvatlanadi?",
+        "a": "Ismlar rus va ingliz matnlarida; telefon, email, kartalar va boshqa tuzilgan ma’lumotlar tildan qat’i nazar aniqlanadi."
+      },
+      {
+        "q": "PDC’ni o‘z tizimlarimizga ulash mumkinmi?",
+        "a": "Ha, Swagger hujjatli server REST API orqali."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Aloqa",
+    "text": "PDC bo‘yicha savollar, takliflar va yetkazib berish so‘rovlari uchun:"
+  },
+  "footer": "Skrinshotlar va misollarda to‘qima ma’lumotlardan foydalanilgan."
+}

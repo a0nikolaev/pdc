@@ -1,23 +1,23 @@
 ---
+import { ui } from '../i18n/ui';
 import Base from '../layouts/Base.astro';
 import { content, type Lang } from '../i18n/content';
-import releases from '../data/releases.json';
+import {localizedReleases} from '../data/localized-releases';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
-const ru = lang === 'ru';
-const entries = releases[lang];
+const entries = localizedReleases(lang);
 const latest = { desktop: entries.find(r => r.component === 'desktop')!, server: entries.find(r => r.component === 'server')! };
-const title = ru ? 'История изменений' : 'Release notes';
-const description = ru ? 'Что нового в PDC.Desktop и PDC.Server: основные изменения каждого обновления.' : 'What’s new in PDC.Desktop and PDC.Server: the highlights of each update.';
+const title = ui(lang, "Release notes");
+const description = ui(lang, "What’s new in PDC.Desktop and PDC.Server: the highlights of each update.");
 const t = { ...content[lang], meta: { title: `${title} — Personal Data Cleaner`, description } };
 const base = import.meta.env.BASE_URL;
 ---
 <Base lang={lang} t={t} section="changelog/">
   <section class="release-hero container">
-    <a class="release-back" href={`${base}${lang}/`}>← {ru ? 'О продукте' : 'About the product'}</a>
-    <p class="eyebrow">PDC / {ru ? 'Развитие продукта' : 'Product evolution'}</p>
-    <h1>{ru ? 'С каждым обновлением' : 'A little better'}<br/><span>{ru ? 'лучше.' : 'with every update.'}</span></h1>
-    <p class="release-lead">{description} {ru ? 'Новые возможности, улучшения и исправления — в одном месте.' : 'New features, improvements and fixes, all in one place.'}</p>
+    <a class="release-back" href={`${base}${lang}/`}>← {ui(lang, "About the product")}</a>
+    <p class="eyebrow">PDC / {ui(lang, "Product evolution")}</p>
+    <h1>{ui(lang, "A little better")}<br/><span>{ui(lang, "with every update.")}</span></h1>
+    <p class="release-lead">{description} {ui(lang, "New features, improvements and fixes, all in one place.")}</p>
     <div class="release-current">
       {Object.entries(latest).map(([key, release]) => <a href={`#${key}-${release.version}`} class={`current-version ${key}`}>
         <span class="release-dot" aria-hidden="true"></span><span>PDC.{key === 'desktop' ? 'Desktop' : 'Server'}</span><strong>v{release.version}</strong><span aria-hidden="true">↘</span>
@@ -27,19 +27,19 @@ const base = import.meta.env.BASE_URL;
   <section class="container release-layout" aria-label={title}>
     <aside class="release-aside">
       <h2>{title}</h2>
-      <p>{ru ? 'Клиент и сервер развиваются независимо. Выберите интересующий компонент.' : 'Client and server evolve independently. Choose the component you’re interested in.'}</p>
-      <div class="release-filters" role="group" aria-label={ru ? 'Фильтр по компоненту' : 'Filter by component'} hidden>
-        <button type="button" data-release-filter="all" aria-pressed="true">{ru ? 'Все обновления' : 'All updates'} <span>{entries.length}</span></button>
+      <p>{ui(lang, "Client and server evolve independently. Choose the component you’re interested in.")}</p>
+      <div class="release-filters" role="group" aria-label={ui(lang, "Filter by component")} hidden>
+        <button type="button" data-release-filter="all" aria-pressed="true">{ui(lang, "All updates")} <span>{entries.length}</span></button>
         <button type="button" data-release-filter="desktop" aria-pressed="false">Desktop <span>{entries.filter(r => r.component === 'desktop').length}</span></button>
-        <button type="button" data-release-filter="server" aria-pressed="false">{ru ? 'Сервер' : 'Server'} <span>{entries.filter(r => r.component === 'server').length}</span></button>
+        <button type="button" data-release-filter="server" aria-pressed="false">{ui(lang, "Server")} <span>{entries.filter(r => r.component === 'server').length}</span></button>
       </div>
-      <p class="release-note">{ru ? 'Здесь — основные изменения выпущенных версий. Запланированные возможности появятся после реализации.' : 'These are highlights of released versions. Planned features will appear once implemented.'}</p>
-      <p class="release-count" aria-live="polite" data-release-count data-label={ru ? 'Показано обновлений' : 'Updates shown'}>{ru ? 'Показано обновлений' : 'Updates shown'}: {entries.length}</p>
+      <p class="release-note">{ui(lang, "These are highlights of released versions. Planned features will appear once implemented.")}</p>
+      <p class="release-count" aria-live="polite" data-release-count data-label={ui(lang, "Updates shown")}>{ui(lang, "Updates shown")}: {entries.length}</p>
     </aside>
     <div class="release-timeline">
       {entries.map(release => <article class={`release-card ${release.component}`} id={`${release.component}-${release.version}`} data-release-component={release.component}>
-        <div class="release-meta"><span class="component-badge">PDC.{release.component === 'desktop' ? 'Desktop' : 'Server'}</span><time datetime={release.date}>{new Intl.DateTimeFormat(ru ? 'ru-RU' : 'en-GB', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${release.date}T00:00:00Z`))}</time></div>
-        <div class="release-version"><h2><a href={`#${release.component}-${release.version}`}>v{release.version}</a></h2>{latest[release.component as 'desktop' | 'server'].version === release.version && <span class="latest-badge">{ru ? 'Актуальная' : 'Latest'}</span>}</div>
+        <div class="release-meta"><span class="component-badge">PDC.{release.component === 'desktop' ? 'Desktop' : 'Server'}</span><time datetime={release.date}>{new Intl.DateTimeFormat(lang, { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' }).format(new Date(`${release.date}T00:00:00Z`))}</time></div>
+        <div class="release-version"><h2><a href={`#${release.component}-${release.version}`}>v{release.version}</a></h2>{latest[release.component as 'desktop' | 'server'].version === release.version && <span class="latest-badge">{ui(lang, "Latest")}</span>}</div>
         <h3>{release.highlights[0]}</h3>
         {release.highlights.length > 1 && <ul>{release.highlights.slice(1).map(item => <li>{item}</li>)}</ul>}
       </article>)}

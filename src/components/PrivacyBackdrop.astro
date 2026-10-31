@@ -1,4 +1,5 @@
 ---
+import { ui } from '../i18n/ui';
 import type { Lang } from '../i18n/content';
 interface Props { lang: Lang }
 const { lang } = Astro.props;
@@ -33,8 +34,8 @@ const pairs = [
     <path d="m53 95 19 19 37-42" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
   </svg>
 </div>
-<button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" aria-label={lang === 'ru' ? 'Приостановить анимацию фона' : 'Pause background animation'} data-pause-label={lang === 'ru' ? 'Приостановить анимацию фона' : 'Pause background animation'} data-play-label={lang === 'ru' ? 'Включить анимацию фона' : 'Play background animation'}>
-  <span data-motion-icon aria-hidden="true">Ⅱ</span><span>{lang === 'ru' ? 'Анимация фона' : 'Background animation'}</span>
+<button class="motion-toggle" type="button" data-motion-toggle aria-pressed="false" aria-label={ui(lang, "Pause background animation")} data-pause-label={ui(lang, "Pause background animation")} data-play-label={ui(lang, "Play background animation")}>
+  <span data-motion-icon aria-hidden="true">Ⅱ</span><span>{ui(lang, "Background animation")}</span>
 </button>
 <script>
   const button = document.querySelector<HTMLButtonElement>('[data-motion-toggle]');

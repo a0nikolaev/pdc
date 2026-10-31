@@ -1,7 +1,12 @@
-// Тексты сайта на двух языках. Факты — по состоянию продукта (возможности, форматы,
+// Базовые тексты RU/EN и переводы четырёх дополнительных языков. Факты — по состоянию продукта (возможности, форматы,
 // лимиты по умолчанию); при изменении продукта обновлять здесь.
 
-export type Lang = 'ru' | 'en';
+import kk from './locales/kk.json';
+import uz from './locales/uz.json';
+import ky from './locales/ky.json';
+import tg from './locales/tg.json';
+export type { Language as Lang } from './languages';
+import type { Language as Lang } from './languages';
 
 export interface Feature {
   title: string;
@@ -29,7 +34,7 @@ export interface Content {
 
 export const contactEmail = 'a0nikolaevsoft@gmail.com';
 
-export const content: Record<Lang, Content> = {
+const originalContent: Record<'ru' | 'en', Content> = {
   ru: {
     htmlLang: 'ru',
     meta: {
@@ -298,3 +303,5 @@ export const content: Record<Lang, Content> = {
     footer: 'Screenshots and examples use fictitious data.',
   },
 };
+
+export const content: Record<Lang, Content> = {...originalContent, kk: kk as Content, uz: uz as Content, ky: ky as Content, tg: tg as Content};

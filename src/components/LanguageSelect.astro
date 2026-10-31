@@ -1,0 +1,28 @@
+---
+import {languages, languageNames} from '../i18n/languages';
+import {ui} from '../i18n/ui';
+import type {Lang} from '../i18n/content';
+interface Props {lang: Lang; section: string}
+const {lang, section} = Astro.props;
+const base = import.meta.env.BASE_URL;
+---
+<label class="language-control" data-language-control hidden>
+  <span class="visually-hidden">{ui(lang, 'Language')}</span>
+  <select aria-label={ui(lang, 'Language')} data-language-select data-base={base} data-section={section}>
+    {languages.map(code => <option value={code} lang={code} selected={code === lang}>{languageNames[code]}</option>)}
+  </select>
+</label>
+<noscript><nav class="language-fallback" aria-label={ui(lang, 'Language')}>{languages.map(code => <a href={`${base}${code}/${section}`} lang={code} hreflang={code} aria-current={code === lang ? 'page' : undefined}>{languageNames[code]}</a>)}</nav></noscript>
+<script>
+  import {isLanguage} from '../i18n/languages';
+  const select = document.querySelector<HTMLSelectElement>('[data-language-select]');
+  if (select) {
+    document.querySelector('[data-language-control]')?.removeAttribute('hidden');
+    try { localStorage.setItem('pdc-language', select.value); } catch {}
+    select.addEventListener('change', () => {
+      if (!isLanguage(select.value)) return;
+      try { localStorage.setItem('pdc-language', select.value); } catch {}
+      location.assign(`${select.dataset.base}${select.value}/${select.dataset.section}${location.search}${location.hash}`);
+    });
+  }
+</script>

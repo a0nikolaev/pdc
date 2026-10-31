@@ -1,7 +1,10 @@
 ---
+import { ui } from '../i18n/ui';
 import '../styles/global.css';
 import PrivacyBackdrop from '../components/PrivacyBackdrop.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import LanguageSelect from '../components/LanguageSelect.astro';
+import {languages} from '../i18n/languages';
 import type { Content, Lang } from '../i18n/content';
 
 interface Props {
@@ -12,7 +15,6 @@ interface Props {
 
 const { lang, t, section = '' } = Astro.props;
 const base = import.meta.env.BASE_URL;
-const other = t.langSwitch.target;
 const canonical = new URL(`${base}${lang}/${section}`, Astro.site);
 const home = `${base}${lang}/`;
 ---
@@ -32,8 +34,8 @@ const home = `${base}${lang}/`;
     <title>{t.meta.title}</title>
     <meta name="description" content={t.meta.description} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang="ru" href={new URL(`${base}ru/${section}`, Astro.site)} />
-    <link rel="alternate" hreflang="en" href={new URL(`${base}en/${section}`, Astro.site)} />
+    {languages.map(code => <link rel="alternate" hreflang={code} href={new URL(`${base}${code}/${section}`, Astro.site)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(base, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <meta property="og:title" content={t.meta.title} />
     <meta property="og:description" content={t.meta.description} />
@@ -48,7 +50,7 @@ const home = `${base}${lang}/`;
           <img src={`${base}favicon.svg`} alt="" width="28" height="28" />
           <span>PDC</span>
         </a>
-        <nav class="nav" aria-label={lang === 'ru' ? 'Главная навигация' : 'Main navigation'}>
+        <nav class="nav" aria-label={ui(lang, "Main navigation")}>
           <a href={`${home}#features`}>{t.nav.features}</a>
           <a href={`${home}#how`}>{t.nav.how}</a>
           <a href={`${home}#example`}>{t.nav.example}</a>
@@ -57,15 +59,15 @@ const home = `${base}${lang}/`;
           <a href={`${home}#contact`}>{t.nav.contact}</a>
         </nav>
         <div class="header-tools">
-          <a class="release-link" href={`${home}changelog/`} aria-current={section === 'changelog/' ? 'page' : undefined}>{lang === 'ru' ? 'Обновления' : 'Updates'}</a>
+          <a class="release-link" href={`${home}changelog/`} aria-current={section === 'changelog/' ? 'page' : undefined}>{ui(lang, "Updates")}</a>
           <details class="investor-menu">
-            <summary>{lang === 'ru' ? 'Для инвесторов' : 'For investors'}</summary>
+            <summary>{ui(lang, "For investors")}</summary>
             <div class="investor-downloads">
-              {(lang === 'ru' ? ['RU', 'EN'] : ['EN', 'RU']).map(pdfLang => <a href={`${base}downloads/PDC_Startup_Deck_${pdfLang}_V3.pdf`} download={`PDC_Startup_Deck_${pdfLang}_V3.pdf`} lang={pdfLang.toLowerCase()}>{lang === 'ru' ? 'Скачать презентацию' : 'Download presentation'} · {pdfLang} (PDF)</a>)}
+              {(lang === 'ru' ? ['RU', 'EN'] : ['EN', 'RU']).map(pdfLang => <a href={`${base}downloads/PDC_Startup_Deck_${pdfLang}_V3.pdf`} download={`PDC_Startup_Deck_${pdfLang}_V3.pdf`} hreflang={pdfLang.toLowerCase()}>{ui(lang, "Download presentation")} · {pdfLang} (PDF)</a>)}
             </div>
           </details>
           <ThemeToggle lang={lang} />
-          <a class="lang-switch" href={`${base}${other}/${section}`} hreflang={other} lang={other}>{t.langSwitch.label}</a>
+          <LanguageSelect lang={lang} section={section} />
         </div>
       </div>
     </header>
