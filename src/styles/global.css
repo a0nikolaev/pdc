@@ -520,3 +520,14 @@ html { scrollbar-gutter: stable; }
 .theme-icon-moon { display: none; }
 [data-theme='light'] .theme-icon-moon { display: block; }
 [data-theme='light'] .theme-icon-sun { display: none; }
+
+/* Native disclosure keeps investor downloads usable with keyboard and without JS. */
+.investor-menu { position:relative; font-size:.85rem; }
+.investor-menu summary { cursor:pointer; padding:8px; border-radius:8px; white-space:nowrap; }
+.investor-menu summary:hover { color:var(--accent); background:var(--accent-soft); }
+.investor-downloads { position:absolute; right:0; top:calc(100% + 8px); z-index:30; min-width:250px; max-width:calc(100vw - 32px); padding:8px; border:1px solid var(--border); border-radius:12px; background:var(--card); box-shadow:var(--shadow); }
+.investor-downloads a { display:block; padding:12px; text-decoration:none; border-radius:8px; }
+.investor-downloads a:hover { background:var(--accent-soft); }
+:focus-visible { outline:2px solid var(--accent); outline-offset:3px; }
+@media(max-width:1100px) { .header-row { flex-wrap:wrap; } .header-tools { margin-left:auto; flex-wrap:wrap; justify-content:flex-end; } }
+@media(max-width:480px) { .header-tools { flex:1 1 100%; justify-content:space-between; gap:4px; } }

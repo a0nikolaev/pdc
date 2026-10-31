@@ -67,3 +67,10 @@ npm run build
 2. `git remote add origin https://github.com/a0nikolaev/pdc.git && git push -u origin main`
 3. Settings → Pages → Build and deployment → Source: **GitHub Actions**.
 4. После первого запуска workflow сайт доступен по адресу выше.
+
+## Для инвесторов
+
+В шапке доступно меню скачивания PDF V3 RU/EN. Файлы находятся в
+`public/downloads/`, атрибут `download` запускает сохранение файла.
+При обновлении PDF заменить обе версии из `PDC/presentation/output/`,
+обновить ссылки меню и убрать старые копии.

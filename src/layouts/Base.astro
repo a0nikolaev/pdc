@@ -58,6 +58,12 @@ const home = `${base}${lang}/`;
         </nav>
         <div class="header-tools">
           <a class="release-link" href={`${home}changelog/`} aria-current={section === 'changelog/' ? 'page' : undefined}>{lang === 'ru' ? 'Обновления' : 'Updates'}</a>
+          <details class="investor-menu">
+            <summary>{lang === 'ru' ? 'Для инвесторов' : 'For investors'}</summary>
+            <div class="investor-downloads">
+              {(lang === 'ru' ? ['RU', 'EN'] : ['EN', 'RU']).map(pdfLang => <a href={`${base}downloads/PDC_Startup_Deck_${pdfLang}_V3.pdf`} download={`PDC_Startup_Deck_${pdfLang}_V3.pdf`} lang={pdfLang.toLowerCase()}>{lang === 'ru' ? 'Скачать презентацию' : 'Download presentation'} · {pdfLang} (PDF)</a>)}
+            </div>
+          </details>
           <ThemeToggle lang={lang} />
           <a class="lang-switch" href={`${base}${other}/${section}`} hreflang={other} lang={other}>{t.langSwitch.label}</a>
         </div>
@@ -73,3 +79,13 @@ const home = `${base}${lang}/`;
     </footer>
   </body>
 </html>
+
+<script>
+  const investors = document.querySelector<HTMLDetailsElement>('.investor-menu');
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && investors?.open) { investors.open = false; investors.querySelector('summary')?.focus(); }
+  });
+  document.addEventListener('click', event => {
+    if (investors?.open && !investors.contains(event.target as Node)) investors.open = false;
+  });
+</script>
