@@ -36,7 +36,7 @@ const home = `${base}${lang}/`;
     <meta name="description" content={t.meta.description} />
     <link rel="canonical" href={canonical} />
     {languages.map(code => <link rel="alternate" hreflang={code} href={new URL(`${base}${code}/${section}`, Astro.site)} />)}
-    <link rel="alternate" hreflang="x-default" href={new URL(base, Astro.site)} />
+    <link rel="alternate" hreflang="x-default" href={new URL(section ? `${base}en/${section}` : base, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <SocialMeta title={t.meta.title} description={t.meta.description} url={canonical} />
   </head>

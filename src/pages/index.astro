@@ -9,6 +9,9 @@ const base = import.meta.env.BASE_URL;
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Personal Data Cleaner (PDC)</title>
+    <link rel="canonical" href={new URL(base, Astro.site)} />
+    {languages.map(lang => <link rel="alternate" hreflang={lang} href={new URL(`${base}${lang}/`, Astro.site)} />)}
+    <link rel="alternate" hreflang="x-default" href={new URL(base, Astro.site)} />
     <SocialMeta title="Personal Data Cleaner (PDC)" description="Desktop, Web and Server for document privacy." url={new URL(base, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
     <script>
