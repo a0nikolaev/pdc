@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 const langs=['ru','en','kk','uz','ky','tg'];
 const read=async file=>JSON.parse(await fs.readFile(file,'utf8'));
 const ui=await read('src/i18n/ui.json');
@@ -15,6 +16,10 @@ for(const lang of langs){
   const html=await fs.readFile(`dist/${lang}/${section}index.html`,'utf8');
   assert(html.includes(`<html lang="${lang}"`));
   assert(!html.includes('undefined')&&!html.includes('[object Object]'));
+  if (!section) {
+    assert(html.includes('id="pdc-web"') && html.includes('PDC.Web'));
+    for (const product of ['desktop','web']) assert.equal((html.match(new RegExp(`id="${product}-gallery-track"`,'g')) || []).length,1,`${lang}/${product} gallery controls`);
+  }
   for(const target of langs)assert(html.includes(`hreflang="${target}"`));
   for(const pdf of ['RU','EN'])assert(html.includes(`download="PDC_Startup_Deck_${pdf}_V3.pdf"`));
   for(const match of html.matchAll(/(?:src|href)="(\/pdc\/[^"#?]*)/g)){
@@ -33,3 +38,13 @@ for(const lang of ['ru','en']){
  const bytes=await fs.readFile(`public/downloads/PDC_Startup_Deck_${lang.toUpperCase()}_V3.pdf`);assert.equal(bytes.subarray(0,5).toString(),'%PDF-');
 }
 console.log(`PASS: 6 locales, 12 localized pages, internal assets/links, public PDF V3, ${releases.en.length} translated releases and source freshness`);
+
+const web = await read('src/i18n/web.json');
+for (const lang of langs) { assert.equal(web[lang].title,'PDC.Web'); assert(web[lang].how.includes('PDC.Web') && web[lang].how.includes('/web/')); assert.equal(web[lang].items.length,6); }
+const screenshots = await read('docs/web-screenshots-provenance.json');
+assert.equal(screenshots.screenshots.length,10);
+for (const shot of screenshots.screenshots) {
+ const bytes=await fs.readFile('public/img/'+shot.file);
+ assert.equal(createHash('sha256').update(bytes).digest('hex'),shot.sha256,shot.file);
+}
+console.log('PASS: localized Web content, independent gallery IDs, 10 screenshot checksums');

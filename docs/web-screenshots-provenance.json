@@ -52,5 +52,16 @@
       "file": "web-en-settings.png",
       "sha256": "acd2c956efa09e7d2a2896970c67c57744278155af040d52c344e81eafae6d98"
     }
-  ]
+  ],
+  "sourceCommit": "c18b61d363a74d32a5a653a97757040c7f6e78ce",
+  "sourceFiles": {
+    "index.html": "4bcde0222d8edde29612845473a688cf8a7bd16d86e07b39895ba70850d9688d",
+    "app.js": "ab0778fb8600b753bacc2ea71f1dc84be0ecf7f32baa475779a35ced65f63cc3",
+    "app.css": "526b6bca627d0d71979556ac1dcecb977acd3a9c43ee926d9a003d5555492dad",
+    "api.js": "401c8f0a0a3e480ad66afbb174f8707b743c911adc2cc3c15c7a64576afb8082",
+    "profiles.js": "877dce7c7034fe9a17fdc8884e7618a0228d8696f533faabfd0a85cf9ce903f5",
+    "appearance.js": "fc8c93afa597dcae3007b255acd7f92591af986ea9eeb2e4c04bcf66cd018407",
+    "locales/ru.json": "334e12da02880411c4021cf28ae73611ef137c14f5abffcfdd96ad919264c082",
+    "locales/en.json": "681602ae7c8194c8be76857cd868457a2f95df39c908d277710449e39ffa42c7"
+  }
 }
