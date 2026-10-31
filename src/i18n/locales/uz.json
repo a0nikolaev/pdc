@@ -19,7 +19,7 @@
   "hero": {
     "title": "Personal Data Cleaner",
     "tagline": "Hujjatlardagi shaxsiy ma’lumotlarni o‘z serverlaringizda egasizlantirish",
-    "lead": "PDC ism, telefon, email, bank kartalari, IBAN, Rossiya SNILS/INN va boshqa shaxsiy ma’lumotlarni topib, haqiqatga o‘xshash to‘qima qiymatlar yoki belgilar bilan almashtiradi. Hujjat shakli saqlanadi, hujjatlar tashkilot tarmog‘idan chiqmaydi.",
+    "lead": "PDC hujjatlardagi ism, telefon, email, karta raqamlari, SNILS, INN va IBAN’ni izlab, topilgan qiymatlarni to‘qima ma’lumotlar, shablon yoki niqob bilan almashtiradi. Ishlov tashkilotingiz serverlarida bajariladi. Natija va hujjat shaklini tekshiring.",
     "benefits": [
       "Internetsiz ishlaydi",
       "Ma’lumotlar tashqariga chiqmaydi",
@@ -42,7 +42,7 @@
       },
       {
         "title": "Hujjatni oynaga tashlang",
-        "text": "Faylni ilova oynasiga sudrab, shu formatdagi egasizlantirilgan nusxani oling."
+        "text": "Qo‘llanadigan faylni ilova oynasiga tashlang. Muvaffaqiyatli ishlov ayni formatdagi nusxani qaytaradi; xato yoki rad javobida natija berilmaydi."
       }
     ]
   },
@@ -52,11 +52,11 @@
     "items": [
       {
         "title": "Bitta hujjat",
-        "text": "Faylni tanlang yoki oynaga tashlang; natija asl fayl yonida name_anonymized nomi bilan saqlanadi."
+        "text": "Faylni tanlang yoki tashlang. Odatda natija asl fayl yonida _anonymized qo‘shimchasi bilan saqlanadi; jild va nom shabloni sozlanadi."
       },
       {
         "title": "Paketli ishlov",
-        "text": "Bir nechta fayl yoki butun jild (odatda 20 fayl / 100 MB). Ishlov fonda bajariladi, tayyor natijalar yuklab olinadi."
+        "text": "Bir nechta fayl yoki jild: odatda 20 fayl, paketga 100 MB, faylga 25 MB. Ishlov fonda bajariladi, tayyor natijalar yuklanadi. Chegaralar serverda belgilanadi."
       },
       {
         "title": "Almashtirish sabablari",
@@ -90,15 +90,15 @@
       },
       {
         "title": "Haqiqatga o‘xshash almashtirish",
-        "text": "Ism bir xil jins va kelishikdagi ismga, telefon ayni format va mamlakat kodidagi raqamga almashtiriladi. Yoki [EMAIL] kabi belgi ishlatiladi; rejim sozlanadi."
+        "text": "Generate to‘qima qiymat yaratadi, Template belgi qo‘yadi, Mask ma’lumotni qisman yashiradi. Rejimlarni ma’lumot turi bo‘yicha birlashtirish mumkin. Rus ismlarining jinsi va kelishigi morfologik tahlil muvaffaqiyatli bo‘lsa hisobga olinadi; niqob qiymatning bir qismini ochiq qoldiradi."
       },
       {
         "title": "Skanlar va rasmlar",
         "text": "Rasmlar, ko‘p sahifali TIFF va skanerlangan PDF ichida OCR ishlaydi; yangi qiymat asl matn o‘rniga chiziladi."
       },
       {
-        "title": "Shakl saqlanadi",
-        "text": "Almashtirish asl qiymat o‘rniga qo‘yiladi, shrift va joylashuv o‘zgarmaydi. Asl matn uzunligidagi belgilarni tanlash mumkin."
+        "title": "Hujjat shakli bilan ishlash",
+        "text": "Ishlovchilar hujjat tuzilishini saqlashga intiladi. PDF, OCR va eski Office konversiyasida joylashuv yoki shrift o‘zgarishi mumkin. Shablon uzunligini moslash mavjud; natijani tekshiring."
       },
       {
         "title": "Foydalanuvchilar va jurnal",
@@ -112,7 +112,7 @@
   },
   "pii": {
     "title": "Nimalar topiladi va almashtiriladi",
-    "lead": "Tuzilgan ma’lumotlar hujjat tilidan qat’i nazar, ismlar rus va ingliz matnlarida aniqlanadi.",
+    "lead": "Telefon, email va boshqa tuzilgan ma’lumotlar format, nazorat summasi va kontekst qoidalari bilan izlanadi. Ism modellari rus va ingliz matnini ishlaydi. Tur qo‘llanishi har bir qiymat topilishini kafolatlamaydi.",
     "rows": [
       [
         "Telefonlar",
@@ -136,14 +136,14 @@
       ],
       [
         "To‘liq ism",
-        "Rus va ingliz ismlari, istalgan kelishikda"
+        "Rus va ingliz ismlarini model bilan aniqlash; o‘tkazib yuborish va yolg‘on moslik mumkin"
       ],
       [
         "Rossiya pasporti, AQSH SSN",
         "Server sozlamalarida yoqiladi"
       ]
     ],
-    "note": "Formatga mos, ammo nazorat summasi xato qiymat alohida belgi, masalan [FAKEBANKCARD], bilan almashtiriladi."
+    "note": "Nazorat summasi xato karta, SNILS, INN va IBAN nomzodlari [FAKEBANKCARD] kabi alohida belgiga almashtirilishi mumkin. Office, Excel son formatlari, formulalar va ichki rasmlarda qamrov cheklangan; ayrim hujjatlar rad etiladi."
   },
   "formats": {
     "title": "Hujjat formatlari",
@@ -162,7 +162,7 @@
       ],
       [
         "PDF",
-        "Matnli va skanerlangan"
+        "Matnli, skanerlangan va aralash; cheklov hujjatga bog‘liq"
       ],
       [
         "Matn",
@@ -176,10 +176,10 @@
   },
   "example": {
     "title": "Misol: xizmat yozuvi skani",
-    "lead": "To‘qima ma’lumotli hujjat ishlovdan oldin va keyin. Ism va telefonlarga yangi tasodifiy qiymatlar yaratilgan, email esa [EMAIL] belgisiga almashtirilgan. Har bir ma’lumot turi rejimini sozlamalarda tanlash mumkin.",
+    "lead": "To‘qima ma’lumotli oldin/keyin misoli, joriy versiya sinovi emas. Ism va telefonlar uchun qiymatlar yaratilgan, email [EMAIL] bo‘lgan. Rejim ma’lumot turi bo‘yicha sozlanadi.",
     "before": "Oldin",
     "after": "Keyin",
-    "caption": "Ismlar, telefonlar, email va karta raqami almashtirilgan; matn joylashuvi va jadval saqlangan."
+    "caption": "Bu misolda ism, telefon, email va karta almashtirilgan; matn va jadval joylashuvi ko‘rsatilgan. Bu boshqa hujjatlar sifatini isbotlamaydi."
   },
   "screenshot": {
     "title": "PDC.Desktop",
@@ -191,9 +191,9 @@
     "server": {
       "title": "PDC.Server",
       "items": [
-        "Docker va Docker Compose o‘rnatilgan Linux yoki Windows",
-        "Xotira — kamida 16 GB, disk — taxminan 25 GB",
-        "Serverga internet kerak emas: ma’lumotlar tashkilot tarmog‘ida qayta ishlanadi"
+        "Docker Engine va Compose v2 bilan Linux x86-64; Windows’da Docker Desktop, Linux containers rejimi",
+        "CPU, RAM va bo‘sh disk model, hujjat va parallelizmga bog‘liq. Joriy versiya uchun universal fizik minimum tasdiqlanmagan; o‘z korpusingizda pilot kerak.",
+        "Mahalliy ishlovga tayyor tasvirlar, model vaznlari va bog‘liqliklar kerak; oflayn tayyorlik tanlangan yetkazib berish to‘plami uchun tekshiriladi"
       ]
     },
     "client": {
@@ -206,7 +206,7 @@
     "deploy": {
       "title": "Joylashtirish",
       "items": [
-        "docker compose up buyrug‘i PDC.Server, PostgreSQL va model konteynerlarini ishga tushiradi",
+        "docker compose up’dan oldin tasvirlar, modellar, maxfiy sozlamalar, baza va obunani tayyorlang. Tarkibga API, PostgreSQL, migratsiyalar va ishlov xizmatlari kiradi.",
         "Mijozlar o‘rnatuvchi yordamida, jumladan server manzilini parametrda ko‘rsatib yashirin o‘rnatiladi",
         "Yetkazib berishda administrator qo‘llanmasi taqdim etiladi"
       ]
@@ -217,27 +217,27 @@
     "items": [
       {
         "q": "Hujjatlar qayerga yuboriladi?",
-        "a": "Faqat tashkilotingizning PDC.Server serveriga. Asl fayl saqlanmaydi; paket natijalari cheklangan vaqt (odatda 24 soat) saqlanib, so‘ng o‘chiriladi. Ishlangan hujjatlarni serverda saqlash odatda o‘chirilgan."
+        "a": "Fayllar tashkilotning PDC.Server serveriga boradi. Paket kirishi xotirada turadi; OCR va konverter vaqtinchalik fayl yaratishi mumkin. Paket natijalari odatda 24 soat saqlanib, tozalashda o‘chiriladi. Doimiy natija keshi odatda o‘chiq; sabablar jurnalida asl qiymatlar bo‘lishi mumkin."
       },
       {
         "q": "Internet kerakmi?",
-        "a": "PDC.Server va PDC.Desktop ishlashi uchun internet kerak emas. Hujjatlar tashkilot serverida qayta ishlanadi, ilova ichki tarmoq orqali ulanadi."
+        "a": "Aniqlash va ishlov mahalliy bajariladi. Oflayn ishga tushishga tayyor tasvirlar, model vaznlari va bog‘liqliklar kerak. Dastlabki o‘rnatish va yangilash yetkazib berish manbasiga ulanishni talab qilishi mumkin; izolyatsiyalangan to‘plam tayyorligi alohida tekshiriladi."
       },
       {
         "q": "Ismlar qanchalik ishonchli topiladi?",
-        "a": "Mashinaviy o‘rganish modellari 100% kafolat bermaydi. Muhim hujjatlar uchun natija va almashtirish sabablari jurnalini tekshiring."
+        "a": "Mashinaviy o‘rganish modellari ismni o‘tkazib yuborishi yoki yolg‘on moslik topishi mumkin. Natija tekshiruvi noma’lum shaxsiy ma’lumot topilishini kafolatlamaydi. Muhim hujjatlarda natija, qamrov ogohlantirishlari va sabablar jurnalini tekshiring."
       },
       {
         "q": "Hujjat shakli saqlanadimi?",
-        "a": "Ha. Almashtirish asl matn o‘rniga qo‘yiladi, shrift va joylashuv o‘zgarmaydi. Skanlarda yangi qiymat asl matn o‘rniga chiziladi."
+        "a": "Tuzilishni saqlash ishlovchilar maqsadi, ammo har bir faylda ayni shrift va joylashuv kafolatlanmaydi, ayniqsa PDF, skan va eski Office konversiyasida. Foydalanishdan oldin natijani tekshiring."
       },
       {
         "q": "Qaysi hujjat tillari qo‘llab-quvvatlanadi?",
-        "a": "Ismlar rus va ingliz matnlarida; telefon, email, kartalar va boshqa tuzilgan ma’lumotlar tildan qat’i nazar aniqlanadi."
+        "a": "Ism modellari rus va ingliz tilida, tuzilgan ma’lumotlar qo‘llanadigan format va kontekstlarda ishlaydi. Saytning olti tili aniqlashning olti tilini anglatmaydi. Yangi til uchun alohida model va moslashtirilgan qoidalar kerak."
       },
       {
         "q": "PDC’ni o‘z tizimlarimizga ulash mumkinmi?",
-        "a": "Ha, Swagger hujjatli server REST API orqali."
+        "a": "Ha, Swagger hujjatli server REST API orqali. Kirish autentifikatsiya, rollar, faol obuna va server sozlamalari bilan boshqariladi."
       }
     ]
   },

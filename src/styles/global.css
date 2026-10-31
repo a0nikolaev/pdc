@@ -549,3 +549,11 @@ html { scrollbar-gutter: stable; }
   .investor-menu summary { max-width:none; white-space:nowrap; }
   .language-fallback { grid-column:1 / -1; }
 }
+
+/* Separate product navigation from updates/investor controls when adjacent. */
+@media(min-width:1101px) {
+  .header-row { gap:18px; }
+  .nav { gap:14px; }
+  .nav a { font-size:.85rem; }
+  .header-tools { border-inline-start:1px solid var(--border); padding-inline-start:18px; }
+}
