@@ -1,0 +1,56 @@
+---
+import {content, type Lang} from '../i18n/content';
+import {ui} from '../i18n/ui';
+interface Props {lang: Lang}
+const {lang} = Astro.props;
+const t=content[lang].example;
+const suffix=lang==='en'?'-en':'';
+const images=[{title:t.before,src:`${import.meta.env.BASE_URL}img/before${suffix}.png`},{title:t.after,src:`${import.meta.env.BASE_URL}img/after${suffix}.png`}];
+---
+<div data-example-comparison>
+ <div class="before-after">
+  {images.map((image,index)=><figure>
+   <figcaption>{image.title}</figcaption>
+   <a href={image.src} data-example-open={index} aria-haspopup="dialog" aria-label={`${image.title} — ${ui(lang,'open full size')}`}>
+    <img src={image.src} alt={image.title} loading="lazy" />
+   </a>
+  </figure>)}
+ </div>
+ <dialog class="example-viewer" aria-label={t.title}>
+  <div class="example-toolbar">
+   <strong data-example-title></strong>
+   <div>{images.map((image,index)=><button type="button" data-example-select={index}>{image.title}</button>)}</div>
+   <button type="button" data-example-close autofocus>{ui(lang,'Close image')}</button>
+  </div>
+  <img data-example-image alt="" />
+ </dialog>
+</div>
+<script>
+ document.querySelectorAll<HTMLElement>('[data-example-comparison]').forEach(comparison=>{
+  const links=[...comparison.querySelectorAll<HTMLAnchorElement>('[data-example-open]')];
+  const dialog=comparison.querySelector<HTMLDialogElement>('dialog')!;
+  const image=dialog.querySelector<HTMLImageElement>('[data-example-image]')!;
+  const selectors=[...dialog.querySelectorAll<HTMLButtonElement>('[data-example-select]')];
+  let selected=0;
+  const show=(index:number)=>{
+   selected=index;image.src=links[index].href;image.alt=links[index].querySelector('img')!.alt;
+   dialog.querySelector('[data-example-title]')!.textContent=image.alt;
+   selectors.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===index)));
+  };
+  links.forEach((link,index)=>link.addEventListener('click',event=>{event.preventDefault();show(index);dialog.showModal();}));
+  selectors.forEach((button,index)=>button.addEventListener('click',()=>show(index)));
+  dialog.querySelector('[data-example-close]')!.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+  dialog.addEventListener('keydown',event=>{if(event.key==='ArrowRight'||event.key==='ArrowLeft'){event.preventDefault();show(1-selected);}});
+  dialog.addEventListener('close',()=>links[selected].focus({preventScroll:true}));
+ });
+</script>
+<style>
+ .example-viewer { width:fit-content; max-width:96vw; max-height:94dvh; padding:14px; border:1px solid var(--border); border-radius:14px; background:var(--card); color:var(--text); }
+ .example-viewer::backdrop { background:rgba(0,0,0,.8); }
+ .example-viewer>img { display:block; max-width:100%; max-height:78dvh; object-fit:contain; margin:auto; }
+ .example-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
+ .example-toolbar div { display:flex; gap:8px; }
+ .example-toolbar button { font:inherit; color:var(--text); background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:8px 12px; cursor:pointer; }
+ .example-toolbar button[aria-pressed='true'] { color:var(--accent); background:var(--accent-soft); }
+</style>

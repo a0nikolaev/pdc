@@ -37,7 +37,8 @@
     "Replacement modes": "Режимы замены",
     "Application settings": "Настройки приложения",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "Что нового в PDC.Desktop, PDC.Web и PDC.Server: основные изменения каждого обновления.",
-    "Components have separate version histories. Choose the component you’re interested in.": "У компонентов отдельные истории версий. Выберите интересующий компонент."
+    "Components have separate version histories. Choose the component you’re interested in.": "У компонентов отдельные истории версий. Выберите интересующий компонент.",
+    "Close image": "Закрыть изображение"
   },
   "en": {
     "Main navigation": "Main navigation",
@@ -77,7 +78,8 @@
     "Replacement modes": "Replacement modes",
     "Application settings": "Application settings",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.",
-    "Components have separate version histories. Choose the component you’re interested in.": "Components have separate version histories. Choose the component you’re interested in."
+    "Components have separate version histories. Choose the component you’re interested in.": "Components have separate version histories. Choose the component you’re interested in.",
+    "Close image": "Close image"
   },
   "kk": {
     "Main navigation": "Негізгі навигация",
@@ -117,7 +119,8 @@
     "Replacement modes": "Алмастыру режимдері",
     "Application settings": "Қолданба баптаулары",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web және PDC.Server жаңалықтары: әр жаңартудың негізгі өзгерістері.",
-    "Components have separate version histories. Choose the component you’re interested in.": "Құрамдастардың нұсқа тарихы бөлек. Қажетті құрамдасты таңдаңыз."
+    "Components have separate version histories. Choose the component you’re interested in.": "Құрамдастардың нұсқа тарихы бөлек. Қажетті құрамдасты таңдаңыз.",
+    "Close image": "Суретті жабу"
   },
   "uz": {
     "Main navigation": "Asosiy navigatsiya",
@@ -157,7 +160,8 @@
     "Replacement modes": "Almashtirish rejimlari",
     "Application settings": "Ilova sozlamalari",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web va PDC.Server yangiliklari: har bir yangilanishning asosiy o‘zgarishlari.",
-    "Components have separate version histories. Choose the component you’re interested in.": "Komponentlarning versiya tarixi alohida. Kerakli komponentni tanlang."
+    "Components have separate version histories. Choose the component you’re interested in.": "Komponentlarning versiya tarixi alohida. Kerakli komponentni tanlang.",
+    "Close image": "Rasmni yopish"
   },
   "ky": {
     "Main navigation": "Негизги багыттоо",
@@ -197,7 +201,8 @@
     "Replacement modes": "Алмаштыруу режимдери",
     "Application settings": "Колдонмонун жөндөөлөрү",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "PDC.Desktop, PDC.Web жана PDC.Server жаңылыктары: ар бир жаңыртуунун негизги өзгөрүүлөрү.",
-    "Components have separate version histories. Choose the component you’re interested in.": "Компоненттердин версия тарыхтары өзүнчө. Керектүү компонентти тандаңыз."
+    "Components have separate version histories. Choose the component you’re interested in.": "Компоненттердин версия тарыхтары өзүнчө. Керектүү компонентти тандаңыз.",
+    "Close image": "Сүрөттү жабуу"
   },
   "tg": {
     "Main navigation": "Роҳнамоии асосӣ",
@@ -237,6 +242,7 @@
     "Replacement modes": "Реҷаҳои ивазкунӣ",
     "Application settings": "Танзимоти барнома",
     "What’s new in PDC.Desktop, PDC.Web and PDC.Server: the highlights of each update.": "Навигариҳои PDC.Desktop, PDC.Web ва PDC.Server: тағйироти асосии ҳар навсозӣ.",
-    "Components have separate version histories. Choose the component you’re interested in.": "Ҷузъҳо таърихи версияҳои ҷудо доранд. Ҷузъи лозимаро интихоб кунед."
+    "Components have separate version histories. Choose the component you’re interested in.": "Ҷузъҳо таърихи версияҳои ҷудо доранд. Ҷузъи лозимаро интихоб кунед.",
+    "Close image": "Пӯшидани тасвир"
   }
 }
