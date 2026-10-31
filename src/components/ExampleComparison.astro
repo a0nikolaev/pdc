@@ -5,6 +5,7 @@ interface Props {lang: Lang}
 const {lang} = Astro.props;
 const t=content[lang].example;
 const suffix=lang==='en'?'-en':'';
+const dimensions={width:870,height:lang==='en'?650:622};
 const images=[{title:t.before,src:`${import.meta.env.BASE_URL}img/before${suffix}.png`},{title:t.after,src:`${import.meta.env.BASE_URL}img/after${suffix}.png`}];
 ---
 <div data-example-comparison>
@@ -12,7 +13,7 @@ const images=[{title:t.before,src:`${import.meta.env.BASE_URL}img/before${suffix
   {images.map((image,index)=><figure>
    <figcaption>{image.title}</figcaption>
    <a href={image.src} data-example-open={index} aria-haspopup="dialog" aria-label={`${image.title} — ${ui(lang,'open full size')}`}>
-    <img src={image.src} alt={image.title} loading="lazy" />
+    <img src={image.src} alt={image.title} width={dimensions.width} height={dimensions.height} loading="lazy" />
    </a>
   </figure>)}
  </div>
@@ -22,7 +23,7 @@ const images=[{title:t.before,src:`${import.meta.env.BASE_URL}img/before${suffix
    <div>{images.map((image,index)=><button type="button" data-example-select={index}>{image.title}</button>)}</div>
    <button type="button" data-example-close autofocus>{ui(lang,'Close image')}</button>
   </div>
-  <img data-example-image alt="" />
+  <img data-example-image alt="" width={dimensions.width} height={dimensions.height} />
  </dialog>
 </div>
 <script>
@@ -46,9 +47,10 @@ const images=[{title:t.before,src:`${import.meta.env.BASE_URL}img/before${suffix
  });
 </script>
 <style>
+ .before-after img { height:auto; }
  .example-viewer { width:fit-content; max-width:96vw; max-height:94dvh; padding:14px; border:1px solid var(--border); border-radius:14px; background:var(--card); color:var(--text); }
  .example-viewer::backdrop { background:rgba(0,0,0,.8); }
- .example-viewer>img { display:block; max-width:100%; max-height:78dvh; object-fit:contain; margin:auto; }
+ .example-viewer>img { display:block; height:auto; max-width:100%; max-height:78dvh; object-fit:contain; margin:auto; }
  .example-toolbar { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:14px; }
  .example-toolbar div { display:flex; gap:8px; }
  .example-toolbar button { font:inherit; color:var(--text); background:var(--bg); border:1px solid var(--border); border-radius:7px; padding:8px 12px; cursor:pointer; }

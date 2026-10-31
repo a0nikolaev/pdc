@@ -18,6 +18,13 @@ for(const lang of langs){
   assert(!html.includes('undefined')&&!html.includes('[object Object]'));
   if (!section) {
     assert(html.includes('id="pdc-web"') && html.includes('PDC.Web'));
+    const exampleImages=[...html.matchAll(/<img\b[^>]*src="([^" ]*\/(?:before|after)(?:-en)?\.png)"[^>]*>/g)];
+    assert.equal(exampleImages.length,2);
+    for (const match of exampleImages) {
+      const png=await fs.readFile('dist/'+match[1].slice('/pdc/'.length));
+      assert.equal(Number(match[0].match(/\bwidth="(\d+)"/)?.[1]),png.readUInt32BE(16));
+      assert.equal(Number(match[0].match(/\bheight="(\d+)"/)?.[1]),png.readUInt32BE(20));
+    }
     for (const product of ['desktop','web']) assert.equal((html.match(new RegExp(`id="${product}-gallery-track"`,'g')) || []).length,1,`${lang}/${product} gallery controls`);
   }
   if (section === 'changelog/') {
