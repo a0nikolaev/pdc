@@ -3,6 +3,7 @@ import { ui } from '../i18n/ui';
 import '../styles/global.css';
 import PrivacyBackdrop from '../components/PrivacyBackdrop.astro';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import SocialMeta from '../components/SocialMeta.astro';
 import LanguageSelect from '../components/LanguageSelect.astro';
 import {languages} from '../i18n/languages';
 import type { Content, Lang } from '../i18n/content';
@@ -37,10 +38,7 @@ const home = `${base}${lang}/`;
     {languages.map(code => <link rel="alternate" hreflang={code} href={new URL(`${base}${code}/${section}`, Astro.site)} />)}
     <link rel="alternate" hreflang="x-default" href={new URL(base, Astro.site)} />
     <link rel="icon" type="image/svg+xml" href={`${base}favicon.svg`} />
-    <meta property="og:title" content={t.meta.title} />
-    <meta property="og:description" content={t.meta.description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonical} />
+    <SocialMeta title={t.meta.title} description={t.meta.description} url={canonical} />
   </head>
   <body>
     <PrivacyBackdrop lang={lang} />

@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#11151e"/><path d="M0 550H1200M900 0V630" stroke="#303d53"/><g transform="translate(80 70)"><svg width="80" height="80" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" rx="14" fill="#2f4ea8"/>
+  <path d="M18 18h28v6H18zM18 30h20v6H18zM18 42h28v6H18z" fill="#ffffff" opacity="0.35"/>
+  <path d="M18 30h20v6H18z" fill="#ffffff"/>
+  <circle cx="46" cy="33" r="6" fill="#7fd1a0"/>
+</svg>
+</g><text x="184" y="125" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="42" fill="#e6e9f0">PDC</text><text x="80" y="255" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="72" fill="#ffffff">Personal</text><text x="80" y="340" font-family="Segoe UI,Arial,sans-serif" font-weight="700" font-size="72" fill="#ffffff">Data Cleaner</text><text x="84" y="415" font-family="Segoe UI,Arial,sans-serif" font-size="30" fill="#99e6cc">Desktop · Web · Server</text><text x="84" y="580" font-family="Segoe UI,Arial,sans-serif" font-size="24" fill="#a8b4c9">a0nikolaev.github.io/pdc</text><rect x="820" y="160" width="295" height="290" rx="22" fill="#1b2130" stroke="#526681"/><path d="M865 220H1070M865 270H1025M865 320H1060M865 370H1010" stroke="#91afff" stroke-width="20" stroke-linecap="round"/><rect x="930" y="255" width="120" height="30" rx="8" fill="#99e6cc"/></svg>
