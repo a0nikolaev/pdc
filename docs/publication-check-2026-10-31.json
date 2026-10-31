@@ -1,0 +1,148 @@
+{
+  "checkedOn": "2026-10-31",
+  "http": [
+    {
+      "url": "https://a0nikolaev.github.io/pdc/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/",
+      "bytes": 693
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/ru/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/ru/",
+      "bytes": 44831
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/ru/changelog/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/ru/changelog/",
+      "bytes": 64502
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/en/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/en/",
+      "bytes": 34839
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/en/changelog/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/en/changelog/",
+      "bytes": 56156
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/kk/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/kk/",
+      "bytes": 44687
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/kk/changelog/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/kk/changelog/",
+      "bytes": 61242
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/uz/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/uz/",
+      "bytes": 36019
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/uz/changelog/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/uz/changelog/",
+      "bytes": 54684
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/ky/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/ky/",
+      "bytes": 45221
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/ky/changelog/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/ky/changelog/",
+      "bytes": 61808
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/tg/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/tg/",
+      "bytes": 44379
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/tg/changelog/",
+      "status": 200,
+      "finalUrl": "https://a0nikolaev.github.io/pdc/tg/changelog/",
+      "bytes": 61186
+    },
+    {
+      "url": "https://github.com/a0nikolaev/pdc/issues/new",
+      "status": 200,
+      "finalUrl": "https://github.com/login?return_to=https%3A%2F%2Fgithub.com%2Fa0nikolaev%2Fpdc%2Fissues%2Fnew",
+      "bytes": 51462
+    }
+  ],
+  "browserRedirects": [
+    {
+      "case": "browser-language",
+      "language": "ru",
+      "url": "https://a0nikolaev.github.io/pdc/ru/",
+      "pass": true
+    },
+    {
+      "case": "browser-language",
+      "language": "en",
+      "url": "https://a0nikolaev.github.io/pdc/en/",
+      "pass": true
+    },
+    {
+      "case": "browser-language",
+      "language": "kk",
+      "url": "https://a0nikolaev.github.io/pdc/kk/",
+      "pass": true
+    },
+    {
+      "case": "browser-language",
+      "language": "uz",
+      "url": "https://a0nikolaev.github.io/pdc/uz/",
+      "pass": true
+    },
+    {
+      "case": "browser-language",
+      "language": "ky",
+      "url": "https://a0nikolaev.github.io/pdc/ky/",
+      "pass": true
+    },
+    {
+      "case": "browser-language",
+      "language": "tg",
+      "url": "https://a0nikolaev.github.io/pdc/tg/",
+      "pass": true
+    },
+    {
+      "case": "saved-language",
+      "language": "tg",
+      "url": "https://a0nikolaev.github.io/pdc/tg/",
+      "pass": true
+    }
+  ],
+  "publicDownloads": [
+    {
+      "url": "https://a0nikolaev.github.io/pdc/downloads/PDC_Startup_Deck_RU_V3.pdf",
+      "status": 200,
+      "sha256": "436579d5ba83eade792534ff430c1021f5cbd727797f9239526cec69481918e4",
+      "matchesLocal": true
+    },
+    {
+      "url": "https://a0nikolaev.github.io/pdc/downloads/PDC_Startup_Deck_EN_V3.pdf",
+      "status": 200,
+      "sha256": "1d673fa47c74710e8d409b272c9c65c173aa7a03a0db2074864d4e06a830305b",
+      "matchesLocal": true
+    }
+  ],
+  "issues": "Unauthenticated new-issue URL redirects to GitHub login. No login, issue submission or deployment performed."
+}
