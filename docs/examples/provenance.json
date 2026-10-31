@@ -1,0 +1,15 @@
+{
+  "purpose": "Illustration of configurable replacement policies; not a PDC processing result or a quality measurement",
+  "data": "Fictitious names, reserved example.com email addresses, demonstration phone and card values",
+  "method": "Rendered English HTML documents with deterministic manually defined before/after values in a clean headless browser",
+  "files": [
+    {
+      "file": "before-en.png",
+      "sha256": "90537dacf0a9caf5cff6a6c474d53d8f317c98f4b8a7339a2b8111550e3e2be3"
+    },
+    {
+      "file": "after-en.png",
+      "sha256": "186c9abaf1edc9e3b751196adc6a11207e3cbd80a67b8839840844043fc6aed5"
+    }
+  ]
+}
