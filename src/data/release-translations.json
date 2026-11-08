@@ -1,4 +1,35 @@
 {
+  "server:1.15.12.5": {
+    "kk": [
+      "Аты-жөннің шекаралары түзетілді: инициалдар және ауыстырудан кейін қалып қоятын, оқуға болатын сөз басы ескерілді. Фрагменттер қабаттасқанда толық аты-жөнге басымдық беріледі.",
+      "Өнім сапасы модельдер мен құрылымдық ережелердің бірлескен жұмысы бойынша бағаланып, кейін нақты шығыс файлдарымен тексеріледі. Жеке модельдің бағасы мен HTTP 200 жауабы тазалаудың сәтті болғанын өздігінен растамайды.",
+      "Орысша мәтінді тануға арналған эксперименттік кандидат дайындалды; сынақтардан кейін бастапқы ағылшын моделі сақталды. Жаңа салмақтар мақұлданбаған және жеткізілмейді.",
+      "Өзіміз жасаған, әзірлеуге арналған 4 256 синтетикалық мәтінде кандидаттың біріктірілген детекторы белгіленген 27 792 дербес дерек кездесуінің 27 792-сін тапты; 240 жалған оң нәтиже есепте сақталды. Есептеу модельдердің дәл сақталған жауаптарын қолданады: бұл модельдерді тікелей орындау өнімділігінің жаңа өлшемі де, тәуелсіз қабылдау да, тапсырыс берушіге кепілдік те емес.",
+      "Нақты он бақылау TXT файлының сегізінің шығысы эталонмен толық сәйкес келді. Бақылау сомалары қате екі теріс мысалда артық [FAKE…] ауыстырулары болды. Office, PDF, OCR және құжаттарды толық тәуелсіз қабылдау тексерістері әлі алда."
+    ],
+    "uz": [
+      "To‘liq ism chegaralari tuzatildi: initsiallar va almashtirishdan keyin qolib ketgan, o‘qish mumkin bo‘lgan so‘z boshlari hisobga olindi. Parchalar ustma-ust tushganda to‘liq ismga ustunlik beriladi.",
+      "Mahsulot sifati modellar va tuzilmaviy qoidalarning birgalikdagi ishlashi bo‘yicha baholanib, keyin haqiqiy chiqish fayllari orqali tekshiriladi. Alohida model bahosi va HTTP 200 javobi tozalash muvaffaqiyatini o‘z-o‘zidan tasdiqlamaydi.",
+      "Ruscha matnni tanish uchun tajribaviy nomzod tayyorlandi; sinovlardan so‘ng dastlabki inglizcha model saqlandi. Yangi vaznlar tasdiqlanmagan va yetkazib berilmaydi.",
+      "O‘zimiz yaratgan 4 256 sintetik ishlab chiqish matnida nomzodning birlashtirilgan detektori belgilangan 27 792 shaxsiy ma’lumot uchrashining barchasini topdi; 240 yolg‘on musbat natija hisobda saqlandi. Hisoblash modellarning aynan saqlangan javoblariga asoslanadi: bu modellarni bevosita bajarish unumdorligining yangi o‘lchovi, mustaqil qabul tekshiruvi yoki mijozga kafolat emas.",
+      "O‘nta haqiqiy nazorat TXT faylining sakkizta chiqishi etalonga to‘liq mos keldi. Nazorat yig‘indisi noto‘g‘ri bo‘lgan ikkita salbiy holatda ortiqcha [FAKE…] almashtirishlari yuz berdi. Office, PDF, OCR va hujjatlarni to‘liq mustaqil qabul qilish tekshiruvlari hali oldinda."
+    ],
+    "ky": [
+      "Аты-жөндүн чектери оңдолду: инициалдар жана алмаштыруудан кийин калып калган, окула турган сөз баштары эске алынды. Үзүндүлөр кабатташканда толук аты-жөнгө артыкчылык берилет.",
+      "Продукттун сапаты моделдер менен түзүмдүк эрежелердин биргелешкен иши боюнча бааланып, андан соң чыныгы чыгыш файлдары аркылуу текшерилет. Өзүнчө моделдин баасы жана HTTP 200 жообу тазалоо ийгиликтүү болгонун өзүнөн-өзү ырастабайт.",
+      "Орусча текстти таануу үчүн эксперименттик талапкер даярдалды; сыноолордон кийин баштапкы англисче модель сакталды. Жаңы салмактар жактырылган эмес жана жеткирилбейт.",
+      "Өзүбүз түзгөн, иштеп чыгууга арналган 4 256 синтетикалык текстте талапкердин бириккен детектору белгиленген 27 792 жеке маалымат учурунун 27 792син тапты; 240 жалган оң натыйжа эсепте сакталды. Эсеп моделдердин так сакталган жоопторун колдонот: бул моделдерди түз аткаруунун өндүрүмдүүлүгүн жаңы өлчөө да, көз карандысыз кабыл алуу да, кардарга кепилдик да эмес.",
+      "Чыныгы он көзөмөл TXT файлынын сегизинин чыгышы эталонго так дал келди. Текшерүү суммалары туура эмес эки терс мисалда ашыкча [FAKE…] алмаштыруулары болду. Office, PDF, OCR жана документтерди толук көз карандысыз кабыл алуу текшерүүлөрү али алдыда."
+    ],
+    "tg": [
+      "Ҳудуди ному насаб барои ҳарфҳои аввали ном ва оғози хондашавандаи калимаҳои пас аз ивазкунӣ боқимонда ислоҳ шуд. Ҳангоми ҳампӯшии порчаҳо ному насаби пурра бартарӣ дорад.",
+      "Сифат аз рӯйи кори муштараки моделҳо ва қоидаҳои сохторӣ, сипас аз файлҳои воқеии баромад санҷида мешавад. Баҳои модели алоҳида ё HTTP 200 муваффақияти тозакуниро тасдиқ намекунад.",
+      "Номзади таҷрибавии шинохти русӣ омода шуд; баъди озмоишҳо модели аслии англисӣ нигоҳ дошта шуд. Вазнҳои нав тасдиқ нашудаанд ва пешниҳод намешаванд.",
+      "Дар 4 256 матни синтетикии худӣ барои таҳия детектори якҷояи номзад ҳамаи 27 792 мавриди нишонагузоришудаи маълумоти шахсиро ёфт; 240 натиҷаи мусбати бардурӯғ дар ҳисоб монд. Ҳисоб ҷавобҳои дақиқи захирашудаи моделҳоро истифода мебарад: ин ченкунии нави самаранокии иҷрои мустақими моделҳо, қабули мустақил ё кафолат ба фармоишгар нест.",
+      "Аз даҳ файли воқеии назоратии TXT баромади ҳашттояш ба эталон комилан мувофиқ буд. Дар ду ҳолати манфӣ бо суммаҳои назоратии нодуруст ивазкуниҳои зиёдатии [FAKE…] ба амал омаданд. Қабули Office, PDF, OCR ва санҷиши пурраи мустақили ҳуҷҷатҳо ҳанӯз дар пешанд."
+    ],
+    "sourceText": "Fixed full-name boundaries around initials and readable word prefixes left after replacement. Overlapping fragments now favor the full name.\nProduct quality is assessed with models and structured rules working together, then checked against actual output files. Model-only scores and HTTP 200 responses do not establish successful cleaning.\nPrepared an experimental Russian recognition candidate; trials retained the original English model. New weights are neither approved nor shipped.\nOn 4,256 own synthetic development texts, the candidate combined detector matched 27,792 of 27,792 annotated personal-data occurrences, with 240 false positives retained in the results. Calculation uses exact saved model responses; it is neither a new native-runtime performance measurement, independent acceptance, nor a customer guarantee.\nEight of ten actual control TXT outputs matched the reference exactly. Two negative checksum cases received excess [FAKE…] replacements. Office, PDF, OCR and full independent document acceptance remain pending."
+  },
   "server:1.15.12.4": {
     "kk": [
       "MIME бағыты түзетілді: өңдеу, кэш және журнал бір құжат түрін қолданады; екіұшты пішімдер қабылданбайды. 1030 тест және PostgreSQL-дің 8 сценарийі өтті."

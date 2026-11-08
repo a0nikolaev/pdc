@@ -2,6 +2,19 @@
   "ru": [
     {
       "component": "server",
+      "version": "1.15.12.5",
+      "date": "2026-11-08",
+      "sourceCommit": "cad8f197cfa28edb8a4ac95e769be2bfd24977ff",
+      "highlights": [
+        "Исправлены границы ФИО: обработка инициалов и читаемые начала слов, остававшиеся после замены. При перекрытии фрагментов предпочтение отдаётся полному имени.",
+        "Качество продукта оценивается по совместной работе моделей и структурированных правил, затем проверяется по фактическим выходным файлам. Оценки отдельной модели и ответ HTTP 200 сами по себе не подтверждают успешную очистку.",
+        "Подготовлен экспериментальный кандидат для распознавания русского текста; после испытаний сохранена исходная английская модель. Новые веса не допущены к поставке.",
+        "На 4 256 собственных синтетических текстах для разработки объединённый детектор кандидата обнаружил 27 792 из 27 792 размеченных вхождений ПДн; 240 лишних срабатываний сохранены в результатах. Расчёт использует точные сохранённые ответы моделей: это не новый замер производительности исполнения моделей, не независимая приёмка и не гарантия для заказчика.",
+        "Из десяти фактических контрольных TXT восемь точно совпали с эталоном. Два отрицательных случая с неверными контрольными суммами получили лишние замены [FAKE…]. Приёмка Office, PDF, OCR и полная независимая проверка документов ещё предстоят."
+      ]
+    },
+    {
+      "component": "server",
       "version": "1.15.12.4",
       "date": "2026-10-31",
       "highlights": [
@@ -527,6 +540,19 @@
     }
   ],
   "en": [
+    {
+      "component": "server",
+      "version": "1.15.12.5",
+      "date": "2026-11-08",
+      "sourceCommit": "cad8f197cfa28edb8a4ac95e769be2bfd24977ff",
+      "highlights": [
+        "Fixed full-name boundaries around initials and readable word prefixes left after replacement. Overlapping fragments now favor the full name.",
+        "Product quality is assessed with models and structured rules working together, then checked against actual output files. Model-only scores and HTTP 200 responses do not establish successful cleaning.",
+        "Prepared an experimental Russian recognition candidate; trials retained the original English model. New weights are neither approved nor shipped.",
+        "On 4,256 own synthetic development texts, the candidate combined detector matched 27,792 of 27,792 annotated personal-data occurrences, with 240 false positives retained in the results. Calculation uses exact saved model responses; it is neither a new native-runtime performance measurement, independent acceptance, nor a customer guarantee.",
+        "Eight of ten actual control TXT outputs matched the reference exactly. Two negative checksum cases received excess [FAKE…] replacements. Office, PDF, OCR and full independent document acceptance remain pending."
+      ]
+    },
     {
       "component": "server",
       "version": "1.15.12.4",

@@ -1,0 +1,32 @@
+{
+  "ru": [
+    "Совместное распознавание и качество",
+    "Правила формата, контекста и контрольных сумм и модели распознавания ПДн анализируют исходный текст. Результаты объединяются до замены; исправлена обработка границ ФИО и инициалов.",
+    "Критерий качества — полностью обезличенный выходной документ. В испытаниях проверяются пропуски, лишние замены и фактические файлы; процент модели и HTTP 200 сами по себе не подтверждают очистку."
+  ],
+  "en": [
+    "Combined recognition and quality",
+    "Format, context and checksum rules and PII recognition models analyze the original text. Their results are merged before replacement; full-name boundaries and initials have been improved.",
+    "The quality criterion is a fully anonymized output document. Tests inspect missed data, excess replacements and actual files; model scores and HTTP 200 alone do not establish successful cleaning."
+  ],
+  "kk": [
+    "Бірлескен тану және сапа",
+    "Пішім, контекст және бақылау сомасы ережелері мен дербес деректерді тану модельдері бастапқы мәтінді талдайды. Нәтижелер алмастыру алдында біріктіріледі; аты-жөн шекаралары мен инициалдарды өңдеу жақсартылды.",
+    "Сапа өлшемі — толық иесіздендірілген шығыс құжаты. Сынақтарда өткізіп алған деректер, артық алмастырулар және нақты файлдар тексеріледі; модель пайызы мен HTTP 200 тазартуды растамайды."
+  ],
+  "uz": [
+    "Birgalikda aniqlash va sifat",
+    "Format, kontekst va nazorat yig‘indisi qoidalari hamda shaxsiy ma’lumotlarni aniqlash modellari asl matnni tahlil qiladi. Natijalar almashtirishdan oldin birlashtiriladi; F.I.Sh. chegaralari va initsiallarni qayta ishlash yaxshilandi.",
+    "Sifat mezoni — to‘liq anonimlashtirilgan chiqish hujjati. Sinovlarda o‘tkazib yuborilgan ma’lumotlar, ortiqcha almashtirishlar va haqiqiy fayllar tekshiriladi; model foizi va HTTP 200 tozalashni tasdiqlamaydi."
+  ],
+  "ky": [
+    "Биргелешкен таануу жана сапат",
+    "Формат, контекст жана текшерүү суммасынын эрежелери менен жеке маалыматтарды таануу моделдери баштапкы текстти талдайт. Натыйжалар алмаштырууга чейин бириктирилет; аты-жөндүн чектери жана инициалдарды иштетүү жакшыртылды.",
+    "Сапат өлчөмү — толук жашырылган чыгуу документи. Сыноолордо өткөрүп жиберилген маалыматтар, ашыкча алмаштыруулар жана чыныгы файлдар текшерилет; модель пайызы жана HTTP 200 тазалоону ырастабайт."
+  ],
+  "tg": [
+    "Шинохти муштарак ва сифат",
+    "Қоидаҳои формат, контекст ва ҷамъи назоратӣ ҳамроҳ бо моделҳои шинохти маълумоти шахсӣ матни аслиро таҳлил мекунанд. Натиҷаҳо пеш аз ивазкунӣ муттаҳид мешаванд; ҳудуди ному насаб ва ҳарфҳои аввал беҳтар коркард мешаванд.",
+    "Меъёри сифат — ҳуҷҷати натиҷавии пурра беномшуда. Дар озмоишҳо маълумоти аздастрафта, ивазкунии зиёдатӣ ва файлҳои воқеӣ санҷида мешаванд; фоизи модел ва HTTP 200 тозакуниро тасдиқ намекунанд."
+  ]
+}

@@ -1,3 +1,4 @@
+import recognition from './recognition.json';
 // Базовые тексты RU/EN и переводы четырёх дополнительных языков. Факты — по состоянию продукта (возможности, форматы,
 // лимиты по умолчанию); при изменении продукта обновлять здесь.
 
@@ -308,3 +309,8 @@ const originalContent: Record<'ru' | 'en', Content> = {
 export const content: Record<Lang, Content> = {...originalContent, kk: kk as Content, uz: uz as Content, ky: ky as Content, tg: tg as Content};
 
 for (const lang of ['ru','en','kk','uz','ky','tg'] as const) content[lang].how.steps[1].text = web[lang].how;
+
+for (const lang of ['ru','en','kk','uz','ky','tg'] as const) {
+  content[lang].server.items[0].text = recognition[lang][1];
+  content[lang].faq.items[2].a = recognition[lang][2] + " " + content[lang].faq.items[2].a;
+}

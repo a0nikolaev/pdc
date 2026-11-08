@@ -31,11 +31,13 @@ for(const lang of langs){
   }
   if (section === 'changelog/') {
     assert(html.includes('data-release-filter="web"'));
+    assert(html.includes('id="server-1.15.12.5"'));
+    assert(!html.includes('Unreleased') && !html.includes('Не опубликовано'));
     for (const version of ['1.0.0.0','1.1.0.0','1.2.0.0','1.2.1.0']) assert(html.includes(`id="web-${version}"`));
     assert.equal((html.match(/data-release-component="web"/g)||[]).length,4);
   }
   for(const target of langs)assert(html.includes(`hreflang="${target}"`));
-  for(const pdf of ['RU','EN'])assert(html.includes(`download="PDC_Startup_Deck_${pdf}_V3.pdf"`));
+  for(const pdf of ['RU','EN'])assert(html.includes(`download="PDC_Startup_Deck_${pdf}_V4.pdf"`));
   for(const match of html.matchAll(/(?:src|href)="(\/pdc\/[^"#?]*)/g)){
    const relative=decodeURIComponent(match[1].slice('/pdc/'.length));
    const file='dist/'+relative+(relative.endsWith('/')?'index.html':'');
@@ -48,10 +50,13 @@ for(const entry of releases.en){
  for(const lang of langs.slice(2))assert(t[lang]?.length&&t[lang].every(value=>value.trim()),`Missing ${lang}/${key}`);
 }
 for(const lang of ['ru','en']){
- assert.equal(releases[lang].find(r=>r.component==='server').version,'1.15.12.4');
- const bytes=await fs.readFile(`public/downloads/PDC_Startup_Deck_${lang.toUpperCase()}_V3.pdf`);assert.equal(bytes.subarray(0,5).toString(),'%PDF-');
+ const latestServer=releases[lang].find(r=>r.component==='server');
+ assert.equal(latestServer.version,'1.15.12.5');
+ assert.equal(latestServer.status,undefined);
+ assert.match(latestServer.sourceCommit,/^[0-9a-f]{40}$/);
+ const bytes=await fs.readFile(`public/downloads/PDC_Startup_Deck_${lang.toUpperCase()}_V4.pdf`);assert.equal(bytes.subarray(0,5).toString(),'%PDF-');
 }
-console.log(`PASS: 6 locales, 12 localized pages, internal assets/links, public PDF V3, ${releases.en.length} translated releases and source freshness`);
+console.log(`PASS: 6 locales, 12 localized pages, internal assets/links, public PDF V4, ${releases.en.length} translated releases and source freshness`);
 
 const web = await read('src/i18n/web.json');
 for (const lang of langs) { assert.equal(web[lang].title,'PDC.Web'); assert(web[lang].how.includes('PDC.Web') && web[lang].how.includes('/web/')); assert.equal(web[lang].items.length,6); }

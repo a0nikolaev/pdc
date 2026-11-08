@@ -3,6 +3,8 @@ import Base from '../layouts/Base.astro';
 import DesktopGallery from './DesktopGallery.astro';
 import ExampleComparison from './ExampleComparison.astro';
 import ProductGallery from './ProductGallery.astro';
+import recognition from '../i18n/recognition.json';
+import {localizedReleases} from '../data/localized-releases';
 import web from '../i18n/web.json';
 import { content, contactEmail, type Lang } from '../i18n/content';
 
@@ -13,6 +15,7 @@ interface Props {
 const { lang } = Astro.props;
 const t = content[lang];
 const w = web[lang];
+const quality = localizedReleases(lang).find(r => r.component === "server" && r.version === "1.15.12.5")!;
 ---
 
 <Base lang={lang} t={t}>
@@ -147,6 +150,15 @@ const w = web[lang];
           </div>
         ))}
       </div>
+    </div>
+  </section>
+
+  <section id="recognition-quality" class="section">
+    <div class="container narrow">
+      <h2>{recognition[lang][0]}</h2>
+      <p class="section-lead">{recognition[lang][2]}</p>
+      <p>{recognition[lang][1]}</p>
+      <ul>{quality.highlights.filter((_, i) => i !== 1).map(item => <li>{item}</li>)}</ul>
     </div>
   </section>
 

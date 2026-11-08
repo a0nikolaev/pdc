@@ -74,7 +74,7 @@ const home = `${base}${lang}/`;
           <details class="investor-menu">
             <summary>{ui(lang, "For investors")}</summary>
             <div class="investor-downloads">
-              {(lang === 'ru' ? ['RU', 'EN'] : ['EN', 'RU']).map(pdfLang => <a href={`${base}downloads/PDC_Startup_Deck_${pdfLang}_V3.pdf`} download={`PDC_Startup_Deck_${pdfLang}_V3.pdf`} hreflang={pdfLang.toLowerCase()}>{ui(lang, "Download presentation")} · {pdfLang} (PDF)</a>)}
+              {(lang === 'ru' ? ['RU', 'EN'] : ['EN', 'RU']).map(pdfLang => <a href={`${base}downloads/PDC_Startup_Deck_${pdfLang}_V4.pdf`} download={`PDC_Startup_Deck_${pdfLang}_V4.pdf`} hreflang={pdfLang.toLowerCase()}>{ui(lang, "Download presentation")} · {pdfLang} (PDF)</a>)}
             </div>
           </details>
           <ThemeToggle lang={lang} />

@@ -1,5 +1,6 @@
 import { readFile, mkdir, writeFile } from 'node:fs/promises';
 import { resolve } from 'node:path';
+import { execFileSync } from 'node:child_process';
 
 // Published data stays in this repository; the product checkout is needed only to sync.
 const product = resolve(process.argv[2] || '../personal-data-cleaner');
@@ -27,8 +28,19 @@ for (const lang of ['ru', 'en']) {
   for (const entry of curated[lang]) {
     const logs = {server:'CHANGELOG.md', desktop:'CHANGELOG.Desktop.md', web:'CHANGELOG.Web.md'};
     if (!logs[entry.component]) throw new Error(`Unknown component: ${entry.component}`);
-    const log = await readFile(resolve(product, `change_log/${logs[entry.component]}`), 'utf8');
-    if (!log.includes(`## [${entry.version}] - ${entry.date}`)) throw new Error(`Unverified curated version: ${entry.version}`);
+    if (entry.sourceCommit) {
+      // Main is the publication channel for these updates. Verify both the
+      // exact source version and that the commit belongs to main.
+      execFileSync('git', ['-C', product, 'merge-base', '--is-ancestor', entry.sourceCommit, 'main']);
+      const configs = {server:'PDC/WebAPI/PDC.WebAPI/appsettings.json', desktop:'PDC.Desktop/PDC.Desktop/appsettings.json'};
+      if (!configs[entry.component] || !/^[0-9a-f]{40}$/.test(entry.sourceCommit || '')) throw new Error(`Unverified source entry: ${entry.version}`);
+      const source = execFileSync('git', ['-C', product, 'show', `${entry.sourceCommit}:${configs[entry.component]}`], {encoding:'utf8'});
+      const version = JSON.parse(source.replace(/^\uFEFF/, '')).Application.Version.replace(/^v/, '');
+      if (version !== entry.version) throw new Error(`Source commit/version mismatch: ${entry.version}`);
+    } else {
+      const log = await readFile(resolve(product, `change_log/${logs[entry.component]}`), 'utf8');
+      if (!log.includes(`## [${entry.version}] - ${entry.date}`)) throw new Error(`Unverified curated version: ${entry.version}`);
+    }
     const index = data[lang].findIndex(r => r.component === entry.component && r.version === entry.version);
     if (index < 0) data[lang].push(entry); else data[lang][index] = entry;
   }
